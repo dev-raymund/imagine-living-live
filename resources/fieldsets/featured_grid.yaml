@@ -1,0 +1,14 @@
+title: 'Featured Grid'
+fields:
+  -
+    handle: entries
+    field:
+      mode: default
+      create: false
+      collections:
+        - developments
+      display: Developments
+      type: entries
+      icon: entries
+      listable: hidden
+      instructions_position: above

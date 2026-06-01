@@ -1,0 +1,14 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: site_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Site Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above

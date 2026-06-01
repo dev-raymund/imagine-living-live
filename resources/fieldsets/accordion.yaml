@@ -1,0 +1,34 @@
+title: Accordion
+fields:
+  -
+    handle: item
+    field:
+      collapse: false
+      sets:
+        item:
+          display: Item
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+            -
+              handle: textarea
+              field:
+                antlers: false
+                display: Textarea
+                type: textarea
+                icon: textarea
+                listable: hidden
+                instructions_position: above
+      display: Item
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above

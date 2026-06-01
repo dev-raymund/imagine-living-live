@@ -1,0 +1,77 @@
+title: 'Block Builder'
+fields:
+  -
+    handle: block_builder
+    field:
+      collapse: false
+      sets:
+        hero:
+          display: Hero
+          fields:
+            -
+              import: hero
+        image_aside:
+          display: 'Image Aside'
+          fields:
+            -
+              import: image_aside
+        cards:
+          display: Cards
+          fields:
+            -
+              import: cards
+        accordion:
+          display: Accordion
+          fields:
+            -
+              import: accordion
+        banner:
+          display: Banner
+          fields:
+            -
+              import: banner
+        featured_grid:
+          display: 'Featured Grid'
+          fields:
+            -
+              import: featured_grid
+        info_grid:
+          display: 'Info Grid'
+          fields:
+            -
+              import: info_grid
+        logos_bar:
+          display: 'Logos Bar'
+          fields:
+            -
+              import: logos_bar
+        contact_form:
+          display: 'Contact Form'
+          fields:
+            -
+              import: form
+        testimonials:
+          display: Testimonials
+          fields:
+            -
+              import: testimonials
+        text_editor:
+          display: 'Text Editor'
+          fields:
+            -
+              import: bard
+        break:
+          display: Break
+          fields:
+            -
+              import: break
+        image_aside_over:
+          display: 'Image Aside Over'
+          fields:
+            -
+              import: image_aside_over
+      display: 'Block Builder'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above

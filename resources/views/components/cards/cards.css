@@ -1,0 +1,39 @@
+.cards {
+    @apply mx-auto bg-white max-w-screen-max;
+}
+
+.cards__container {
+    @apply flex flex-wrap justify-center mx-auto;
+}
+
+.card {
+    @apply mx-auto w-80;
+
+    & .card__image {
+        @apply mx-auto z-0 relative;
+
+        & img {
+            @apply m-auto w-full h-full;
+        }
+    }
+}
+
+.card__link {
+    @apply text-brand-primary font-bold text-xl pt-7;
+}
+
+.card__content {
+    @apply bg-brand-white py-3 px-10 mb-10 -mt-28 z-10 relative w-90 m-auto;
+    & h3 {
+        @apply text-brand-secondary font-sans font-bold mt-4 uppercase;
+    }
+    & p {
+        @apply text-xl leading-10;
+    }
+}
+
+@screen md {
+    .card {
+        width: 45%;
+    }
+}

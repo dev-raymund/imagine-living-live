@@ -1,0 +1,24 @@
+<section class="section default-image-aside {{ background }}"
+    id={{ anchor }}>
+    <div class="default-image-aside__container {{ image_side === "left" ? 'image--left' : 'image--right' }}">
+        <div class="default-image-aside__text">
+            <h2 class="heading-4 uppercase">
+                {{ title }}
+            </h2>
+            <div>
+                <div class="my-6">
+                    {{ bard }}
+                </div>
+                <a href="{{ url }}" class="p anchor anchor--primary font-bold">
+                    {{ text }}
+                </a>
+            </div>
+        </div>
+        <div class="default-image-aside__image">
+            {{ if image }}
+                <img src="{{ glide:image width="675" height="468" quality="80" format="webp" }}" loading="lazy"
+                    alt="{{ title }}" />
+            {{ /if }}
+        </div>
+    </div>
+</section>

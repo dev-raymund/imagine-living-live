@@ -1,0 +1,4 @@
+.banner {
+    @apply relative;
+    height: 28rem;
+}

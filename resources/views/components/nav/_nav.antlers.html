@@ -1,0 +1,78 @@
+<div class="nav-wrapper relative bg-white">
+    <div class="nav-container max-w-screen-max mx-auto px-4 xl:px-8">
+        <div class="flex justify-between items-center h-full">
+            <div class="flex justify-center">
+                <a href="/" >
+                    {{ company_information:logo }}
+                        <img width="200" src="{{ url }}"
+                            loading="lazy" alt="{{ title }}" />
+                    {{ /company_information:logo }}
+                </a>
+
+            </div>
+            <nav class="nav hidden xl:flex xl:items-center">
+                {{ nav:main_nav }}
+                    <a href="{{ url }}"
+                        class="nav-link anchor {{ is_current || is_parent ?= "nav-link nav-link--active" }}">
+                        {{ title }}
+                    </a>
+                {{ /nav:main_nav }}
+                <a href="tel:{{ company_information:phone_number }}" target="_blank"
+                    rel="noreferrer noopener" class="nav-link anchor anchor--secondary lowercase">
+                    {{ company_information:phone_number }}
+                </a>
+            </nav>
+            <div class="-mr-2 -my-2 xl:hidden">
+                <button type="button"
+                    class="js-hamburger-menu rounded-md p-2 inline-flex items-center justify-center text-brand-primary transition-all hover:text-brand-secondary">
+                    <!-- Heroicon name: outline/menu -->
+                    <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-nav mobile-nav-closed js-mobile-nav">
+        <div class="rounded-xl shadow-xl bg-brand-white">
+            <div class="pt-8 pb-10 px-5">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <a href="/">
+                            {{ company_information:logo }}
+                                <img width="100" class="h-20 w-auto" src="{{ url }}"
+                                    loading="lazy" alt="{{ title }}" />
+                            {{ /company_information:logo }}
+                        </a>
+                    </div>
+                    <div class="-mr-2">
+                        <button type="button"
+                            class="js-hamburger-menu rounded-md p-2 inline-flex items-center justify-center text-brand-primary transition-all hover:text-brand-secondary">
+                            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <nav class="grid gap-y-8">
+                        {{ nav:main_nav }}
+                            <a href="{{ url }}"
+                                class="nav-link anchor {{ is_current || is_parent ?= 'nav-link nav-link--active' }}">
+                                {{ title }}
+                            </a>
+                        {{ /nav:main_nav }}
+                        <a href="tel:{{ company_information:phone_number }}" target="_blank"
+                            rel="noreferrer noopener" class="nav-link anchor anchor--secondary lowercase">
+                            {{ company_information:phone_number }}
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: name
+        field:
+          placeholder: Name
+          input_type: text
+          antlers: false
+          display: Name
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+      -
+        handle: phone
+        field:
+          placeholder: Phone
+          input_type: tel
+          antlers: false
+          display: Phone
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: email_address
+        field:
+          placeholder: 'Email address'
+          input_type: email
+          antlers: false
+          display: 'Email address'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+      -
+        handle: service
+        field:
+          options:
+            service: Service
+            registered-providers: 'Register Providers/ LA/ Developers'
+            buyers-tenants: 'Buyers & Tenants'
+            application-enquiry: 'Application Enquiry'
+            general: 'General Enquiry, Marketing or Accounts'
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          display: Service
+          type: select
+          icon: select
+          listable: hidden
+          instructions_position: above
+          placeholder: Service
+          default: service
+      -
+        handle: enquiry
+        field:
+          placeholder: Enquiry
+          input_type: text
+          antlers: false
+          display: Enquiry
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required

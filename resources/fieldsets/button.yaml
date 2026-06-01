@@ -1,0 +1,32 @@
+title: Button
+fields:
+  -
+    handle: button_text
+    field:
+      input_type: text
+      antlers: false
+      display: 'Button Text'
+      type: text
+      icon: text
+      width: 50
+      listable: hidden
+      instructions_position: above
+  -
+    handle: secondary_text
+    field:
+      input_type: text
+      antlers: false
+      display: 'Secondary Text'
+      type: text
+      icon: text
+      width: 50
+      listable: hidden
+      instructions_position: above
+  -
+    handle: button_url
+    field:
+      display: 'Button Url'
+      type: link
+      icon: link
+      listable: hidden
+      instructions_position: above

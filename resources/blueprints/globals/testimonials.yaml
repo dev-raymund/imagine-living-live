@@ -1,0 +1,64 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: testimonials
+        field:
+          collapse: false
+          sets:
+            testimonial:
+              display: Testimonial
+              fields:
+                -
+                  handle: bard
+                  field:
+                    always_show_set_button: false
+                    buttons:
+                      - Paragraph
+                      - bold
+                      - italic
+                      - anchor
+                    save_html: false
+                    toolbar_mode: fixed
+                    link_noopener: false
+                    link_noreferrer: false
+                    target_blank: false
+                    reading_time: false
+                    fullscreen: true
+                    allow_source: true
+                    enable_input_rules: true
+                    enable_paste_rules: true
+                    antlers: false
+                    display: Bard
+                    type: bard
+                    icon: bard
+                    listable: hidden
+                    instructions_position: above
+                -
+                  handle: author
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Author
+                    type: text
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                -
+                  handle: text
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: 'Post Code'
+                    type: text
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+          display: Testimonials
+          type: replicator
+          icon: replicator
+          listable: hidden
+          instructions_position: above

@@ -1,0 +1,25 @@
+<section class="section accordion">
+    <div class="accordion__container">
+        {{ item }}
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='accordion__icon'>
+                        <svg class="w-4 h-4"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="5 0 15 24">
+                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+                        </svg>
+                    </i>
+                    <h3 class="accordion__title heading-4 ml-6">
+                        {{ title }}
+                    </h3>
+                </header>
+                <div class="accordion__content">
+                    <p class="px-10 py-6 p lg:px-20 lg:py-12">
+                        {{ textarea }}
+                    </p>
+                </div>
+            </div>
+        {{ /item }}
+    </div>
+</section>

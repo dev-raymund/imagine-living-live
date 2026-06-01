@@ -1,0 +1,7 @@
+.overlay {
+    @apply absolute top-0 left-0 w-full h-full z-10 bg-brand-black opacity-20;
+}
+
+.overlay-hover {
+    @apply absolute top-0 left-0 w-full h-full z-10 bg-brand-black opacity-20 transition-opacity hover:opacity-10;
+}

@@ -1,0 +1,13 @@
+title: 'Logos Bar'
+fields:
+  -
+    handle: caption
+    field:
+      input_type: text
+      antlers: false
+      display: Caption
+      type: text
+      icon: text
+      instructions: 'Logos editable in Globals -> Company Information'
+      listable: hidden
+      instructions_position: below

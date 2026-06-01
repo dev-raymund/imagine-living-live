@@ -1,0 +1,16 @@
+name: Nina
+roles:
+  - editor
+groups:
+  - editors
+id: 7a539f00-e052-4cb1-9eeb-a6993f430081
+password_hash: $2y$10$J/1B6Ee0Zb0NS0pCHmnqA.t5Jt1PVmKnGcNwdU0/mdTPi3FydS6.m
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing
+    testimonials:
+      after_save: create_another
+  assets:
+    images:
+      mode: grid

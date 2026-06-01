@@ -1,0 +1,16 @@
+.logos-bar {
+  & .swiper {
+    @apply max-w-9xl mx-auto;
+  }
+
+  & .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      max-width: 22rem;
+      object-fit: cover;
+    }
+  }
+}

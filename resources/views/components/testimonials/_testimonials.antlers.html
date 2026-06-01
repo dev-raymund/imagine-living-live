@@ -1,0 +1,17 @@
+<section class="testimonials section--wide {{ background }}">
+    <div class='max-w-9xl mx-auto'>
+        <div class="testimonials__header">
+            <h3 class="heading-4 uppercase text-brand-primary">
+                {{ heading }}
+            </h3>
+            <p class="p mt-3 mb-6">
+                {{ textarea }}
+            </p>
+        </div>
+        <div class="testimonials__content flex flex-col md:flex-row md:flex-wrap">
+            {{ collection:testimonials limit="2" sort="random" }}
+                {{ partial:components/testimonials/testimonial  }}
+            {{ /collection:testimonials }}
+        </div>
+    </div>
+</section>

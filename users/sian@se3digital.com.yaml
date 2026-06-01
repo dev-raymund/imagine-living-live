@@ -1,0 +1,16 @@
+name: Sian
+super: true
+roles:
+  - editor
+groups:
+  - editors
+id: 22e15410-60d0-4a71-9e75-0084066eb332
+password_hash: $2y$10$/1zSHcMgjP6VDrmlJ4MS6u8OKN2PJq1dzK0KNVeJgk1ZupoNhNQIm
+preferences:
+  collections:
+    developments:
+      columns:
+        - status
+        - slug
+    testimonials:
+      per_page: 500

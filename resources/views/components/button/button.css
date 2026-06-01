@@ -1,0 +1,44 @@
+.btn {
+    @apply relative flex justify-center font-semibold bg-brand-primary text-white transition-all py-4 md:px-10 md:py-6;
+    border-radius: 0;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    overflow: hidden;
+    min-width: 23rem;
+}
+
+.btn span {
+    z-index:1;
+}
+
+.btn::after {
+    @apply bg-brand-secondary absolute;
+    content: "";
+    height: 60px;
+    width: 60px;
+    left: -30px;
+    top: -30px;
+    transform: rotate(45deg);
+    transition:transform 0.3s ease-in-out;
+}
+
+.btn:hover:after {
+    transform: rotate(0) scale(30);
+}
+
+.btn-flex {
+    @apply flex flex-col items-center;
+}
+
+@screen md {
+    .btn {
+        min-width: 26rem;
+    }
+}
+
+@screen xxl {
+    .btn {
+        min-width: 30rem;
+    }
+}

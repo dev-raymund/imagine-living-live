@@ -1,0 +1,20 @@
+name: 'Marius Adam'
+super: true
+id: 6d1af9c0-511e-4aad-94a9-44a14a2422ee
+password_hash: $2y$10$WdFw81UkT76tlX9QU22fE.228bQtcPWb9DuMJsPGxezuaLVrwT7VW
+preferences:
+  assets:
+    images:
+      mode: grid
+  collections:
+    developments:
+      columns:
+        - title
+        - subtitle
+        - price_range
+        - status
+    testimonials:
+      columns:
+        - title
+        - bard
+        - text

@@ -1,0 +1,133 @@
+title: Development
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: status
+        field:
+          options:
+            live: Live
+            new: New
+            sold: Sold
+            coming-soon: 'Coming soon'
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          display: Status
+          type: select
+          icon: select
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: price_range
+        field:
+          input_type: text
+          antlers: false
+          display: 'Price Range'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: price_from
+        field:
+          type: integer
+          display: 'Price from (GBP)'
+          instructions: 'Lowest price in pounds (no £ or commas). Used for sorting and max-price filter. Run `php artisan developments:sync-prices` to fill from Price Range.'
+          width: 50
+          listable: hidden
+          instructions_position: above
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          width: 33
+          validate:
+            - required
+          display: Name
+          instructions_position: above
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: subtitle
+        field:
+          input_type: text
+          antlers: false
+          display: Area
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+      -
+        handle: caption
+        field:
+          input_type: text
+          antlers: false
+          display: Caption
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+      -
+        handle: images
+        field:
+          mode: list
+          restrict: false
+          allow_uploads: false
+          show_filename: true
+          display: Images
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+      -
+        handle: description
+        field:
+          antlers: false
+          display: Description
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+      -
+        handle: link
+        field: link.text
+        config:
+          display: Link
+          width: 75
+          instructions: 'Link for the development card'
+      -
+        handle: target_blank
+        field:
+          default: false
+          display: 'Target blank'
+          type: toggle
+          icon: toggle
+          instructions: 'Open the link in a new tab'
+          width: 25
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        import: buttons
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate:
+            - required

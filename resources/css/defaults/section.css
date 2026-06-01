@@ -1,0 +1,13 @@
+.section {
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 5vw, 5rem);
+}
+
+.section--small {
+    padding: clamp(2rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem);
+}
+
+.section--wide {
+    @apply px-6;
+    padding-top: clamp(2rem, 5vw, 3rem);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+}

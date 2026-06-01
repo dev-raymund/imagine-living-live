@@ -1,0 +1,16 @@
+title: 'Company Information'
+data:
+  logo:
+    - logos/logo-d2-(3).png
+  name: 'Imagine Living'
+  email: hello@imagineliving.co.uk
+  phone_number: '020 3376 6455'
+  address_line_1: 'Ealing Cross'
+  address_line_2: '85 Uxbridge Road'
+  city: London
+  post_code: 'W5 5BW'
+  regulation_agencies:
+    - logos/ombudsman.jpg
+    - logos/TSIlogo.jpg
+    - logos/CMPLOGO.jpg
+  google_maps_link: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.078000449124!2d-0.31426592337965237!3d51.51178497181433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760d8bd36f649b%3A0x8fa175a74fbbe26a!2sPodium%20-%20Ealing%20Cross!5e0!3m2!1sen!2sza!4v1743009026518!5m2!1sen!2sza'

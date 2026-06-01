@@ -1,0 +1,134 @@
+.default-image-aside {
+  @apply mx-auto max-w-screen-max;
+}
+
+.default-image-aside__container {
+  @apply max-w-screen-xxl mx-auto;
+  & img {
+    @apply w-full object-cover mt-8;
+    min-height: 25rem;
+  }
+}
+
+@screen md {
+  .default-image-aside__container {
+    @apply flex;
+
+    & .default-image-aside__text {
+      flex: 1 1 55%;
+    }
+
+    & .default-image-aside__image {
+      @apply flex justify-center items-center;
+      flex: 1 1 37%;
+
+      & img {
+        @apply w-full mt-0;
+        min-height: 30rem;
+        height: 80%;
+      }
+    }
+  }
+
+  .image--left {
+    @apply flex-row-reverse;
+
+    & .default-image-aside__text {
+      margin-left: 5%;
+    }
+    & .default-image-aside__image {
+      margin-right: 3%;
+    }
+  }
+
+  .image--right {
+    & .default-image-aside__text {
+      margin-right: 5%;
+    }
+    & .default-image-aside__image {
+      margin-left: 3%;
+    }
+  }
+}
+
+.wide-image-aside {
+  padding-top: clamp(2rem, 5vw, 5rem);
+  padding-bottom: clamp(2rem, 5vw, 5rem);
+}
+
+.wide-image-aside_container {
+  @apply flex flex-wrap;
+}
+
+.wide-image-aside_image {
+  @apply order-2;
+}
+
+.wide-image-aside_text {
+  @apply order-1;
+}
+
+.wide-image-aside_content {
+  @apply bg-brand-gray p-10;
+  & h2 {
+    @apply mb-5;
+  }
+}
+
+.flip {
+  transform: scaleX(-1);
+}
+
+@screen md {
+  .wide-image-aside_container {
+    @apply flex-nowrap relative mx-auto;
+    height: 800px;
+  }
+
+  .wide-image-aside_image {
+    @apply absolute right-0 h-full;
+    & img {
+      @apply object-cover h-full;
+    }
+  }
+
+  .wide-image-aside_text {
+    @apply absolute;
+    top: 50px;
+    transform: translateY(-50%);
+  }
+
+  .wide-image-aside_content {
+    @apply px-16 mx-auto max-w-60;
+  }
+}
+
+@screen lg {
+  .wide-image-aside_content {
+    & p {
+      @apply ml-10;
+    }
+  }
+  .wide-image-aside_content {
+    @apply px-28 pt-20 pb-40 mr-auto ml-0;
+  }
+}
+
+@screen xl {
+  .wide-image-aside_content {
+    @apply mx-0;
+
+    & p {
+      @apply ml-24;
+    }
+  }
+}
+
+@screen xxl {
+  .wide-image-aside {
+    @apply max-w-screen-max mx-auto;
+  }
+  .wide-image-aside_container {
+    @apply mr-0 max-w-90;
+  }
+}

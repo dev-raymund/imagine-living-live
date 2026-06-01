@@ -1,0 +1,75 @@
+/*
+clamp() enables selecting value within a range of values between 
+a defined minimum and maximum. It takes three parameters: 
+a minimum value, a preferred value, and a maximum allowed value. 
+*/
+
+@font-face {
+    font-family: "Brother";
+    src: url("https://use.typekit.net/af/69907d/00000000000000003b9b32e1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+            format("woff2"),
+        url("https://use.typekit.net/af/69907d/00000000000000003b9b32e1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+            format("woff"),
+        url("https://use.typekit.net/af/69907d/00000000000000003b9b32e1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+            format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Brother";
+    src: url("https://use.typekit.net/af/5d27c7/00000000000000003b9b32e5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+            format("woff2"),
+        url("https://use.typekit.net/af/5d27c7/00000000000000003b9b32e5/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+            format("woff"),
+        url("https://use.typekit.net/af/5d27c7/00000000000000003b9b32e5/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+            format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.heading-1 {
+    @apply font-sans font-bold;
+    font-size: clamp(3.25rem, 6vw, 9rem);
+    line-height: 1.125;
+}
+
+.heading-2 {
+    @apply font-sans;
+    font-size: clamp(3rem, 3vw, 3.75rem);
+    line-height: 1.4;
+}
+
+.heading-3 {
+    @apply font-sans;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+.heading-4 {
+    @apply font-sans;
+    font-size: clamp(1.75rem, 4vw, 2.125rem);
+    line-height: 1.8;
+}
+
+.heading-5 {
+    @apply font-sans;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.heading-6 {
+    @apply font-sans;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+}
+
+.p {
+    @apply font-sans;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    line-height: 2;
+}
+
+.p-small {
+    @apply font-sans;
+    font-size: clamp(0.875rem, 3vw, 1rem);
+}

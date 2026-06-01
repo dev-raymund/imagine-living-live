@@ -1,0 +1,17 @@
+title: Buttons
+fields:
+  -
+    handle: buttons
+    field:
+      collapse: false
+      sets:
+        button:
+          display: Button
+          fields:
+            -
+              import: button
+      display: Buttons
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above

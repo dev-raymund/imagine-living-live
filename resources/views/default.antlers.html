@@ -1,0 +1,41 @@
+{{ block_builder }}
+    {{ if type === "hero" }}
+        {{ partial:components/hero/hero image=image }}
+    {{ /if }}
+    {{ if type === "banner" }}
+        {{ partial:components/banner/banner image=image }}
+    {{ /if }}
+    {{ if type === "break" }}
+        {{ partial:components/break/break }}
+    {{ /if }}
+    {{ if type === "image_aside" }}
+        {{ partial:components/imageaside/image-aside image=image background=background image_side=image_side select=select }}
+    {{ /if }}
+    {{ if type === "cards" }}
+        {{ partial:components/cards/cards }}
+    {{ /if }}
+    {{ if type === "text_editor" }}
+        {{ partial:components/texteditor/text-editor background=background }}
+    {{ /if }}
+    {{ if type === "accordion" }}
+        {{ partial:components/accordion/accordion  }}
+    {{ /if }}
+    {{ if type === "featured_grid" }}
+        {{ partial:components/featuredgrid/featured-grid  }}
+    {{ /if }}
+    {{ if type === "image_aside_over" }}
+        {{ partial:components/imgasideover/imgasideover }}
+    {{ /if }}
+    {{ if type === "info_grid" }}
+        {{ partial:components/infogrid/info-grid  }}
+    {{ /if }}
+    {{ if type === "logos_bar" }}
+        {{ partial:components/logosbar/logos-bar }}
+    {{ /if }}
+    {{ if type === "contact_form" }}
+        {{ partial:components/contactform/contact-form  }}
+    {{ /if }}
+    {{ if type === "testimonials" }}
+        {{ partial:components/testimonials/testimonials background=background }}
+    {{ /if }}
+{{ /block_builder }}

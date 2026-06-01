@@ -1,0 +1,28 @@
+<section class="section cards">
+    <h2 class="heading-2 text-brand-primary font-bold mt-8 mb-12 text-center md:text-left lg:px-6 xl:px-14">
+        {{ heading }}
+    </h2>
+    <div class="cards__container">
+        {{ cards }}
+            <div class="card">
+                <div class="card__image">
+                    <img src="{{ glide:image width="786" height="553" quality="80" format="webp" }}" loading="lazy"
+                        alt="{{ alt }}" />
+                </div>
+                <div class="card__content">
+                    <h3 class="heading-4">
+                        {{ title }}
+                    </h3>
+                    <p class="p p-small my-4">
+                        {{ textarea }}
+                    </p>
+                    <div class="card__link">
+                        <a href="{{ url }}">
+                            {{ text }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {{ /cards }}
+    </div>
+</section>

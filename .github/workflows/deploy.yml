@@ -1,0 +1,46 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Sync code to server
+        run: |
+          rsync -avz \
+            --exclude '.env' \
+            --exclude '.git/' \
+            --exclude 'vendor/' \
+            --exclude 'node_modules/' \
+            --exclude 'storage/' \
+            --exclude 'public/assets/' \
+            --exclude '.parcel-cache/' \
+            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ploi/imagineliving.co.uk/
+
+      - name: Build and clear caches on server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            export APP_DIR=/home/ploi/imagineliving.co.uk
+            bash "$APP_DIR/scripts/deploy.sh"

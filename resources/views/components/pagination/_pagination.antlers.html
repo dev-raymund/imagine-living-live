@@ -1,0 +1,48 @@
+{{ paginate }}
+    <ul class="pagination">
+        {{ if prev_page }}
+            <a href="{{ prev_page }}">
+                <li class='mt-2 text-4xl text-brand-black hover:text-brand-secondary'>
+                    &#706;
+                </li>
+            </a>
+        {{ /if }}
+        {{ links:segments }}
+            {{ first }}
+                {{ if page == current_page }}
+                    <li class="bg-brand-secondary text-brand-white">
+                        {{ page }}
+                    </li>
+                {{ else }}
+                    <a href="{{ url }}">
+                        <li class="text-brand-black hover:text-brand-secondary">
+                            {{ page }}
+                        </li>
+                    </a>
+                {{ /if }}
+            {{ /first }}
+            {{ last }}
+                {{ if page == current_page }}
+                    <li class="bg-brand-secondary text-brand-white">
+                        {{ page }}
+                    </li>
+                {{ else }}
+                    <a href="{{ url }}">
+                        <li class="text-brand-black hover:text-brand-secondary">
+                            {{ page }}
+                        </li>
+                    </a>
+                {{ /if }}
+            {{ /last }}
+
+        {{ /links:segments }}
+
+        {{ if next_page }}
+            <a href="{{ next_page }}">
+                <li class='mt-2 text-4xl text-brand-black hover:text-brand-secondary'>
+                    &#707;
+                </li>
+            </a>
+        {{ /if }}
+    </ul>
+{{ /paginate }}

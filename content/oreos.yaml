@@ -1,0 +1,7 @@
+essentials_title: Essentials
+essentials_description: 'By proceeding, you confirm your agreement to our Privacy Policy.'
+essentials_details:
+  -
+    type: paragraph
+    attrs:
+      class: null

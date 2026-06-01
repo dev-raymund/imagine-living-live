@@ -1,0 +1,21 @@
+title: 'Contact Form'
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      display: Title
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+  -
+    handle: textarea
+    field:
+      antlers: false
+      display: Textarea
+      type: textarea
+      icon: textarea
+      listable: hidden
+      instructions_position: above

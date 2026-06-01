@@ -1,0 +1,68 @@
+{{ partial:components/banner/banner image=image:url }}
+<section class="contact">
+  <div class="contact-left">
+    {{ form:contact_us }}
+    <div class="contact-left-form">
+      {{ if success }}
+      <h3 class="heading-3 text-center">{{ success }}</h3>
+      {{ else }}
+      <h3 class="heading-3">Find out how we can help</h3>
+      {{ fields }}
+      <div class="field">{{ field }}</div>
+      {{ /fields }}
+
+      <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}" />
+      <button class="btn btn-flex" type="submit">
+        <span class="leading-8 heading-6">Send</span>
+      </button>
+      {{ /if }}
+    </div>
+    {{ /form:contact_us }}
+  </div>
+  <div class="contact-right">
+    <div class="contact-right-one">
+      <h3 class="heading-6">Find us</h3>
+      <ul>
+        <li>{{ company_information:address_line_1 }},</li>
+        <li>{{ company_information:address_line_2 }},</li>
+        <li>{{ company_information:city }},</li>
+        <li>{{ company_information:post_code }}</li>
+      </ul>
+    </div>
+    <div class="contact-right-two">
+      <h3 class="heading-6">Contact us</h3>
+      <ul>
+        <li>{{ company_information:email }}</li>
+        <li>{{ company_information:phone_number }}</li>
+      </ul>
+    </div>
+    <div style="display: flex; width: 100%;">
+      <div class="contact-right-three">
+        <h3 class="heading-6">Follow us</h3>
+        {{ partial:components/social/social-links }}
+      </div>
+      <div class="contact-right-three">
+        <h3 class="heading-6">Application Form</h3>
+        <a
+          href="https://forms.gle/UZj1sMDz3f3Dxa7u8"
+          class="heading-7"
+          target="_blank"
+          rel="noreferrer noopener"
+          >Apply <span style="text-decoration: underline;">here</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+{{ if company_information:google_maps_link }}
+<div class="contact-map">
+  <iframe
+    src="{{ company_information:google_maps_link }}"
+    width="100%"
+    height="768px"
+    style="border: 0"
+    allowfullscreen=""
+    loading="lazy"
+  ></iframe>
+</div>
+{{ partial:components/break/break }} {{ /if }}

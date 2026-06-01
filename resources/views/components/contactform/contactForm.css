@@ -1,0 +1,13 @@
+.contact-form-cta {
+    @apply pt-0 pb-20;
+}
+
+.contact-form-cta__content {
+    @apply max-w-9xl mx-auto bg-brand-gray relative pb-24;
+}
+
+.contact-form-cta button {
+    @apply bg-brand-secondary transition-colors w-60 absolute left-52 py-6 text-white font-bold hover:bg-brand-primary md:w-40;
+    bottom: -44px;
+    transform: translateX(-50%);
+}

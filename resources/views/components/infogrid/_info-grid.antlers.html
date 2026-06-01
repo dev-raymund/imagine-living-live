@@ -1,0 +1,42 @@
+<section class="info-grid">
+    <div class="section--wide max-w-9xl mx-auto">
+        <h2 class="heading-2 font-bold text-brand-primary leading-none mb-8 xl:mb-12">
+            {{ title }}
+        </h2>
+        <div class="info-grid__row">
+            {{ columns }}
+                <div
+                    class="info-grid__column {{ if columns | count %2 !== 0 }}grid-item-odd{{ /if }}">
+                    <div class="info-grid__column-header px-4 mt-4 lg:mt-0">
+                        <h4 class="heading-4 font-bold uppercase text-brand-secondary mb-2">
+                            {{ title }}
+                        </h4>
+                        <p class="p">
+                            {{ textarea }}
+                        </p>
+                    </div>
+                    <div class="info-grid__thumbnails bg-white section--small">
+                        {{ thumbnails }}
+                            <div class="info-grid__thumbnail">
+                                <div>
+                                    <h6 class="title heading-6 font-bold text-brand-primary leading-9">
+                                        {{ title }}
+                                    </h6>
+
+                                    <a href="{{ url }}">
+                                        <p class="p my-6">
+                                            {{ textarea }}
+                                        </p>
+                                    </a>
+                                </div>
+                                <a href="{{ url_link }}" class="p anchor font-bold leading-none">
+                                    {{ text }}
+                                </a>
+                            </div>
+                        {{ /thumbnails }}
+                    </div>
+                </div>
+            {{ /columns }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+{{ if secondary_text }}
+    <button class="btn btn-flex">
+        <span class="leading-8 mb-5 heading-3">
+            {{ button_text }}
+        </span>
+        <span class="uppercase p-small font-normal">
+            {{ secondary_text }}
+        </span>
+    </button>
+{{ elseif button_text }}
+    <button class="btn ">
+        <span class="heading-5">
+            {{ button_text }}
+        </span>
+    </button>
+{{ /if }}

@@ -1,0 +1,21 @@
+.hero {
+    @apply mx-auto max-w-screen-max relative;
+    height: 62.25rem;
+}
+
+.hero__content {
+    @apply relative flex flex-col items-center justify-evenly h-full mx-auto text-center z-20 lg:pt-20;
+}
+
+.heading-hero {
+    @apply font-sans;
+    font-size: clamp(2.5rem, 4vw, 3rem);
+}
+
+.hero__buttons {
+    @apply flex flex-wrap justify-center lg:pt-20;
+
+    & .btn {
+        @apply m-6 lg:mx-12 xxl:my-0;
+    }
+}

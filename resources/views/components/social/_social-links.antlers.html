@@ -1,0 +1,11 @@
+<div class="social-links flex justify-center">
+    <ul class="flex items-center justify-between w-56">
+        {{ social_media:social }}
+            <li>
+                <a href="{{ url }}" aria-label="{{ name }}" rel="noopener">
+                    {{ svg :src="icon" class="w-12 h-12" }}
+                </a>
+            </li>
+        {{ /social_media:social }}
+    </ul>
+</div>

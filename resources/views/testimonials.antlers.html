@@ -1,0 +1,25 @@
+{{ partial:components/banner/banner image=image:url }}
+<section class="testimonials section--wide max-w-9xl mx-auto">
+    <div class="testimonials__header">
+        <h3 class="heading-3 uppercase">
+            {{ heading }}
+        </h3>
+        <p class="p mt-3 mb-6">
+            {{ textarea }}
+        </p>
+    </div>
+    <div class="testimonials__content flex flex-col md:flex-row md:flex-wrap">
+        {{ collection:testimonials as="testimonials" paginate="true" limit="2" }}
+            {{ if no_results }}
+                <h2 class="heading-2 font-serif text-brand-secondary text-center">No testimonials yet! Check back soon.
+                </h2>
+            {{ /if }}
+            <div class="testimonials__content flex flex-col md:flex-row md:flex-wrap">
+                {{ testimonials }}
+                    {{ partial:components/testimonials/testimonial  }}
+                {{ /testimonials }}
+            </div>
+            {{ partial:components/pagination/pagination }}
+        {{ /collection:testimonials }}
+    </div>
+</section>

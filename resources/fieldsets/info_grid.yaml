@@ -1,0 +1,78 @@
+title: 'Info Grid'
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      display: Title
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+  -
+    handle: columns
+    field:
+      collapse: false
+      sets:
+        column:
+          display: Column
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+                instructions_position: above
+            -
+              handle: textarea
+              field:
+                antlers: false
+                display: Textarea
+                type: textarea
+                icon: textarea
+                listable: hidden
+                instructions_position: above
+            -
+              handle: thumbnails
+              field:
+                collapse: false
+                sets:
+                  new_set:
+                    display: 'New Set'
+                    fields:
+                      -
+                        handle: title
+                        field:
+                          input_type: text
+                          antlers: false
+                          display: Title
+                          type: text
+                          icon: text
+                          listable: hidden
+                          instructions_position: above
+                      -
+                        handle: textarea
+                        field:
+                          antlers: false
+                          display: Textarea
+                          type: textarea
+                          icon: textarea
+                          listable: hidden
+                          instructions_position: above
+                      -
+                        import: link
+                display: Thumbnails
+                type: replicator
+                icon: replicator
+                listable: hidden
+                instructions_position: above
+      display: Columns
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above

@@ -1,0 +1,21 @@
+<section class="wide-image-aside {{ background }} {{ image_side === "left" ? 'flip' : '' }}
+">
+    <div class="wide-image-aside_container ">
+        <div class="wide-image-aside_image {{ image_side === "left" ? 'flip' : '' }}">
+            {{ if image }}
+                <img src="{{ glide:image width="948" height="803" quality="80" format="webp" }}" loading="lazy"
+                    alt="{{ title }}" />
+            {{ /if }}
+        </div>
+        <div class="wide-image-aside_text">
+            <div class="wide-image-aside_content 
+                {{ background === "bg-brand-gray" ? 'bg-brand-white' : 'bg-brand-gray' }}
+                {{ image_side === "left" ? 'flip' : '' }}">
+                <h2 class="heading-2 text-brand-primary font-bold">
+                    {{ title }}
+                </h2>
+                {{ bard }}
+            </div>
+        </div>
+    </div>
+</section>

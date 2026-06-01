@@ -1,0 +1,87 @@
+title: 'Text Editor'
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      display: Title
+      type: text
+      icon: text
+      width: 50
+      listable: hidden
+      instructions_position: above
+  -
+    handle: background
+    field:
+      options:
+        bg-brand-white: White
+        bg-brand-gray: Gray
+      multiple: false
+      clearable: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      default: White
+      display: Background
+      type: select
+      icon: select
+      width: 50
+      listable: hidden
+      instructions_position: above
+  -
+    handle: replicator
+    field:
+      collapse: false
+      sets:
+        new_set:
+          display: 'New Set'
+          fields:
+            -
+              handle: bard
+              field:
+                always_show_set_button: false
+                buttons:
+                  - h2
+                  - h3
+                  - h4
+                  - h5
+                  - h6
+                  - paragraph
+                  - paragraphS
+                  - paragraphP
+                  - paragraphL
+                  - bold
+                  - italic
+                  - underline
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - quote
+                  - anchor
+                  - image
+                  - table
+                save_html: false
+                toolbar_mode: fixed
+                link_noopener: false
+                link_noreferrer: false
+                target_blank: false
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                antlers: false
+                display: Bard
+                type: bard
+                icon: bard
+                listable: hidden
+                instructions_position: above
+            -
+              import: button
+      display: 'Text Editor'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above

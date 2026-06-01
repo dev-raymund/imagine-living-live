@@ -1,0 +1,7 @@
+.lum-lightbox.lum-open {
+    @apply z-50;
+
+    & img {
+        @apply mx-auto;
+    }
+}

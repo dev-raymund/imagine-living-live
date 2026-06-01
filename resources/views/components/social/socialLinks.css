@@ -1,0 +1,16 @@
+.social-links path {
+    @apply transition-colors;
+    fill: var(--color-brand-primary);
+}
+
+.social-links svg {
+    @apply transition-transform;
+}
+
+.social-links li:hover svg {
+    transform: scale(1.1);
+}
+
+.social-links li:hover path {
+    fill: var(--color-brand-secondary);
+}

@@ -1,0 +1,61 @@
+{
+    "name": "inten-statamic-template",
+    "private": true,
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "engines": {
+        "node": ">=18"
+    },
+    "overrides": {
+        "node-gyp-build": "^4.8.4"
+    },
+    "targets": {
+        "default": {
+            "distDir": "./public"
+        }
+    },
+    "scripts": {
+        "setup": "nvm install && nvm use && npm i && npx husky install && composer install",
+        "build-dev": "NODE_ENV=development npm run build",
+        "prebuild": "npx browserslist@latest --update-db",
+        "prewatch": "npx browserslist@latest --update-db",
+        "build": "npm run build:css && npm run build:js",
+        "build:js": "parcel build resources/js/site.js --no-cache --no-scope-hoist  --public-url ../",
+        "build:css": "node generate-css-imports.js && parcel build resources/css/site.generated.css --no-cache --public-url ../",
+        "postbuild:css": "node scripts/sync-assets.js",
+        "postbuild:js": "node scripts/sync-assets.js",
+        "watch": "node generate-css-imports.js && concurrently \"parcel watch resources/js/site.js resources/css/site.generated.css --no-cache --public-url ../\" \"node scripts/sync-assets.js --watch\"",
+        "format": "prettier --loglevel warn --write \"resources/**/*.{js,css,md}\"",
+        "serve": "php artisan serve",
+        "dev": "npx concurrently npm:watch npm:serve"
+    },
+    "dependencies": {
+        "@tailwindcss/typography": "^0.5.2",
+        "luminous-lightbox": "^2.4.0",
+        "tailwind-css-variables": "^3.0.1"
+    },
+    "devDependencies": {
+        "@parcel/config-default": "^2.4.1",
+        "@parcel/resolver-glob": "^2.4.1",
+        "@parcel/transformer-image": "^2.4.1",
+        "autoprefixer": "^10.4.20",
+        "concurrently": "^7.1.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.4.0",
+        "parcel": "^2.12.0",
+        "postcss": "^8.4.47",
+        "postcss-import": "^14.1.0",
+        "postcss-nesting": "^10.2.0",
+        "prettier": "^2.6.2",
+        "stylelint": "^14.7.1",
+        "stylelint-config-standard": "^25.0.0",
+        "tailwindcss": "^3.4.14"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "templates/**/*.{js,css,md}": "prettier --write"
+    }
+}

@@ -1,0 +1,15 @@
+@screen lg {
+    .text-editor__container {
+        @apply flex flex-wrap;
+    }
+
+    .text-editor__content--flex:nth-child(odd) {
+        width: 50%;
+        margin-right: 5%;
+    }
+
+    .text-editor__content--flex:nth-child(even) {
+        width: 40%;
+        margin-left: 5%;
+    }
+}

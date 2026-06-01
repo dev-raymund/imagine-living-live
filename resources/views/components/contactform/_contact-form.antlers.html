@@ -1,0 +1,27 @@
+<section class="contact-form-cta section--wide">
+    <div class="contact-form-cta__content section">
+        <h3 class="heading-3 font-bold text-brand-primary">
+            {{ title }}
+        </h3>
+        <p class="p mt-3 mb-6">
+            {{ textarea }}
+        </p>
+        {{ form:contact_us }}
+            {{ if success }}
+                <h3 class="text-brand-primaryLight font-sans heading-3 text-center">
+                    {{ success }}
+                </h3>
+            {{ else }}
+                {{ fields }}
+                    <div class="py-2">
+                        <div class="py-2">
+                            {{ field }}
+                        </div>
+                    </div>
+                {{ /fields }}
+                <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+                <button class="heading-3" type="submit">Send</button>
+            {{ /if }}
+        {{ /form:contact_us }}
+    </div>
+</section>

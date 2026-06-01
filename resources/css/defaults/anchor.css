@@ -1,0 +1,37 @@
+.anchor {
+    @apply relative max-w-max text-brand-black transition-colors hover:text-brand-primary;
+}
+
+.anchor--primary {
+    @apply text-brand-primary transition-colors hover:text-brand-secondary;
+}
+
+.anchor--secondary {
+    @apply text-brand-secondary transition-colors hover:text-brand-primary;
+}
+
+.anchor::before,
+.anchor::after {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    top: 100%;
+    left: 0;
+    pointer-events: none;
+}
+
+.anchor::before {
+    content: "";
+}
+
+.anchor:before {
+    transform-origin: 100% 50%;
+    transform: scale3d(0, 1, 1);
+    transition: transform 0.3s;
+}
+
+.anchor:hover::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+}

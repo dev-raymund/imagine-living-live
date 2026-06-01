@@ -1,0 +1,57 @@
+{{ partial:components/banner/banner image=image:url }}
+<section class="developments section max-w-screen-max mx-auto">
+    <h3 class="heading-3 uppercase mt-8 mb-12 text-center md:text-left lg:px-6 xl:px-14">
+        {{ heading }}
+    </h3>
+
+    <form method="get" action="{{ url }}" class="mb-10 flex flex-col gap-4 md:flex-row md:flex-wrap md:items-end md:gap-6 lg:px-6 xl:px-14">
+        <div class="flex flex-col gap-1" style="flex: 2 1 22rem; min-width: 18rem;">
+            <label for="developments-filter-q" class="heading-6 uppercase text-brand-primary font-bold">Search by name</label>
+            <input id="developments-filter-q" type="search" name="q" value="{{ get:q }}" placeholder="Development name" class="w-full border border-brand-black/20 px-3 py-2 text-brand-black bg-brand-white">
+        </div>
+        <div class="flex flex-col gap-1" style="flex: 1 1 12rem; min-width: 10rem;">
+            <label for="developments-filter-max" class="heading-6 uppercase text-brand-primary font-bold">Max price</label>
+            <select id="developments-filter-max" name="max_price" class="w-full border border-brand-black/20 px-3 py-2 text-brand-black bg-brand-white">
+                <option value="" {{ unless get:max_price }}selected{{ /unless }}>Any</option>
+                <option value="250000" {{ if get:max_price == "250000" }}selected{{ /if }}>Up to £250,000</option>
+                <option value="300000" {{ if get:max_price == "300000" }}selected{{ /if }}>Up to £300,000</option>
+                <option value="350000" {{ if get:max_price == "350000" }}selected{{ /if }}>Up to £350,000</option>
+                <option value="400000" {{ if get:max_price == "400000" }}selected{{ /if }}>Up to £400,000</option>
+                <option value="450000" {{ if get:max_price == "450000" }}selected{{ /if }}>Up to £450,000</option>
+                <option value="500000" {{ if get:max_price == "500000" }}selected{{ /if }}>Up to £500,000</option>
+                <option value="600000" {{ if get:max_price == "600000" }}selected{{ /if }}>Up to £600,000</option>
+                <option value="750000" {{ if get:max_price == "750000" }}selected{{ /if }}>Up to £750,000</option>
+                <option value="1000000" {{ if get:max_price == "1000000" }}selected{{ /if }}>Up to £1,000,000</option>
+            </select>
+        </div>
+        <div class="flex flex-col gap-1" style="flex: 1.5 1 18rem; min-width: 16rem;">
+            <label for="developments-filter-sort" class="heading-6 uppercase text-brand-primary font-bold">Sort</label>
+            <select id="developments-filter-sort" name="sort" class="w-full border border-brand-black/20 px-3 py-2 text-brand-black bg-brand-white">
+                <option value="price" {{ if get:sort != "name" }}selected{{ /if }}>Price (low to high)</option>
+                <option value="name" {{ if get:sort == "name" }}selected{{ /if }}>Name (A-Z)</option>
+            </select>
+        </div>
+        <div class="flex gap-3" style="flex: 0 0 auto;">
+            <button type="submit" class="btn inline-flex items-center justify-center px-6 py-2">
+                <span class="heading-5">Apply</span>
+            </button>
+            {{ if get:q or get:max_price or get:sort == "name" }}
+                <a href="{{ url }}" class="btn inline-flex items-center justify-center px-6 py-2 border border-brand-black bg-transparent">
+                    <span class="heading-5">Reset</span>
+                </a>
+            {{ /if }}
+        </div>
+    </form>
+
+    <div class="showcase-card__container">
+        {{ if get:sort == "name" }}
+            {{ collection:developments query_scope="developments_listing_filters" sort="title:asc" paginate="8" as="developments" }}
+                {{ partial:partials/developments-results }}
+            {{ /collection:developments }}
+        {{ else }}
+            {{ collection:developments query_scope="developments_listing_filters" sort="price_from:asc|title:asc" paginate="8" as="developments" }}
+                {{ partial:partials/developments-results }}
+            {{ /collection:developments }}
+        {{ /if }}
+    </div>
+</section>

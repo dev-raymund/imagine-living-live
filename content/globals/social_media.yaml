@@ -1,0 +1,26 @@
+title: 'Social Media'
+data:
+  social:
+    -
+      id: VdlBNSA8
+      name: Facebook
+      url: 'https://www.facebook.com/'
+      icon: icons/facebook-black.svg
+      title: Facebook
+    -
+      id: UGqTHAJx
+      name: Instagram
+      url: 'https://www.instagram.com/'
+      icon: icons/instagram-black.svg
+      title: Instagram
+    -
+      id: maf2skpr
+      title: LinkedIn
+      url: 'https://www.linkedin.com/company/imagine-living-uk/'
+      icon: icons/linkedin-black.svg
+    -
+      id: wT5yAPeg
+      name: Twitter
+      url: 'https://docs.google.com/forms/d/1CyPaRGel5PMmgiHio23uxyq8eWvDbsssMgLsJ1Xde54/edit'
+      title: 'Register your interest here'
+      icon: register.png

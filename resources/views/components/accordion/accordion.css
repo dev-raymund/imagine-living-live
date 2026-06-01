@@ -1,0 +1,43 @@
+.accordion {
+    @apply text-brand-black mx-auto max-w-screen-max;
+    display: grid;
+    align-content: center;
+}
+
+.accordion__container {
+    @apply bg-white max-w-3xl mx-auto;
+    display: grid;
+    row-gap: 0.75rem;
+}
+
+.accordion__title {
+    @apply font-sans;
+    margin-top: 0.15rem;
+    transition: 0.2s;
+}
+
+.accordion__header {
+    @apply flex items-center cursor-pointer px-10 py-4;
+    min-height: 7.5rem;
+    border-bottom: 1px solid var(--color-brand-primary-alpha);
+}
+
+.accordion__icon {
+    height: max-content;
+    transition: 0.3s ease;
+}
+
+.accordion__item {
+    position: relative;
+    transition: 0.25s ease;
+    border-bottom: 1px solid var(--color-brand-primary-alpha);
+}
+
+.accordion__content {
+    @apply overflow-hidden  h-0;
+    transition: 0.25s ease;
+}
+
+.accordion-open .accordion__icon {
+    transform: rotate(90deg);
+}

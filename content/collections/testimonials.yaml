@@ -1,0 +1,9 @@
+title: Testimonials
+template: testimonials
+layout: layout
+mount: 4dac8a44-cad5-4a22-ac29-7cb424a182ae
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

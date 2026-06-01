@@ -1,0 +1,24 @@
+<section class="hero" style="background-image: url( '{{ image }}' );
+background-size: cover;
+background-position: bottom;">
+    <div class="overlay"></div>
+    <div class="hero__content {{ image ? "text-brand-white" : "text-brand-black" }} ">
+        <div class="hero__text">
+            <h1 class="heading-1">
+                {{ hero_title }}
+            </h1>
+            {{ if hero_subtitle }}
+                <h2 class="heading-hero">
+                    {{ hero_subtitle }}
+                </h2>
+            {{ /if }}
+        </div>
+        <div class="hero__buttons">
+            {{ buttons }}
+                <a href="{{ button_url }}">
+                    {{ partial:components/button/button  }}
+                </a>
+            {{ /buttons }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,65 @@
+title: Testimonial
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: bard
+        field:
+          always_show_set_button: false
+          buttons:
+            - Paragraph
+            - bold
+            - italic
+            - removeformat
+            - quote
+            - anchor
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          display: Bard
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          width: 50
+          display: Author
+          instructions_position: above
+          listable: hidden
+          input_type: text
+          antlers: false
+      -
+        handle: text
+        field:
+          input_type: text
+          antlers: false
+          display: 'Post Code'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required

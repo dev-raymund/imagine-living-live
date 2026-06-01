@@ -1,0 +1,13 @@
+<div class="logos-bar section--wide">
+    <div class="swiper section">
+        <h3 class="text-brand-primary heading-4 uppercase text-center  md:text-left mb-8">{{caption}}</h3>
+        <div class="swiper-wrapper">
+            {{ company_information:regulation_agencies }}
+                <div class="swiper-slide">
+                    <img src="{{ glide:url width="675" height="400" quality="80" format="webp" }}" loading="lazy"
+                        alt="{{ title }}" />
+                </div>
+            {{ /company_information:regulation_agencies }}
+        </div>
+    </div>
+</div>

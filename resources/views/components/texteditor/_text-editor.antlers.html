@@ -1,0 +1,20 @@
+<section class="text-editor section--wide {{ background }} max-w-screen-max mx-auto">
+    <div class="max-w-screen-xxl mx-auto">
+        <h2 class="heading-4 uppercase text-brand-primary {{ replicator ? 'mb-4 md:mb-8' : '' }}">
+            {{ title }}
+        </h2>
+        {{ if replicator }}
+        <div class="text-editor__container">
+            {{ replicator }}
+                <div class="text-editor__content {{ replicator | length === 1 ? 'w-full' : 'text-editor__content--flex' }}">
+                    {{ bard }}
+                    <a class="inline-flex w-full" href="{{ button_url }}">
+                        {{ partial:components/button/button }}
+                    </a>
+                </div>
+            {{ /replicator }}
+        </div>
+    {{ /if }}
+    
+    </div>
+</section>

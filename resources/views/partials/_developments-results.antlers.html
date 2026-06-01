@@ -1,0 +1,11 @@
+{{ if no_results }}
+    <p class="p w-full text-center md:text-left lg:px-6 xl:px-14">No developments match your filters.</p>
+{{ /if }}
+<div class="testimonials__content flex flex-col justify-center md:flex-row md:flex-wrap">
+    {{ developments }}
+        {{ partial:components/showcasecard/showcase-card }}
+    {{ /developments }}
+</div>
+<div class="mt-6 md:mt-12">
+    {{ partial:components/pagination/pagination }}
+</div>

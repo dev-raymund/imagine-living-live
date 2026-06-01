@@ -1,0 +1,12 @@
+title: Developments
+template: developments
+layout: layout
+mount: 5d0f33cd-f95f-4a8e-998a-949280e724bf
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+inject:
+  seo:
+    description: Developments

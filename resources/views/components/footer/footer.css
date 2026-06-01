@@ -1,0 +1,40 @@
+footer {
+    background-image: linear-gradient(to right, #802b90 87%, #ef2c78 13%);
+    padding-top: 4px;
+}
+.footer {
+    @apply bg-white flex flex-col items-center mx-auto max-w-screen-max;
+}
+
+.footer__container {
+    @apply w-full flex flex-col justify-between items-center;
+}
+
+.footer__links {
+    @apply w-full text-center max-w-4xl;
+
+    & .footer__link {
+        max-width: 17rem;
+    }
+}
+
+.footer__contacts {
+    @apply w-full;
+
+    & li {
+        @apply mb-2 mx-auto;
+    }
+}
+
+@screen xl {
+    .footer {
+        @apply flex-row items-start;
+    }
+    .footer__container {
+        @apply flex-row items-start;
+    }
+
+    .footer__logo {
+        width: 25%;
+    }
+}
