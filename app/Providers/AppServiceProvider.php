@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Console\Commands\SyncDevelopmentPrices;
 use Illuminate\Support\ServiceProvider;
 use Statamic\Statamic;
 
@@ -24,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                SyncDevelopmentPrices::class,
+            ]);
+        }
+
         // Statamic::script('app', 'cp');
         // Statamic::style('app', 'cp');
     }
