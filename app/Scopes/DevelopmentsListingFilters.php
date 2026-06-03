@@ -11,13 +11,32 @@ class DevelopmentsListingFilters extends Scope
         $q = trim((string) request('q', ''));
         if ($q !== '') {
             $like = '%'.addcslashes($q, '%_\\').'%';
-            $query->where('title', 'like', $like);
+            $query->whereNested(function ($query) use ($like) {
+                $query->where('title', 'like', $like)
+                    ->orWhere('subtitle', 'like', $like);
+            });
+        }
+
+        $area = trim((string) request('area', ''));
+        if ($area !== '') {
+            $query->where('subtitle', $area);
         }
 
         $max = filter_var(request('max_price'), FILTER_VALIDATE_INT);
         if ($max !== false && $max > 0) {
-            $query->whereNotNull('price_from')
-                ->where('price_from', '<=', $max);
+            $query->whereNested(function ($query) use ($max) {
+                $query->where('price_from', '<=', $max)
+                    ->orWhereNull('price_from');
+            });
+        }
+
+        $query->orderBy('featured', 'desc');
+
+        if (request('sort') === 'name') {
+            $query->orderBy('title', 'asc');
+        } else {
+            $query->orderBy('price_from', 'asc');
+            $query->orderBy('title', 'asc');
         }
     }
 }

@@ -1,7 +1,7 @@
 ---
 id: 9b6f5179-88cf-424f-ac28-412d3a6cfbb7
 blueprint: development
-status: live
+listing_status: live
 price_range: '£635,000'
 title: '(A) Rigel House'
 subtitle: 'Tower Hamlets'

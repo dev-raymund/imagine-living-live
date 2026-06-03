@@ -1,7 +1,7 @@
 ---
 id: 0ace231f-7098-4281-8cb7-f42494cf96e2
 blueprint: development
-status: live
+listing_status: live
 price_range: '£400,000 - £449,500'
 title: '(A) Cityview Point'
 subtitle: 'Tower Hamlets'

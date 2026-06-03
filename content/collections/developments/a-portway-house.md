@@ -2,7 +2,7 @@
 id: 9a7a9fab-d2e1-42f0-8794-bd35fb2bd568
 published: false
 blueprint: development
-status: live
+listing_status: live
 price_range: '£500,000 - £525,000'
 title: '(A) Portway House'
 subtitle: Southwark

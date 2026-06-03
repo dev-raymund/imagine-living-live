@@ -1,7 +1,7 @@
 ---
 id: ca163e52-76df-489a-8ede-28abb4799c12
 blueprint: development
-status: live
+listing_status: live
 price_range: '£335,000 - £510,000'
 title: '(A) The Picture House'
 subtitle: Newham

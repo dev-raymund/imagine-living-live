@@ -1,7 +1,7 @@
 ---
 id: 8e840e15-b277-4959-bc51-8816b6f4f9ac
 blueprint: development
-status: coming-soon
+listing_status: coming-soon
 price_range: '£440,000 - £670,000'
 title: '(A) Post House'
 subtitle: Hounslow

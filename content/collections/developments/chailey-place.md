@@ -1,7 +1,7 @@
 ---
 id: 183e69d9-6d61-440d-98b7-3446af398956
 blueprint: development
-status: sold
+listing_status: sold
 price_range: '£1,100.06 pcm - £1,118.06 pcm'
 title: '(x_L) Chailey Place'
 subtitle: Hillingdon

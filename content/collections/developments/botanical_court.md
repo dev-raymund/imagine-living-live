@@ -1,7 +1,7 @@
 ---
 id: 60db4376-9e24-4400-8221-e5355958ad45
 blueprint: development
-status: sold
+listing_status: sold
 price_range: '£540,000 - £555,000'
 title: '(S) Botanical Court'
 subtitle: 'Tower Hamlets'

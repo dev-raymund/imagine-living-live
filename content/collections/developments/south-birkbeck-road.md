@@ -2,7 +2,7 @@
 id: dc956fbc-8123-4c23-b3b3-2b8937e4e720
 published: false
 blueprint: development
-status: live
+listing_status: live
 price_range: '£620,000'
 title: 'South Birkbeck Road'
 subtitle: 'Waltham Forest'

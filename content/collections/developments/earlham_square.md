@@ -1,7 +1,7 @@
 ---
 id: c15bafa5-fcff-4a98-a648-1e007b1d8f4a
 blueprint: development
-status: sold
+listing_status: sold
 price_range: '£345,000 - £635,000'
 title: '(S) Earlham Square'
 subtitle: Newham

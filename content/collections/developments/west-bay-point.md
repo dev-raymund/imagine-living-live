@@ -2,7 +2,7 @@
 id: 005948c1-75e9-451d-aaae-2d782521e30f
 published: false
 blueprint: development
-status: coming-soon
+listing_status: coming-soon
 price_range: '£620,000 - £860,000'
 title: 'West Bay Point'
 subtitle: Bournemouth

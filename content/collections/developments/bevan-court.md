@@ -2,7 +2,7 @@
 id: 844082e9-e917-46f0-8317-42dd1bdf300d
 published: false
 blueprint: development
-status: live
+listing_status: live
 price_range: '£415,000'
 title: 'Bevan Court'
 subtitle: Leyton

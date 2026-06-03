@@ -4,7 +4,7 @@ sections:
     display: Main
     fields:
       -
-        handle: status
+        handle: listing_status
         field:
           options:
             live: Live
@@ -17,11 +17,11 @@ sections:
           taggable: false
           push_tags: false
           cast_booleans: false
-          display: Status
+          display: 'Listing status'
           type: select
           icon: select
           width: 50
-          listable: hidden
+          listable: true
           instructions_position: above
       -
         handle: price_range
@@ -32,7 +32,7 @@ sections:
           type: text
           icon: text
           width: 50
-          listable: hidden
+          listable: true
           instructions_position: above
       -
         handle: price_from
@@ -41,7 +41,7 @@ sections:
           display: 'Price from (GBP)'
           instructions: 'Lowest price in pounds (no £ or commas). Used for sorting and max-price filter. Run `php artisan developments:sync-prices` to fill from Price Range.'
           width: 50
-          listable: hidden
+          listable: false
           instructions_position: above
       -
         handle: title
@@ -53,7 +53,7 @@ sections:
             - required
           display: Name
           instructions_position: above
-          listable: hidden
+          listable: true
           input_type: text
           antlers: false
       -
@@ -65,7 +65,7 @@ sections:
           type: text
           icon: text
           width: 33
-          listable: hidden
+          listable: true
           instructions_position: above
       -
         handle: caption
@@ -76,7 +76,7 @@ sections:
           type: text
           icon: text
           width: 33
-          listable: hidden
+          listable: false
           instructions_position: above
       -
         handle: images
@@ -88,7 +88,7 @@ sections:
           display: Images
           type: assets
           icon: assets
-          listable: hidden
+          listable: false
           instructions_position: above
       -
         handle: description
@@ -97,7 +97,7 @@ sections:
           display: Description
           type: textarea
           icon: textarea
-          listable: hidden
+          listable: false
           instructions_position: above
       -
         handle: link
@@ -115,7 +115,7 @@ sections:
           icon: toggle
           instructions: 'Open the link in a new tab'
           width: 25
-          listable: hidden
+          listable: false
           instructions_position: above
           visibility: visible
           always_save: false
@@ -124,6 +124,16 @@ sections:
   sidebar:
     display: Sidebar
     fields:
+      -
+        handle: featured
+        field:
+          type: toggle
+          display: 'Featured property'
+          instructions: 'When on, this development appears first on the public listings page.'
+          default: false
+          width: 50
+          listable: false
+          instructions_position: above
       -
         handle: slug
         field:

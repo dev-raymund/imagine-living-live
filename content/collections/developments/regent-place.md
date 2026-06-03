@@ -1,7 +1,7 @@
 ---
 id: d1b1a838-5972-44c5-a4ec-78b6c88ef170
 blueprint: development
-status: sold
+listing_status: sold
 price_range: '£410,000 - £717,500'
 title: '(S) Regent Place'
 subtitle: 'Tower Hamlets'

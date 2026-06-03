@@ -1,11 +1,11 @@
 {{ if no_results }}
-    <p class="p w-full text-center md:text-left lg:px-6 xl:px-14">No developments match your filters.</p>
+    <p class="p w-full text-center md:text-left mb-8">No developments match your filters.</p>
 {{ /if }}
-<div class="testimonials__content flex flex-col justify-center md:flex-row md:flex-wrap">
-    {{ developments }}
+<div class="testimonials__content developments-results flex flex-col gap-12 md:flex-row md:flex-wrap md:gap-x-[5%] md:gap-y-16">
+    {{ development_entries }}
         {{ partial:components/showcasecard/showcase-card }}
-    {{ /developments }}
+    {{ /development_entries }}
 </div>
-<div class="mt-6 md:mt-12">
+<div class="mt-8 md:mt-12">
     {{ partial:components/pagination/pagination }}
 </div>

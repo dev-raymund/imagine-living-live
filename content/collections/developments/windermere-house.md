@@ -2,7 +2,7 @@
 id: f3a22c46-ede9-4672-b5db-2ea52ee73bb9
 published: false
 blueprint: development
-status: coming-soon
+listing_status: coming-soon
 price_range: '£1,094.95 pcm - £1,337.46 pcm'
 title: 'Windermere House'
 subtitle: 'Mile End'

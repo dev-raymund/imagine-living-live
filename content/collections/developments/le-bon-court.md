@@ -1,7 +1,7 @@
 ---
 id: acacea4f-bd32-419c-80f1-2f0c5be993dd
 blueprint: development
-status: live
+listing_status: live
 price_range: '£400,000 - £440,000'
 title: 'Le Bon Court'
 subtitle: Harrow

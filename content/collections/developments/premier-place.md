@@ -1,7 +1,7 @@
 ---
 id: 62095cec-671a-4b08-9d05-8ecb45596b07
 blueprint: development
-status: live
+listing_status: live
 price_range: '£1,160 pcm - £1,417 pcm'
 title: '(X_A) Premier Place'
 subtitle: Barnet

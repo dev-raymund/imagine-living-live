@@ -1,7 +1,7 @@
 ---
 id: 7ad1c081-a280-45b0-af46-148ea719fab3
 blueprint: development
-status: live
+listing_status: live
 price_range: '£300,000 - £449,500'
 title: '(A) East Thames House'
 subtitle: 'Tower Hamlets'

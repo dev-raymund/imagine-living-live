@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Console\Commands\SyncDevelopmentPrices;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Statamic\Statamic;
 
@@ -25,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->environment('local')) {
+            URL::forceScheme('http');
+            URL::forceRootUrl(config('app.url'));
+        }
+
         if ($this->app->runningInConsole()) {
             $this->commands([
                 SyncDevelopmentPrices::class,

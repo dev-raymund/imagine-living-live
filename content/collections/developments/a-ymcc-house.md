@@ -1,7 +1,7 @@
 ---
 id: 5ec34409-e627-438f-8368-24972988c77f
 blueprint: development
-status: live
+listing_status: live
 price_range: '£400,000 - £410,000'
 title: '(A) YMCC House'
 subtitle: Hackney

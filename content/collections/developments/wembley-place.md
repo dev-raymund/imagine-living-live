@@ -2,7 +2,7 @@
 id: 7d00e10b-8aed-483b-9b3a-bce8391bab70
 published: false
 blueprint: development
-status: sold
+listing_status: sold
 price_range: '£774 pcm - £860 pcm'
 title: 'Wembley Place'
 subtitle: Brent

@@ -1,0 +1,20 @@
+/* Developments listing: even gaps; horizontal padding comes from the page template */
+.developments-results .showcase-card {
+  @apply mb-0 mx-auto;
+}
+
+@screen md {
+  .developments-results .showcase-card {
+    @apply mx-0;
+  }
+
+  .developments-results .showcase-card:nth-child(odd),
+  .developments-results .showcase-card:nth-child(even) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .developments-results .showcase-card:nth-last-child(-n + 2) {
+    @apply mb-0;
+  }
+}

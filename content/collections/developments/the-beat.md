@@ -1,7 +1,7 @@
 ---
 id: 95a53414-0b80-40e2-b6f5-64f5de596d01
 blueprint: development
-status: sold
+listing_status: sold
 price_range: '£300,000 - £540,000'
 title: '(S) The Beat'
 subtitle: Hillingdon

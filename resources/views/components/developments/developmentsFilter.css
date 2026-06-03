@@ -1,0 +1,104 @@
+.developments-filter {
+  display: grid;
+  align-items: end;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1rem;
+  row-gap: 0.875rem;
+  margin-bottom: 2.5rem;
+  @apply lg:px-6 xl:px-14;
+}
+
+.developments-filter__field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.developments-filter__field--search {
+  grid-column: 1 / -1;
+}
+
+.developments-filter__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.developments-filter .heading-6 {
+  font-size: 0.8125rem;
+  line-height: 1.2;
+}
+
+.developments-filter input,
+.developments-filter select {
+  min-height: 2.5rem !important;
+  padding: 0.375rem 1.75rem 0.375rem 0.625rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25 !important;
+  max-width: 100%;
+  width: 100%;
+}
+
+.developments-filter select {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-position-x: calc(100% - 0.5rem);
+  background-position-y: 50%;
+  background-size: 0.6rem;
+}
+
+.developments-filter ::placeholder {
+  font-size: 0.875rem !important;
+}
+
+/* Plain buttons — no .btn hover animation */
+.developments-filter__btn {
+  @apply inline-flex items-center justify-center font-semibold text-brand-white;
+  min-width: 5.5rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: none;
+}
+
+.developments-filter__btn::before,
+.developments-filter__btn::after {
+  display: none !important;
+  content: none !important;
+}
+
+.developments-filter__btn--apply {
+  @apply bg-brand-secondary;
+}
+
+.developments-filter__btn--apply:hover,
+.developments-filter__btn--apply:focus {
+  @apply bg-brand-secondary text-brand-white;
+  opacity: 0.92;
+}
+
+.developments-filter__btn--reset {
+  @apply bg-brand-primary;
+}
+
+.developments-filter__btn--reset:hover,
+.developments-filter__btn--reset:focus {
+  @apply bg-brand-primary text-brand-white;
+  opacity: 0.92;
+}
+
+@screen lg {
+  .developments-filter {
+    column-gap: 1.25rem;
+    row-gap: 1rem;
+  }
+}

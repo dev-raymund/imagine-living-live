@@ -1,7 +1,7 @@
 ---
 id: 9c95f7aa-907f-4e6a-813c-a35f8eac0297
 blueprint: development
-status: sold
+listing_status: sold
 price_range: '£370,000 - £505,000'
 title: '(S) Otium House'
 subtitle: Enfield

@@ -31,7 +31,14 @@ pull app/Console/Kernel.php
 pull app/Providers/AppServiceProvider.php
 pull resources/views/developments.antlers.html
 pull resources/views/partials/_developments-results.antlers.html
+pull resources/views/components/developments/developmentsFilter.css
+pull resources/views/components/showcasecard/developmentsResults.css
 pull resources/blueprints/collections/developments/development.yaml
+
+echo "→ rebuild CSS on server (if npm available) or upload public/css/site.css from your PC"
+if command -v npm >/dev/null 2>&1 && [ -f package.json ]; then
+  npm run build:css --silent 2>/dev/null || true
+fi
 
 echo "→ composer + caches"
 composer dump-autoload -o --no-interaction

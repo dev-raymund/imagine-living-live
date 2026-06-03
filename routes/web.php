@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 //    'title' => 'Example'
 // ]);
 
-if (env('APP_ENV') !== 'local') {
-  URL::forceScheme('https');
+if (app()->environment('local')) {
+    URL::forceScheme('http');
+} else {
+    URL::forceScheme('https');
 }

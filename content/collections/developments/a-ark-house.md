@@ -2,7 +2,7 @@
 id: eb59bfd4-2e72-44df-9959-d3f3060b10b1
 published: false
 blueprint: development
-status: live
+listing_status: live
 price_range: '£440,000'
 title: '(A) Ark House'
 subtitle: Southwark

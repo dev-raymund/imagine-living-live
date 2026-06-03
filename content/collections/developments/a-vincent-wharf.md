@@ -1,7 +1,7 @@
 ---
 id: 1051f2dd-bbfa-47d5-ab56-3408af3042a5
 blueprint: development
-status: live
+listing_status: live
 price_range: '£490,000 - £520,000'
 title: '(A) Vincent Wharf'
 subtitle: 'Tower Hamlets'

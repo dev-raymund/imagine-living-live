@@ -1,7 +1,7 @@
 ---
 id: 2fb872a4-0f4e-4eb4-8b62-72fbf1782faf
 blueprint: development
-status: live
+listing_status: live
 price_range: '£1,202.08 pcm - £1,469.22 pcm'
 title: '(X_L) Celestina Court'
 subtitle: Hounslow

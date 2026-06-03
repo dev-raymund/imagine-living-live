@@ -2,7 +2,7 @@
 id: 5e61765a-2300-423e-b2f8-4e7a96d7c024
 published: false
 blueprint: development
-status: coming-soon
+listing_status: coming-soon
 price_range: '£460,000 - £780,000'
 title: 'Buttermere House'
 subtitle: 'Mile End'

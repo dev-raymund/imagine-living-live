@@ -1,7 +1,7 @@
 ---
 id: 608d297e-0d9c-46a9-9b19-173ae12cb2ad
 blueprint: development
-status: sold
+listing_status: sold
 price_range: 'From £905pcm'
 title: '(x_L) Atrium Point'
 subtitle: Ealing

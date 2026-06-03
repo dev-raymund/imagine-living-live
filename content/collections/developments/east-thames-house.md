@@ -2,7 +2,7 @@
 id: 99794db5-523c-4791-84ba-f1aa7fc1d378
 published: false
 blueprint: development
-status: live
+listing_status: live
 price_range: '£310,000'
 title: 'East Thames House'
 subtitle: Poplar

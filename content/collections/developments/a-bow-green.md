@@ -1,7 +1,7 @@
 ---
 id: 12d149bf-2ebc-4be1-9e89-7c6f4ff15823
 blueprint: development
-status: coming-soon
+listing_status: coming-soon
 price_range: 'From £465,000 - £630,000'
 title: '(A) Bow Green'
 subtitle: 'Tower Hamlets'

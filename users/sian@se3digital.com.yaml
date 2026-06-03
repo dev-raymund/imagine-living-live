@@ -10,7 +10,7 @@ preferences:
   collections:
     developments:
       columns:
-        - status
+        - listing_status
         - slug
     testimonials:
       per_page: 500

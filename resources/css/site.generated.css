@@ -14,6 +14,7 @@
 @import "../views/components/button/button.css";
 @import "../views/components/cards/cards.css";
 @import "../views/components/contactform/contactForm.css";
+@import "../views/components/developments/developmentsFilter.css";
 @import "../views/components/featuredgrid/featuredGrid.css";
 @import "../views/components/footer/footer.css";
 @import "../views/components/hero/hero.css";
@@ -23,6 +24,7 @@
 @import "../views/components/logosbar/logosBar.css";
 @import "../views/components/nav/navigation.css";
 @import "../views/components/pagination/pagination.css";
+@import "../views/components/showcasecard/developmentsResults.css";
 @import "../views/components/showcasecard/showcaseCard.css";
 @import "../views/components/social/socialLinks.css";
 @import "../views/components/testimonials/testimonials.css";
