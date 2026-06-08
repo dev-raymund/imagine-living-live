@@ -53,6 +53,38 @@
 .showcase-card__expand {
   @apply font-bold cursor-pointer text-center inline-flex leading-6 my-4 md:my-8;
 }
+
+.showcase-card__specs {
+  @apply flex flex-wrap justify-center items-start text-brand-primary;
+  gap: 1.25rem 2rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(128, 43, 144, 0.2);
+  list-style: none;
+}
+
+.showcase-card__spec {
+  @apply flex flex-col items-center;
+  gap: 0.5rem;
+  min-width: 5rem;
+}
+
+.showcase-card__spec-icon {
+  @apply flex text-brand-primary;
+  width: 2rem;
+  height: 2rem;
+}
+
+.showcase-card__spec-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.showcase-card__spec-label {
+  @apply text-brand-primary;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
 @screen md {
   .showcase-card {
     @apply mb-36 mx-0;

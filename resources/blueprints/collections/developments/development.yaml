@@ -79,6 +79,45 @@ sections:
           listable: false
           instructions_position: above
       -
+        handle: property_type
+        field:
+          input_type: text
+          antlers: false
+          display: 'Property type'
+          type: text
+          icon: text
+          width: 25
+          listable: false
+          instructions: 'e.g. Apartment, House, Studio'
+          instructions_position: above
+      -
+        handle: bedrooms
+        field:
+          type: integer
+          display: Bedrooms
+          icon: integer
+          width: 25
+          listable: false
+          instructions_position: above
+      -
+        handle: bathrooms
+        field:
+          type: integer
+          display: Bathrooms
+          icon: integer
+          width: 25
+          listable: false
+          instructions_position: above
+      -
+        handle: size_sq_ft
+        field:
+          type: integer
+          display: 'Size (sq ft)'
+          icon: integer
+          width: 25
+          listable: false
+          instructions_position: above
+      -
         handle: images
         field:
           mode: list

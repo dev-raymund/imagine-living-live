@@ -6,6 +6,10 @@ price_range: '£1,160 pcm - £1,417 pcm'
 title: '(X_A) Premier Place'
 subtitle: Barnet
 caption: 'Sovereign Network Group'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 850
 description: |-
   This beautiful unique development consists of modern one, two & three bedroom apartments, available under the London Living Rent Scheme (LLR).
   The development’s convenient central location, is a short distance from Edgware tube station, offering easy access to central London, whilst boasting a diverse selection of eating, shopping, and leisure experiences right on your doorstep. Just moments from an array of local shops and handy convenience stores.

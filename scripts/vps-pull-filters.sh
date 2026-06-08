@@ -36,6 +36,9 @@ pull resources/views/developments.antlers.html
 pull resources/views/partials/_developments-results.antlers.html
 pull resources/views/components/developments/developmentsFilter.css
 pull resources/views/components/showcasecard/developmentsResults.css
+pull resources/views/components/showcasecard/_showcase-card.antlers.html
+pull resources/views/components/showcasecard/_showcase-card-specs.antlers.html
+pull resources/views/components/showcasecard/showcaseCard.css
 pull resources/blueprints/collections/developments/development.yaml
 pull public/css/site.css
 
