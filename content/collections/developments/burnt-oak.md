@@ -5,6 +5,10 @@ price_range: '£883.00 pcm - £993.00 pcm'
 title: '(X_L) Burnt Oak'
 subtitle: Barnet
 caption: 'Sovereign Network Homes'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 700
 images:
   - developments/llr_burnt-oak/064_fourcommunications_icon-at-burnt-oak_residentialgardens003.jpg
   - developments/llr_burnt-oak/exterior-garden-(1).png

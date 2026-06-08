@@ -6,6 +6,10 @@ price_range: '£635,000'
 title: '(A) Rigel House'
 subtitle: 'Tower Hamlets'
 caption: 'North London Muslim Housing Association'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 1076
 images:
   - developments/so_rigel_house/08-4528dsc_5622-small.jpg
   - developments/so_rigel_house/13-d341dsc_5657-small.jpg

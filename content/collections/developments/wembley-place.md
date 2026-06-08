@@ -7,6 +7,10 @@ price_range: '£774 pcm - £860 pcm'
 title: 'Wembley Place'
 subtitle: Brent
 caption: 'Sovereign Network Homes'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 2
+size_sq_ft: 750
 description: |-
   A stunning collection of 1 and 2 bedroom apartments
 

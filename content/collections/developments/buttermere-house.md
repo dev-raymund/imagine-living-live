@@ -7,6 +7,10 @@ price_range: '£460,000 - £780,000'
 title: 'Buttermere House'
 subtitle: 'Mile End'
 caption: 'East End Homes'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 description: 'Welcome to Buttermere House! This new Shared Ownership development in the borough of Tower Hamlets offers a limited number of two bedroom apartments.'
 buttons:
   -

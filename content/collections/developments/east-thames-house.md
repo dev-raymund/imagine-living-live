@@ -7,6 +7,10 @@ price_range: '£310,000'
 title: 'East Thames House'
 subtitle: Poplar
 caption: 'North London Muslim'
+property_type: Apartment
+bedrooms: 1
+bathrooms: 1
+size_sq_ft: 550
 images:
   - developments/so_east-thames-house/so_30-east-thames-house/04-d5e2_DSC4106-(1).JPG
 description: 'Welcome to East Thames House! This contemporary one-bedroom, one-bathroom apartment on the 5th floor is ideal for couples or those venturing into shared ownership for their first home. Conveniently located in zones 2 & 3, it offers easy access to central London, the City, Canary Wharf, and Stratford.'

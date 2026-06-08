@@ -7,6 +7,10 @@ price_range: '£440,000'
 title: '(A) Ark House'
 subtitle: Southwark
 caption: 'L&Q'
+property_type: Apartment
+bedrooms: 1
+bathrooms: 1
+size_sq_ft: 550
 images:
   - developments/so_archouse/07-e000jhiml---148-arc-house---13-small.jpg
   - developments/so_archouse/05-25fcjhiml---148-arc-house---7-small.jpg

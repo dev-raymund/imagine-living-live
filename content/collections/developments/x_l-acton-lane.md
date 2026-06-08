@@ -5,6 +5,10 @@ price_range: '£864.00 pcm - £1,057.00 pcm'
 title: '(X_L) Acton Lane'
 subtitle: Brent
 caption: 'Sovereign Network Group'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 800
 images:
   - developments/llr_acton-lane/cgi-1.jpg
   - developments/llr_acton-lane/parkroyal-5.jpg

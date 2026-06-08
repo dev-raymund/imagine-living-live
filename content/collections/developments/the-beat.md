@@ -6,6 +6,10 @@ price_range: '£300,000 - £540,000'
 title: '(S) The Beat'
 subtitle: Hillingdon
 caption: 'Sovereign Network Homes'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 images:
   - developments/so_the-beat/bedroom.png
   - developments/so_the-beat/block.png

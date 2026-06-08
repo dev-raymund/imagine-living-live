@@ -6,6 +6,10 @@ price_range: '£490,000 - £520,000'
 title: '(A) Vincent Wharf'
 subtitle: 'Tower Hamlets'
 caption: 'Gateway Housing Association'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 images:
   - vincentwharf_dodstreet/il01_eal_0003_vsb_lv1a_cc.jpg
   - vincentwharf_dodstreet/il01_eal_0003_vsb_bd1a_bb.jpg

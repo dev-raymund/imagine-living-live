@@ -6,6 +6,10 @@ price_range: '£345,000 - £635,000'
 title: '(S) Earlham Square'
 subtitle: Newham
 caption: 'Gateway Housing Association'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 images:
   - 'developments/so_earlham-square/2-bed-apt-earlham-grove,-forest-gate-012-hdr.jpg'
   - 'developments/so_earlham-square/2-bed-apt-earlham-grove,-forest-gate-030-hdr.jpg'

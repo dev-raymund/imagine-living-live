@@ -5,6 +5,10 @@ price_range: 'From £846.55 PCM'
 title: '(X_L) Park Royal'
 subtitle: Brent
 caption: 'L&Q'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 800
 images:
   - developments/llr_park-royal/16309410781982-2048-2048.jpg
   - developments/llr_park-royal/16309410765123-2322-1805.jpg

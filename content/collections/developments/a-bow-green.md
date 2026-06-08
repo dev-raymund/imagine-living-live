@@ -6,6 +6,10 @@ price_range: 'From £465,000 - £630,000'
 title: '(A) Bow Green'
 subtitle: 'Tower Hamlets'
 caption: 'Gateway Housing Association'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 images:
   - developments/so_bow_green/vb5447728_residents__botanical_garden_800x497.jpg
   - developments/so_bow_green/vb5447721_hero_landscape_800x516.jpg

@@ -20,6 +20,7 @@ mkdir -p resources/views/partials
 mkdir -p resources/views/components/developments
 mkdir -p resources/views/components/showcasecard
 mkdir -p resources/blueprints/collections/developments
+mkdir -p content/collections/developments
 mkdir -p public/css
 
 pull() {
@@ -40,6 +41,48 @@ pull resources/views/components/showcasecard/_showcase-card.antlers.html
 pull resources/views/components/showcasecard/_showcase-card-specs.antlers.html
 pull resources/views/components/showcasecard/showcaseCard.css
 pull resources/blueprints/collections/developments/development.yaml
+
+DEVELOPMENT_ENTRIES=(
+  content/collections/developments/a-ark-house.md
+  content/collections/developments/a-bow-green.md
+  content/collections/developments/a-cityview-point.md
+  content/collections/developments/a-east-thames-house.md
+  content/collections/developments/a-portway-house.md
+  content/collections/developments/a-rigel-house.md
+  content/collections/developments/a-vincent-wharf.md
+  content/collections/developments/a-ymcc-house.md
+  content/collections/developments/atrium-point.md
+  content/collections/developments/bevan-court.md
+  content/collections/developments/bilton-road.md
+  content/collections/developments/botanical_court.md
+  content/collections/developments/burnt-oak.md
+  content/collections/developments/buttermere-house.md
+  content/collections/developments/chailey-place.md
+  content/collections/developments/earlham_square.md
+  content/collections/developments/east-thames-house.md
+  content/collections/developments/le-bon-court.md
+  content/collections/developments/otium-house.md
+  content/collections/developments/post-house.md
+  content/collections/developments/premier-place.md
+  content/collections/developments/queen-s-quarter.md
+  content/collections/developments/regent-place.md
+  content/collections/developments/south-birkbeck-road.md
+  content/collections/developments/the-beat.md
+  content/collections/developments/the-picture-house.md
+  content/collections/developments/west-bay-point.md
+  content/collections/developments/wembley-place.md
+  content/collections/developments/windermere-house.md
+  content/collections/developments/x_l-acton-lane.md
+  content/collections/developments/x_l-celestina-court.md
+  content/collections/developments/x_l-chobham-manor.md
+  content/collections/developments/x_l-madison_amory-tower.md
+  content/collections/developments/x_l-park-royal.md
+)
+
+for entry in "${DEVELOPMENT_ENTRIES[@]}"; do
+  pull "$entry"
+done
+
 pull public/css/site.css
 
 echo "→ rebuild CSS on server (optional; site.css already pulled from GitHub)"

@@ -7,6 +7,10 @@ price_range: '£415,000'
 title: 'Bevan Court'
 subtitle: Leyton
 caption: 'North London Muslim'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 650
 images:
   - developments/so_bevan-court/so_59-bevan-court/Bevan-10.jpg
   - developments/so_bevan-court/so_59-bevan-court/Bevan-14.1.jpg

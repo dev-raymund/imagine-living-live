@@ -6,6 +6,10 @@ price_range: '£400,000 - £440,000'
 title: 'Le Bon Court'
 subtitle: Harrow
 caption: 'Sovereign Network Group'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 650
 images:
   - developments/so_le-bon-court/10-a30dgciml---3ff-le-bon-court---kitchen--original--(6).JPG
   - developments/so_le-bon-court/11-e33agciml---3ff-le-bon-court---kitchen-2--original--(6).JPG

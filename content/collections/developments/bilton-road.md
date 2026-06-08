@@ -5,6 +5,10 @@ price_range: '£861.45 pcm - £1,052.88 pcm'
 title: '(X_L) Bilton Road'
 subtitle: Ealing
 caption: 'Sovereign Network Homes'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 800
 images:
   - developments/llr_bilton-road/image-2.jpg
   - developments/llr_bilton-road/image-3.jpg

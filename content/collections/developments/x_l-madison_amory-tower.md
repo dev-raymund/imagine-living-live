@@ -4,6 +4,10 @@ blueprint: development
 title: '(X_L) Madison_Amory Tower'
 subtitle: 'Tower Hamlets'
 caption: 'Sovereign Network Group'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 850
 images:
   - developments/llr_madison-amory-towers/ma1502_meridian-gate-marketing_aerial-5_hi-res.jpg
   - developments/llr_madison-amory-towers/ma1502_meridian-gate-marketing_cam20_hi-res.jpg

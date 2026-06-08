@@ -5,6 +5,10 @@ price_range: 'From £1298.00 PCM'
 title: '(X_L) Chobham Manor'
 subtitle: Stratford
 caption: 'L&Q'
+property_type: Apartment
+bedrooms: 3
+bathrooms: 2
+size_sq_ft: 1000
 images:
   - developments/llr_chobham-manor/chobhammanorph3view3---copy_resize---picketts-house.png
   - developments/llr_chobham-manor/image-3.jpg

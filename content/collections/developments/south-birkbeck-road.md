@@ -7,6 +7,10 @@ price_range: '£620,000'
 title: 'South Birkbeck Road'
 subtitle: 'Waltham Forest'
 caption: 'North London Muslim'
+property_type: House
+bedrooms: 3
+bathrooms: 1
+size_sq_ft: 1100
 description: |-
   A wonderfully presented 3 bedroom home available now for sale in Waltham Forest.
 

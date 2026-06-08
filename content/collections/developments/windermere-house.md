@@ -7,6 +7,10 @@ price_range: '£1,094.95 pcm - £1,337.46 pcm'
 title: 'Windermere House'
 subtitle: 'Mile End'
 caption: 'East End Homes'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 images:
   - developments/so_buttermere-house/Eric-Street-Image-1.jpg
   - developments/so_buttermere-house/Eric-Street-Image-2.jpg

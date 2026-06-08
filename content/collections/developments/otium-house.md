@@ -6,6 +6,10 @@ price_range: '£370,000 - £505,000'
 title: '(S) Otium House'
 subtitle: Enfield
 caption: 'North London Muslim'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 650
 images:
   - developments/so_otium-house/15-bbb978661---gciml---flat-5-otium-house---original-(90)-small.JPG
   - developments/so_otium-house/living-room_2.jpeg

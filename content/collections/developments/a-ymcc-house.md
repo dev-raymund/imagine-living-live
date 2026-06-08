@@ -6,6 +6,10 @@ price_range: '£400,000 - £410,000'
 title: '(A) YMCC House'
 subtitle: Hackney
 caption: 'North London Muslim'
+property_type: Apartment
+bedrooms: 1
+bathrooms: 1
+size_sq_ft: 500
 images:
   - developments/so_ymcc_house/20250909_133934_original.jpeg
   - developments/so_ymcc_house/20250909_155404_original.jpeg

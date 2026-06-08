@@ -6,6 +6,10 @@ price_range: '£400,000 - £449,500'
 title: '(A) Cityview Point'
 subtitle: 'Tower Hamlets'
 caption: 'North London Muslim Housing Association'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 images:
   - developments/so_east_thames_house/il01_eal_0001_vsb_lv1a_cc.jpg
   - developments/so_east_thames_house/il01_eal_0001_vsb_bd1a_aa.jpg

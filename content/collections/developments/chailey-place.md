@@ -6,6 +6,10 @@ price_range: '£1,100.06 pcm - £1,118.06 pcm'
 title: '(x_L) Chailey Place'
 subtitle: Hillingdon
 caption: 'Sovereign Network Group'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 images:
   - developments/so_the-beat/block.png
   - developments/so_the-beat/kitchen1.png

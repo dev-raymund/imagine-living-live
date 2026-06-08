@@ -6,6 +6,10 @@ price_range: '£1,202.08 pcm - £1,469.22 pcm'
 title: '(X_L) Celestina Court'
 subtitle: Hounslow
 caption: 'Sovereign Network Group'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 850
 images:
   - developments/llr_celestina_court/jjv_hc_lndrd_livingroom_web.jpg
   - developments/llr_celestina_court/jjv_hc_lndrd_kitchendining_web.jpg

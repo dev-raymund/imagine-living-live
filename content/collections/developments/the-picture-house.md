@@ -6,6 +6,10 @@ price_range: '£335,000 - £510,000'
 title: '(A) The Picture House'
 subtitle: Newham
 caption: 'Gateway Housing Association'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 750
 description: |-
   Welcome to Picture House! This brand new development situated in Newham, offers a limited one, two & three Bedroom Properties Under the Shared Ownership Scheme.
   Crafted to suit a variety of lifestyles, these stunning homes bring a serene living space for first time home buyers.

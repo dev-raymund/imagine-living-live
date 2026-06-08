@@ -6,6 +6,10 @@ price_range: '£410,000 - £717,500'
 title: '(S) Regent Place'
 subtitle: 'Tower Hamlets'
 caption: 'Gateway Housing Association'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 800
 images:
   - developments/so_regent_place/jmw-3268368.jpg
   - developments/so_regent_place/jmw-3268382.jpg

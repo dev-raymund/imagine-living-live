@@ -6,6 +6,10 @@ price_range: '£300,000 - £449,500'
 title: '(A) East Thames House'
 subtitle: 'Tower Hamlets'
 caption: 'North London Muslim'
+property_type: Apartment
+bedrooms: 1
+bathrooms: 1
+size_sq_ft: 550
 description: |-
   Step into modern urban living with this stylish one-bedroom Shared Ownership apartment, perfect for first-time buyers or couples seeking a home in a vibrant London neighbourhood.
   This home offers generous open-plan living, thoughtfully designed to maximise space, light and comfort. With sleek interiors and a welcoming community feel, it's the perfect place to call home.

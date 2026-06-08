@@ -7,6 +7,10 @@ price_range: '£620,000 - £860,000'
 title: 'West Bay Point'
 subtitle: Bournemouth
 caption: 'Gateway Housing Association'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 850
 images:
   - images/stock-photo-property-development-concept-with-newly-built-houses-against-blue-sky-240621037.jpg
   - developments/stock-photo-painting-on-white-wall-above-sofa-with-cushions-in-living-room-interior-with-chairs-at-the-table-1011184687.jpg

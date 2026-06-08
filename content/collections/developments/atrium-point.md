@@ -6,6 +6,10 @@ price_range: 'From £905pcm'
 title: '(x_L) Atrium Point'
 subtitle: Ealing
 caption: 'Sovereign Network Group'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 700
 images:
   - developments/btr_atrium_point/_dsc9715.jpg
   - developments/btr_atrium_point/_dsc9716.jpg

@@ -7,6 +7,10 @@ price_range: '£500,000 - £525,000'
 title: '(A) Portway House'
 subtitle: Southwark
 caption: 'L&Q'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 650
 images:
   - developments/so_portway_house/image-2.jpg
   - developments/so_portway_house/09-bd16jhiml---flat-19-portway-house---27-(1)-small.JPG

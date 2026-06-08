@@ -6,6 +6,10 @@ price_range: '£440,000 - £670,000'
 title: '(A) Post House'
 subtitle: Hounslow
 caption: 'Sovereign Network Group'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 800
 description: |-
   This new Shared Ownership development in the borough of Hounslow features a select number of one, two, three, and a single four-bedroom property.
   The area boasts an array of local supermarkets, convenience stores, and eateries, all of which cater to the everyday needs of residents while fostering a strong sense of community.

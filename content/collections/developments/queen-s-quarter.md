@@ -5,6 +5,10 @@ price_range: '£1,285.47 pcm - £1,400.00 pcm'
 title: "(X_L) Queen's Quarter"
 subtitle: Croydon
 caption: 'L&Q'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 1
+size_sq_ft: 700
 images:
   - developments/llr_queens-quarter/eps23306-32.jpg
   - developments/llr_queens-quarter/eps23306-60.jpg

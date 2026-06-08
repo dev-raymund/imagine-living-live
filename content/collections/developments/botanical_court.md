@@ -6,6 +6,10 @@ price_range: '£540,000 - £555,000'
 title: '(S) Botanical Court'
 subtitle: 'Tower Hamlets'
 caption: 'North London Muslim'
+property_type: Apartment
+bedrooms: 2
+bathrooms: 2
+size_sq_ft: 800
 images:
   - developments/so_botanical-court/jmw-3260218.jpg
   - developments/so_botanical-court/jmw-3260222.jpg
