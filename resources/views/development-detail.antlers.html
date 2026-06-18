@@ -1,0 +1,275 @@
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+/>
+<section class="development-detail section development-detail__container mx-auto px-4 lg:px-6">
+    <nav class="development-detail__breadcrumb p-small" aria-label="Breadcrumb">
+        <a href="/" class="anchor anchor--primary">Home</a>
+        <span aria-hidden="true"> &gt; </span>
+        <a href="/developments-preview" class="anchor anchor--primary">Developments</a>
+        <span aria-hidden="true"> &gt; </span>
+        <span>{{ title }}</span>
+    </nav>
+
+    <div class="development-detail__layout">
+        <div class="development-detail__main">
+    <header class="development-detail__header">
+        {{ if scheme_type }}
+        <p class="development-detail__scheme p-small font-bold uppercase text-brand-secondary">{{ scheme_type }}</p>
+        {{ /if }}
+        <h1 class="heading-2 uppercase text-brand-primary font-bold">{{ title }}</h1>
+        {{ if address }}
+        <p class="development-detail__address p">{{ address }}</p>
+        {{ else }}
+        <p class="development-detail__address p">{{ subtitle }}, London</p>
+        {{ /if }}
+        {{ if price_display }}
+        <p class="development-detail__price heading-3 text-brand-secondary font-bold">{{ price_display }}</p>
+        {{ elseif price_range }}
+        <p class="development-detail__price heading-3 text-brand-secondary font-bold">{{ price_range }}</p>
+        {{ /if }}
+        {{ if share_pricing_note }}
+        <p class="development-detail__pricing-note p">{{ share_pricing_note }}</p>
+        {{ /if }}
+        <ul class="development-detail__quick-specs" aria-label="Property summary">
+            {{ if property_type }}
+            <li class="p">{{ property_type }}</li>
+            {{ /if }}
+            {{ if bedrooms }}
+            <li class="p">{{ bedrooms }} bedroom{{ unless bedrooms == 1 }}s{{ /unless }}</li>
+            {{ /if }}
+            {{ if bathrooms }}
+            <li class="p">{{ bathrooms }} bathroom{{ unless bathrooms == 1 }}s{{ /unless }}</li>
+            {{ /if }}
+            {{ if listing_status }}
+            <li class="p development-detail__quick-specs-status">{{ listing_status | title }}</li>
+            {{ /if }}
+        </ul>
+    </header>
+
+    {{ if images }}
+    <div class="development-detail__gallery" data-id="{{ id }}">
+        <div class="swiper-container development-detail__gallery-slider mb-3" data-id="{{ id }}">
+            <div class="swiper-wrapper">
+                {{ images }}
+                <div class="swiper-slide">
+                    <a class="js-development-gallery__content" href="{{ url }}">
+                        <img src="{{ url }}" alt="{{ title }}" />
+                    </a>
+                </div>
+                {{ /images }}
+            </div>
+        </div>
+        {{ if images | count > 1 }}
+        <div class="swiper-container development-detail__gallery-thumbs" data-id="{{ id }}">
+            <div class="swiper-wrapper">
+                {{ images }}
+                <div class="swiper-slide">
+                    <img src="{{ url }}" alt="{{ title }}" />
+                </div>
+                {{ /images }}
+            </div>
+        </div>
+        {{ /if }}
+    </div>
+    {{ /if }}
+
+            {{ if summary }}
+            <section class="development-detail__summary" aria-labelledby="development-summary-heading">
+                <h2 id="development-summary-heading" class="heading-4 uppercase text-brand-primary font-bold mb-4">Summary</h2>
+                <p class="p">{{ summary }}</p>
+            </section>
+            {{ /if }}
+
+            <section id="description" class="development-detail__about" aria-labelledby="development-description-heading">
+                <h2 id="development-description-heading" class="heading-4 uppercase text-brand-primary font-bold mb-4">Description</h2>
+                {{ if description }}
+                <p class="p development-detail__description-excerpt">{{ description }}</p>
+                {{ /if }}
+                <button
+                    type="button"
+                    class="development-detail__info-row"
+                    data-development-panel="description"
+                    aria-controls="development-panel"
+                >
+                    <span>Full description</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </section>
+
+            <section class="development-detail__downloads" aria-labelledby="development-downloads-heading">
+                <h2 id="development-downloads-heading" class="heading-4 uppercase text-brand-primary font-bold mb-4">
+                    Property information &amp; downloads
+                </h2>
+                <div class="development-detail__info-rows">
+                    {{ if key_features }}
+                    <button
+                        type="button"
+                        class="development-detail__info-row"
+                        data-development-panel="key-features"
+                        aria-controls="development-panel"
+                    >
+                        <span>Key features</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                    {{ /if }}
+                    {{ if material_information }}
+                    <button
+                        type="button"
+                        class="development-detail__info-row"
+                        data-development-panel="material-information"
+                        aria-controls="development-panel"
+                    >
+                        <span>Material information</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                    {{ /if }}
+                    {{ floor_plan }}
+                    <a href="{{ url }}" class="development-detail__info-row development-detail__info-row--download" download>
+                        <span>Floor plan</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </a>
+                    {{ /floor_plan }}
+                </div>
+            </section>
+
+            <section id="local-area" class="development-detail__local" aria-labelledby="development-local-heading">
+                <h2 id="development-local-heading" class="development-detail__local-heading heading-4 uppercase text-brand-primary font-bold mb-4">
+                    Local area information
+                </h2>
+                <div class="development-detail__map-tabs" role="tablist" aria-label="Local area views">
+                    <button type="button" class="development-detail__map-tab development-detail__map-tab--active" role="tab" aria-selected="true" data-map-view="stations">Stations</button>
+                    <button type="button" class="development-detail__map-tab" role="tab" aria-selected="false" data-map-view="schools">Schools</button>
+                </div>
+                <div
+                    id="development-map"
+                    class="development-detail__map"
+                    role="application"
+                    aria-label="Map showing nearby transport and schools"
+                    {{ if map_latitude && map_longitude }}
+                    data-lat="{{ map_latitude }}"
+                    data-lng="{{ map_longitude }}"
+                    {{ /if }}
+                    data-title="{{ title }}"
+                >
+                    <ul class="development-detail__map-data" hidden>
+                        {{ stations }}
+                            {{ if latitude && longitude }}
+                            <li
+                                data-marker-type="station"
+                                data-name="{{ name }}"
+                                data-distance="{{ distance }}"
+                                data-lat="{{ latitude }}"
+                                data-lng="{{ longitude }}"
+                            ></li>
+                            {{ /if }}
+                        {{ /stations }}
+                        {{ schools }}
+                            {{ if latitude && longitude }}
+                            <li
+                                data-marker-type="school"
+                                data-name="{{ name }}"
+                                data-distance="{{ distance }}"
+                                data-lat="{{ latitude }}"
+                                data-lng="{{ longitude }}"
+                            ></li>
+                            {{ /if }}
+                        {{ /schools }}
+                    </ul>
+                </div>
+                <div class="development-detail__map-legend" aria-hidden="true">
+                    <span class="development-detail__map-legend-item development-detail__map-legend-item--development">Development</span>
+                    <span class="development-detail__map-legend-item development-detail__map-legend-item--station">Train stations</span>
+                    <span class="development-detail__map-legend-item development-detail__map-legend-item--school">Schools</span>
+                </div>
+                {{ if stations }}
+                <ul class="development-detail__stations">
+                    {{ stations }}
+                    <li class="p"><strong>{{ name }}</strong> — {{ distance }}</li>
+                    {{ /stations }}
+                </ul>
+                {{ /if }}
+                {{ if schools }}
+                <ul class="development-detail__stations development-detail__schools">
+                    {{ schools }}
+                    <li class="p"><strong>{{ name }}</strong> — {{ distance }}</li>
+                    {{ /schools }}
+                </ul>
+                {{ /if }}
+            </section>
+
+            <section id="properties" class="development-detail__properties" aria-labelledby="development-properties-heading">
+                <h2 id="development-properties-heading" class="heading-4 uppercase text-brand-primary font-bold mb-6">
+                    Properties in this development
+                </h2>
+
+                {{ if property_units }}
+                <div class="development-detail__filters" aria-label="Property filters">
+                    <span class="development-detail__filter-label">Home</span>
+                    <span class="development-detail__filter-label">For Sale</span>
+                    <span class="development-detail__filter-label">To Rent</span>
+                    <span class="development-detail__filter-label">Bedrooms</span>
+                    <span class="development-detail__filter-label">Property Type</span>
+                </div>
+
+                <div class="development-detail__property-list">
+                    {{ property_units }}
+                        {{ partial:components/developments/development-property-unit-card }}
+                    {{ /property_units }}
+                </div>
+                {{ else }}
+                <p class="p">Property listings for this development will be available soon. <a href="/contact-us" class="anchor anchor--primary">Contact us</a> for the latest availability.</p>
+                {{ /if }}
+            </section>
+
+            <p class="development-detail__disclaimer p-small">
+                The information displayed about this development comprises a property advertisement. Property details are provided for guidance only. Floor plans, sizes, and specifications may vary. Please contact Imagine Living for the latest availability and viewing arrangements.
+            </p>
+        </div>
+
+        <aside class="development-detail__sidebar">
+            {{ partial:components/developments/development-sidebar-cta }}
+        </aside>
+    </div>
+
+    {{ partial:components/developments/development-panel-templates }}
+
+    <div class="development-detail__panel-backdrop" id="development-panel-backdrop" hidden></div>
+    <aside
+        class="development-detail__panel"
+        id="development-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="development-panel-title"
+        aria-hidden="true"
+    >
+        <div class="development-detail__panel-header">
+            <button type="button" class="development-detail__panel-close" aria-label="Close panel">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="development-detail__panel-title heading-4 font-bold" id="development-panel-title"></h2>
+        </div>
+        <div class="development-detail__panel-body" id="development-panel-body"></div>
+    </aside>
+</section>
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+    onload="window.initDevelopmentMap && window.initDevelopmentMap()"
+></script>

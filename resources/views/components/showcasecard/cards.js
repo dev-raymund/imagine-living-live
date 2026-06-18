@@ -51,15 +51,22 @@ if (showcaseCards.length) {
         cardSlider.controller.control = cardThumbs;
         cardThumbs.controller.control = cardSlider;
 
-        const anchor = document.querySelector(
+        const anchor = showcaseCard.querySelector(
             `.js-showcase-card__expand[data-id="${showcaseCard.dataset.id}"]`
         );
-        const descriptions = document.querySelector(
+        const descriptions = showcaseCard.querySelector(
             `.js-showcase-card__description[data-id="${showcaseCard.dataset.id}"]`
         );
 
-        anchor.addEventListener("click", () => {
-            const expanded = descriptions[i].classList.contains(
+        if (!anchor || !descriptions) {
+            return;
+        }
+
+        anchor.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const expanded = descriptions.classList.contains(
                 "showcase-card__description"
             );
             if (expanded) {
@@ -67,13 +74,13 @@ if (showcaseCards.length) {
                 descriptions.classList.add(
                     "showcase-card__description--expand"
                 );
-                el.innerHTML = "Read less";
+                anchor.textContent = "Read less";
             } else {
                 descriptions.classList.add("showcase-card__description");
                 descriptions.classList.remove(
                     "showcase-card__description--expand"
                 );
-                el.innerHTML = "Read more";
+                anchor.textContent = "Read more";
             }
         });
     });

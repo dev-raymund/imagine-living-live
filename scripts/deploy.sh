@@ -15,6 +15,9 @@ npm run build
 echo "→ Sync development prices (if command exists)"
 php artisan developments:sync-prices || true
 
+echo "→ Clear detail fields on non-preview developments (if command exists)"
+php artisan developments:clear-detail-fields || true
+
 echo "→ Clear caches"
 php please stache:clear
 php artisan cache:clear

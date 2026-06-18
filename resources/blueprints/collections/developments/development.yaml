@@ -24,6 +24,16 @@ sections:
           listable: true
           instructions_position: above
       -
+        handle: preview_detail_page
+        field:
+          type: toggle
+          display: 'Preview detail page'
+          instructions: 'When on, this development appears on /developments-preview with an internal detail page.'
+          default: false
+          width: 50
+          listable: false
+          instructions_position: above
+      -
         handle: price_range
         field:
           input_type: text
@@ -160,6 +170,119 @@ sections:
           always_save: false
       -
         import: buttons
+  detail:
+    display: 'Development detail'
+    instructions: 'Content for the internal preview detail page (/developments/{slug}). Leave empty unless Preview detail page is enabled.'
+    fields:
+      -
+        handle: address
+        field:
+          type: text
+          display: Address
+          instructions: 'Full street address shown on the development detail page'
+          width: 50
+          listable: false
+          instructions_position: above
+      -
+        handle: map_latitude
+        field:
+          type: text
+          display: 'Map latitude'
+          instructions: 'Centre point for the development detail map'
+          width: 25
+          listable: false
+          instructions_position: above
+      -
+        handle: map_longitude
+        field:
+          type: text
+          display: 'Map longitude'
+          instructions: 'Centre point for the development detail map'
+          width: 25
+          listable: false
+          instructions_position: above
+      -
+        handle: stations
+        field:
+          type: replicator
+          display: 'Nearby stations'
+          listable: false
+          instructions_position: above
+          sets:
+            station:
+              display: Station
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Name
+                -
+                  handle: distance
+                  field:
+                    type: text
+                    display: Distance
+                -
+                  handle: latitude
+                  field:
+                    type: text
+                    display: Latitude
+                    width: 50
+                -
+                  handle: longitude
+                  field:
+                    type: text
+                    display: Longitude
+                    width: 50
+      -
+        handle: schools
+        field:
+          type: replicator
+          display: 'Nearby schools'
+          listable: false
+          instructions_position: above
+          sets:
+            school:
+              display: School
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Name
+                -
+                  handle: distance
+                  field:
+                    type: text
+                    display: Distance
+                -
+                  handle: latitude
+                  field:
+                    type: text
+                    display: Latitude
+                    width: 50
+                -
+                  handle: longitude
+                  field:
+                    type: text
+                    display: Longitude
+                    width: 50
+      -
+        handle: property_units
+        field:
+          type: replicator
+          display: 'Property units'
+          instructions: 'Individual homes shown on the development detail page'
+          listable: false
+          instructions_position: above
+          sets:
+            unit:
+              display: Unit
+              fields:
+                -
+                  import: property_unit
+      -
+        import: development_detail
   sidebar:
     display: Sidebar
     fields:
@@ -173,6 +296,14 @@ sections:
           width: 50
           listable: false
           instructions_position: above
+      -
+        handle: template
+        field:
+          type: template
+          display: Template
+          instructions: 'Use development-detail when Preview detail page is enabled.'
+          folder: ''
+          hide_partials: true
       -
         handle: slug
         field:

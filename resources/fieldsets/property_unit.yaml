@@ -1,0 +1,97 @@
+title: 'Property unit'
+fields:
+  -
+    handle: unit_address
+    field:
+      type: text
+      display: Address
+      width: 50
+  -
+    handle: floor
+    field:
+      type: text
+      display: Floor
+      width: 50
+  -
+    handle: unit_description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: unit_price
+    field:
+      type: text
+      display: Price
+      width: 33
+  -
+    handle: unit_price_note
+    field:
+      type: text
+      display: 'Price note'
+      width: 67
+      instructions: 'e.g. Share 30% / Full price £600,000 / Min deposit £45,000'
+  -
+    handle: scheme_type
+    field:
+      type: text
+      display: 'Scheme type'
+      width: 50
+  -
+    handle: monthly_rent
+    field:
+      type: text
+      display: 'Monthly rent'
+      width: 50
+  -
+    handle: service_charge
+    field:
+      type: text
+      display: 'Service charge'
+      width: 50
+  -
+    handle: ground_rent
+    field:
+      type: text
+      display: 'Ground rent'
+      width: 50
+  -
+    handle: unit_status
+    field:
+      type: select
+      display: Status
+      width: 25
+      options:
+        for-sale: 'For Sale'
+        sold: Sold
+        to-rent: 'To Rent'
+  -
+    handle: property_type
+    field:
+      type: text
+      display: 'Property type'
+      width: 25
+  -
+    handle: bedrooms
+    field:
+      type: integer
+      display: Bedrooms
+      width: 25
+  -
+    handle: bathrooms
+    field:
+      type: integer
+      display: Bathrooms
+      width: 25
+  -
+    handle: size_sq_ft
+    field:
+      type: integer
+      display: 'Size (sq ft)'
+      width: 25
+  -
+    handle: unit_image
+    field:
+      type: assets
+      display: Image
+      max_files: 1
+      mode: list

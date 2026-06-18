@@ -1,0 +1,159 @@
+title: 'Development detail'
+fields:
+  -
+    handle: scheme_type
+    field:
+      type: text
+      display: 'Scheme type'
+      instructions: 'e.g. Shared Ownership Resale'
+      width: 50
+  -
+    handle: price_display
+    field:
+      type: text
+      display: 'Headline price'
+      instructions: 'e.g. £180,000'
+      width: 50
+  -
+    handle: share_pricing_note
+    field:
+      type: text
+      display: 'Share pricing note'
+      instructions: 'e.g. Share 30% / Full price £600,000 / Min deposit £45,000'
+  -
+    handle: summary
+    field:
+      type: textarea
+      display: Summary
+  -
+    handle: full_description
+    field:
+      type: textarea
+      display: 'Full description'
+  -
+    handle: monthly_cost_total
+    field:
+      type: text
+      display: 'Monthly cost total'
+      width: 25
+  -
+    handle: monthly_rent
+    field:
+      type: text
+      display: 'Monthly rent'
+      width: 25
+  -
+    handle: monthly_service_charge
+    field:
+      type: text
+      display: 'Monthly service charge'
+      width: 25
+  -
+    handle: monthly_mortgage
+    field:
+      type: text
+      display: 'Monthly mortgage'
+      width: 25
+  -
+    handle: mortgage_rate_note
+    field:
+      type: textarea
+      display: 'Mortgage rate note'
+  -
+    handle: eligibility_items
+    field:
+      type: replicator
+      display: Eligibility
+      sets:
+        item:
+          display: Item
+          fields:
+            -
+              handle: text
+              field:
+                type: textarea
+                display: Text
+  -
+    handle: highlights
+    field:
+      type: replicator
+      display: Highlights
+      instructions: 'Why you will love living here'
+      sets:
+        highlight:
+          display: Highlight
+          fields:
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+            -
+              handle: description
+              field:
+                type: textarea
+                display: Description
+  -
+    handle: key_features
+    field:
+      type: replicator
+      display: 'Key features'
+      sets:
+        feature:
+          display: Feature
+          fields:
+            -
+              handle: text
+              field:
+                type: text
+                display: Text
+  -
+    handle: material_information
+    field:
+      type: replicator
+      display: 'Material information'
+      sets:
+        row:
+          display: Row
+          fields:
+            -
+              handle: label
+              field:
+                type: text
+                display: Label
+                width: 50
+            -
+              handle: value
+              field:
+                type: text
+                display: Value
+                width: 50
+  -
+    handle: estimated_costs
+    field:
+      type: replicator
+      display: 'Estimated costs'
+      sets:
+        cost:
+          display: Cost
+          fields:
+            -
+              handle: label
+              field:
+                type: text
+                display: Label
+                width: 50
+            -
+              handle: value
+              field:
+                type: text
+                display: Value
+                width: 50
+  -
+    handle: floor_plan
+    field:
+      type: assets
+      display: 'Floor plan'
+      instructions: 'Downloadable floor plan file (PDF or image)'
+      max_files: 1
+      mode: list

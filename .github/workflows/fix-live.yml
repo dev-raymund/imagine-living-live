@@ -1,0 +1,54 @@
+# Emergency: restore live site from GitHub (run in browser, no Mac SSH).
+# GitHub → Actions → "Fix live site" → Run workflow
+name: Fix live site
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: fix-live-production
+  cancel-in-progress: true
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Sync full site to server
+        run: |
+          rsync -avz \
+            -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=accept-new" \
+            --exclude '.env' \
+            --exclude '.git/' \
+            --exclude 'vendor/' \
+            --exclude 'node_modules/' \
+            --exclude 'storage/' \
+            --exclude 'public/assets/' \
+            --exclude '.parcel-cache/' \
+            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ploi/imagineliving.co.uk/
+
+      - name: Build and clear caches
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            export APP_DIR=/home/ploi/imagineliving.co.uk
+            cd "$APP_DIR"
+            composer dump-autoload -o --no-interaction
+            php artisan developments:sync-prices || true
+            php please stache:clear
+            php artisan view:clear
+            php artisan cache:clear
+            php artisan config:clear
+            echo "✓ Live site restore finished"

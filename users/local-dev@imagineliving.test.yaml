@@ -1,0 +1,12 @@
+name: 'Local Dev'
+super: true
+id: 9ce7e473-5eab-4843-8595-b327c0600b33
+password_hash: $2y$10$Ut/duEV5mmafYJXwIj2aBeIgzDASFsKKaLYXlbU8t7y4VF.i3aVTS
+preferences:
+  collections:
+    developments:
+      columns:
+        - title
+        - subtitle
+        - price_range
+        - listing_status

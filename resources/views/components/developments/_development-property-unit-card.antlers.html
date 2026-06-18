@@ -1,0 +1,48 @@
+<article class="development-property-card" id="unit-{{ id }}">
+    <div class="development-property-card__media">
+        {{ unit_image }}
+            <img src="{{ url }}" alt="{{ unit_address }}" class="development-property-card__image" />
+        {{ /unit_image }}
+        <span class="development-property-card__status development-property-card__status--{{ unit_status }}">
+            {{ if unit_status == "for-sale" }}Available{{ /if }}
+            {{ if unit_status == "sold" }}Sold{{ /if }}
+            {{ if unit_status == "to-rent" }}To Rent{{ /if }}
+        </span>
+    </div>
+
+    <div class="development-property-card__body">
+        <div class="development-property-card__summary">
+            {{ if scheme_type }}
+            <p class="p-small font-bold uppercase text-brand-secondary mb-2">{{ scheme_type }}</p>
+            {{ /if }}
+            <h3 class="heading-5 uppercase text-brand-primary font-bold">{{ unit_address }}</h3>
+            {{ if floor }}
+            <p class="p font-bold">{{ floor }}</p>
+            {{ /if }}
+            <p class="p development-property-card__excerpt">{{ unit_description }}</p>
+            <p class="heading-5 text-brand-secondary font-bold mt-4">{{ unit_price }}</p>
+            {{ if unit_price_note }}
+            <p class="p-small">{{ unit_price_note }}</p>
+            {{ /if }}
+            {{ if monthly_rent || service_charge || ground_rent }}
+            <ul class="development-property-card__costs p-small">
+                {{ if monthly_rent }}
+                <li><strong>Monthly rent:</strong> {{ monthly_rent }}</li>
+                {{ /if }}
+                {{ if service_charge }}
+                <li><strong>Service charge:</strong> {{ service_charge }}</li>
+                {{ /if }}
+                {{ if ground_rent }}
+                <li><strong>Ground rent:</strong> {{ ground_rent }}</li>
+                {{ /if }}
+            </ul>
+            {{ /if }}
+        </div>
+    </div>
+
+    {{ partial:components/developments/development-unit-specs }}
+
+    <a href="/contact-us" class="development-property-card__btn">
+        View details
+    </a>
+</article>

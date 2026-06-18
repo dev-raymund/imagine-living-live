@@ -27,10 +27,7 @@
         {{ /if }}
     </div>
 <div class="flex flex-col justify-between" style="flex-grow: 1;">
-    {{ if link }}
-    <a href="{{ link }}"
-        {{ if target_blank == '1' }}target="_blank" rel="noopener noreferrer"{{ /if }}>
-    {{ /if }}
+    <a href="{{ url }}">
     <div class="showcase-card__heading mt-8">
         <h4 class="heading-4 uppercase text-brand-secondary font-bold">
             {{ title }}
@@ -51,16 +48,11 @@
     </p>
     <div class="p showcase-card__expand anchor anchor--primary js-showcase-card__expand" data-id="{{ id }}">
     </div>
-    {{ if link }}
     </a>
-    {{ /if }}
     <div class="showcase-card__buttons">
-        {{ buttons }}
-            <a class="my-4 inline-flex w-full" href="{{ button_url }}"
-                {{ if target_blank == '1' }}target="_blank" rel="noopener noreferrer"{{ /if }}>
-                {{ partial:components/button/button  }}
-            </a>
-        {{ /buttons }}
+        <a class="my-4 inline-flex w-full" href="{{ url }}">
+            {{ partial:components/button/button button_text="View development" }}
+        </a>
     </div>
 </div>
 </div>

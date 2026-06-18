@@ -1,0 +1,61 @@
+<template id="development-panel-description">
+    {{ if full_description }}
+    <p class="p mb-6">{{ full_description }}</p>
+    {{ elseif description }}
+    <p class="p mb-6">{{ description }}</p>
+    {{ /if }}
+
+    {{ if highlights }}
+    <h3 class="heading-6 uppercase text-brand-primary font-bold mb-4">Why you'll love living here</h3>
+    <div class="development-detail__highlights">
+        {{ highlights }}
+        <div class="development-detail__highlight">
+            <h4 class="p font-bold">{{ title }}</h4>
+            <p class="p">{{ description }}</p>
+        </div>
+        {{ /highlights }}
+    </div>
+    {{ /if }}
+
+    {{ if estimated_costs }}
+    <h3 class="heading-6 uppercase text-brand-primary font-bold mt-8 mb-4">Estimated costs</h3>
+    <ul class="development-detail__costs">
+        {{ estimated_costs }}
+        <li class="p"><strong>{{ label }}:</strong> {{ value }}</li>
+        {{ /estimated_costs }}
+    </ul>
+    {{ /if }}
+
+    {{ if eligibility_items }}
+    <h3 class="heading-6 uppercase text-brand-primary font-bold mt-8 mb-4">Eligibility</h3>
+    <p class="p mb-4">You may be eligible for this development if:</p>
+    <ul class="development-detail__list development-detail__list--bullets">
+        {{ eligibility_items }}
+        <li class="p">{{ text }}</li>
+        {{ /eligibility_items }}
+    </ul>
+    {{ /if }}
+</template>
+
+<template id="development-panel-key-features">
+    {{ if key_features }}
+    <ul class="development-detail__list development-detail__list--bullets">
+        {{ key_features }}
+        <li class="p">{{ text }}</li>
+        {{ /key_features }}
+    </ul>
+    {{ /if }}
+</template>
+
+<template id="development-panel-material-information">
+    {{ if material_information }}
+    <dl class="development-detail__material-grid">
+        {{ material_information }}
+        <div class="development-detail__material-row">
+            <dt class="p font-bold">{{ label }}</dt>
+            <dd class="p">{{ value }}</dd>
+        </div>
+        {{ /material_information }}
+    </dl>
+    {{ /if }}
+</template>

@@ -17,7 +17,10 @@ FILES=(
   app/Providers/AppServiceProvider.php
   resources/views/developments.antlers.html
   resources/views/partials/_developments-results.antlers.html
+  resources/views/components/developments/developmentsFilter.css
+  resources/views/components/showcasecard/developmentsResults.css
   resources/blueprints/collections/developments/development.yaml
+  public/css/site.css
 )
 
 RSYNC_SSH="ssh -i ${SSH_KEY} -o StrictHostKeyChecking=accept-new"
