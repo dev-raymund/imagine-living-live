@@ -44,7 +44,7 @@
             <li class="p">{{ bathrooms }} bathroom{{ unless bathrooms == 1 }}s{{ /unless }}</li>
             {{ /if }}
             {{ if listing_status }}
-            <li class="p development-detail__quick-specs-status">{{ listing_status | title }}</li>
+            <li class="p development-detail__quick-specs-status">{{ listing_status:label }}</li>
             {{ /if }}
         </ul>
     </header>
