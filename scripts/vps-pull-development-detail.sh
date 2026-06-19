@@ -37,6 +37,7 @@ pull app/Console/Commands/DisableDevelopmentDetailPages.php
 pull app/Console/Commands/EnableDevelopmentDetailPages.php
 pull app/Console/Commands/SeedPreviewDevelopmentExamples.php
 pull resources/blueprints/collections/developments/development.yaml
+pull content/collections/developments.yaml
 pull resources/fieldsets/development_detail.yaml
 pull resources/fieldsets/property_unit.yaml
 pull resources/views/development-detail.antlers.html
