@@ -287,11 +287,25 @@ sections:
     display: Sidebar
     fields:
       -
+        handle: listing_rank
+        field:
+          type: integer
+          display: 'Preview rank'
+          instructions: 'Ordering priority on /developments-preview only (1 = top, 5 = lowest). Lower numbers rank higher; entries with the same rank fall back to the page sort, then name A–Z. Leave empty to sort after all ranked developments.'
+          width: 50
+          listable: false
+          instructions_position: above
+          validate:
+            - nullable
+            - integer
+            - 'min:1'
+            - 'max:5'
+      -
         handle: featured
         field:
           type: toggle
           display: 'Featured property'
-          instructions: 'When on, this development appears first on the public listings page.'
+          instructions: 'When on, this development appears first on the public /developments listing (does not affect /developments-preview, which uses Preview rank).'
           default: false
           width: 50
           listable: false

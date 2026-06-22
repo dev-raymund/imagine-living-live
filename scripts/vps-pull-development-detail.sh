@@ -31,6 +31,7 @@ pull() {
     curl -fsSL "${BASE}/${rel}" -o "${rel}"
 }
 
+pull app/Scopes/DevelopmentsListingFilters.php
 pull app/Scopes/DevelopmentsPreviewListingFilters.php
 pull app/Console/Commands/ClearDevelopmentDetailFields.php
 pull app/Console/Commands/DisableDevelopmentDetailPages.php
