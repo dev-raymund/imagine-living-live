@@ -47,6 +47,14 @@
     {{ /if }}
 </template>
 
+<template id="development-panel-phone">
+    <p class="p mb-6">Speak to our team about {{ title }}.</p>
+    <a href="tel:{{ company_information:phone_number }}" class="heading-3 anchor anchor--primary">
+        {{ company_information:phone_number }}
+    </a>
+    <p class="p mt-6">Lines are open Monday to Friday. You can also <a href="/contact-us" class="anchor anchor--primary">request more details</a> and we'll come back to you.</p>
+</template>
+
 <template id="development-panel-material-information">
     {{ if material_information }}
     <dl class="development-detail__material-grid">

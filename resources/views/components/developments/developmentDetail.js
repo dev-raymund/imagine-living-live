@@ -51,6 +51,7 @@ const panelTitles = {
     description: "Description",
     "key-features": "Key features",
     "material-information": "Material information",
+    phone: "Call us",
 };
 
 const panel = document.getElementById("development-panel");
