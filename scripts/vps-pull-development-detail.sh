@@ -53,8 +53,9 @@ pull resources/views/components/developments/_development-unit-specs.antlers.htm
 pull resources/views/components/developments/_development-property-card.antlers.html
 pull resources/views/components/developments/developmentDetail.css
 pull resources/views/components/developments/developmentDetail.js
-pull content/collections/pages/developments-preview.md
-pull content/trees/collections/pages.yaml
+# The developments-preview page entry and the pages tree are NOT pulled.
+# Re-copying them republishes the staging listing and overwrites the live page
+# tree, dropping any page added in the control panel since.
 pull public/site.generated.css
 pull public/site.js
 pull public/css/site.css
@@ -62,30 +63,22 @@ pull public/css/site.css
 # copies must ship - not just the Parcel output at public root.
 pull public/js/site.js
 
-PREVIEW_DEVELOPMENTS=(
-  content/collections/developments/a-cityview-point.md
-  content/collections/developments/a-bow-green.md
-  content/collections/developments/a-ark-house.md
-  content/collections/developments/a-east-thames-house.md
-  content/collections/developments/a-portway-house.md
-  content/collections/developments/a-rigel-house.md
-  content/collections/developments/a-vincent-wharf.md
-  content/collections/developments/a-ymcc-house.md
-  content/collections/developments/east-thames-house.md
-  content/collections/developments/regent-place.md
-)
+# Development entries are NOT pulled. This script used to copy ten of them from
+# the repo onto the server, which overwrote live entries with seeded example
+# data (invented rents, "Local station", "example detail content") and created
+# duplicate (A)-prefixed entries for slugs that only exist locally. Developments
+# are edited in the live control panel; the server is their source of truth.
 
-for entry in "${PREVIEW_DEVELOPMENTS[@]}"; do
-  pull "$entry"
-done
+# developments:clear-detail-fields is NOT run here either. Without an explicit
+# --except matching a live slug it strips the detail content off every entry,
+# including curated ones. Run it by hand when you actually mean to reset.
 
 echo "→ composer + caches"
 composer dump-autoload -o --no-interaction
-php artisan developments:clear-detail-fields
 php please stache:clear
 php artisan view:clear
 php artisan cache:clear
 
 echo "✓ Done. Check:"
-echo "  /developments-preview"
-echo "  /developments/a-cityview-point"
+echo "  /developments"
+echo "  /developments/cityview-point"
