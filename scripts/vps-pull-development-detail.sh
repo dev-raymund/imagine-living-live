@@ -32,7 +32,6 @@ pull() {
 }
 
 pull app/Scopes/DevelopmentsListingFilters.php
-pull app/Scopes/DevelopmentsPreviewListingFilters.php
 pull app/Console/Commands/ClearDevelopmentDetailFields.php
 pull app/Console/Commands/DisableDevelopmentDetailPages.php
 pull app/Console/Commands/EnableDevelopmentDetailPages.php
@@ -59,6 +58,9 @@ pull content/trees/collections/pages.yaml
 pull public/site.generated.css
 pull public/site.js
 pull public/css/site.css
+# The live layout references /css/site.css and /js/site.js, so both synced
+# copies must ship - not just the Parcel output at public root.
+pull public/js/site.js
 
 PREVIEW_DEVELOPMENTS=(
   content/collections/developments/a-cityview-point.md

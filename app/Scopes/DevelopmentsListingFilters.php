@@ -6,6 +6,13 @@ use Statamic\Query\Scopes\Scope;
 
 class DevelopmentsListingFilters extends Scope
 {
+    /**
+     * Shared by both development listings. Neither one filters on visibility
+     * here: an entry's published status is the only thing deciding where it
+     * shows, applied by the collection tag — /developments takes the default
+     * published-only filter, /developments-preview overrides it with
+     * `status:is="draft"`.
+     */
     public function apply($query, $values): void
     {
         $this->applyFilters($query);
@@ -40,11 +47,18 @@ class DevelopmentsListingFilters extends Scope
 
     /**
      * Primary ordering applied before the user-selected sort.
-     * The public listing pins featured developments to the top.
+     * The public listing is ordered by the editor-controlled rank (1 = top).
+     * Any ranked entry sorts above every unranked one; unranked entries fall
+     * back to the page sort, then name A–Z (see applySortOrder).
+     *
+     * `listing_rank` is the only pinning mechanism: null sorts last under asc,
+     * which is exactly the wanted behaviour. Promoting specific developments on
+     * the homepage is a separate, manual job — the Featured Grid block there
+     * picks its entries by hand.
      */
     protected function applyPriorityOrder($query): void
     {
-        $query->orderBy('featured', 'desc');
+        $query->orderBy('listing_rank', 'asc');
     }
 
     protected function applySortOrder($query): void

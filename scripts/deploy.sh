@@ -15,8 +15,11 @@ npm run build
 echo "→ Sync development prices (if command exists)"
 php artisan developments:sync-prices || true
 
-echo "→ Clear detail fields on non-preview developments (if command exists)"
-php artisan developments:clear-detail-fields || true
+# NOTE: developments:clear-detail-fields is deliberately NOT run here.
+# It strips `template` and every detail field from all entries except
+# a-cityview-point, which would undo the detail pages on every deploy now
+# that developments opt in via the Template field. Run it by hand if you
+# ever need to reset an entry.
 
 echo "→ Clear caches"
 php please stache:clear

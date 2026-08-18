@@ -24,16 +24,6 @@ sections:
           listable: true
           instructions_position: above
       -
-        handle: preview_detail_page
-        field:
-          type: toggle
-          display: 'Preview detail page'
-          instructions: 'When on, this development appears on /developments-preview with an internal detail page.'
-          default: false
-          width: 50
-          listable: false
-          instructions_position: above
-      -
         handle: price_range
         field:
           input_type: text
@@ -172,7 +162,7 @@ sections:
         import: buttons
   detail:
     display: 'Development detail'
-    instructions: 'Content for the internal preview detail page (/developments/{slug}). Leave empty unless Preview detail page is enabled.'
+    instructions: 'Content for this development''s own page at /developments/{slug}. Only used when Template (in the sidebar) is set to development-detail — leave empty otherwise.'
     fields:
       -
         handle: address
@@ -290,8 +280,8 @@ sections:
         handle: listing_rank
         field:
           type: integer
-          display: 'Preview rank'
-          instructions: 'Ordering priority on /developments-preview only (1 = top, 5 = lowest). Lower numbers rank higher; entries with the same rank fall back to the page sort, then name A–Z. Leave empty to sort after all ranked developments.'
+          display: 'Listing rank'
+          instructions: 'Ordering priority on both the public /developments listing and the drafts on /developments-preview (1 = top, 5 = lowest). Any ranked development sorts above every unranked one, so setting 5 still pins it to the top — ranks only order ranked entries against each other. Entries with the same rank fall back to the page sort, then name A–Z. Leave empty to sort after all ranked developments.'
           width: 50
           listable: false
           instructions_position: above
@@ -301,21 +291,11 @@ sections:
             - 'min:1'
             - 'max:5'
       -
-        handle: featured
-        field:
-          type: toggle
-          display: 'Featured property'
-          instructions: 'When on, this development appears first on the public /developments listing (does not affect /developments-preview, which uses Preview rank).'
-          default: false
-          width: 50
-          listable: false
-          instructions_position: above
-      -
         handle: template
         field:
           type: template
           display: Template
-          instructions: 'Use development-detail when Preview detail page is enabled.'
+          instructions: "Controls whether this development gets its own page on the site.\n\n**development-detail** — the development gets a full page at /developments/{slug}, built from the Development detail tab. On the listing its button changes to “View development” and points at that page, so the Buttons set below (ShareToBuy and any others) are bypassed and never shown.\n\n**Leave empty** — no page of its own. The listing shows the Buttons set below, which is how visitors are sent off to ShareToBuy.\n\nEither way the development is only public once published; unpublished drafts appear on /developments-preview instead."
           folder: ''
           hide_partials: true
       -

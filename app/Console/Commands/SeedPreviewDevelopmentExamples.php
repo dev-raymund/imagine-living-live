@@ -54,7 +54,6 @@ class SeedPreviewDevelopmentExamples extends Command
             }
 
             if (in_array($slug, self::PROTECTED_SLUGS, true)) {
-                $entry->set('preview_detail_page', true);
                 $entry->set('template', 'development-detail');
                 $entry->save();
                 $this->line("{$slug}: kept curated detail content");
@@ -123,7 +122,6 @@ class SeedPreviewDevelopmentExamples extends Command
 
         return [
             'template' => 'development-detail',
-            'preview_detail_page' => true,
             'scheme_type' => $entry->get('listing_status') === 'coming-soon' ? 'Shared Ownership (Coming soon)' : 'Shared Ownership',
             'price_display' => '£'.number_format($sharePrice),
             'share_pricing_note' => "Share {$sharePercent}% / Full price £".number_format($fullPrice)." / Min deposit £".number_format($deposit),

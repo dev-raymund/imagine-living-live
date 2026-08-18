@@ -4,7 +4,7 @@
         {{ heading }}
     </h3>
     <p class="p text-center md:text-left lg:px-6 xl:px-14 mb-12 text-brand-black/70">
-        Preview listing with internal development detail pages. The live <a href="/developments" class="anchor anchor--primary">developments page</a> is unchanged.
+        Unpublished drafts only, shown with internal development detail pages. Publish a development to move it to the live <a href="/developments" class="anchor anchor--primary">developments page</a>.
     </p>
 
     <form method="get" action="{{ url }}" class="developments-filter">
@@ -67,7 +67,7 @@
     </form>
 
     <div class="showcase-card__container mt-8 lg:px-6 xl:px-14">
-        {{ collection:developments query_scope="developments_preview_listing_filters" paginate="8" as="development_entries" }}
+        {{ collection:developments query_scope="developments_listing_filters" status:is="draft" paginate="8" as="development_entries" }}
             {{ if no_results }}
                 <p class="p w-full text-center md:text-left mb-8">No developments match your filters.</p>
             {{ /if }}

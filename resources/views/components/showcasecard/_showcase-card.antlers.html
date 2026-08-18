@@ -55,12 +55,22 @@
     </a>
     {{ /if }}
     <div class="showcase-card__buttons">
-        {{ buttons }}
-            <a class="my-4 inline-flex w-full" href="{{ button_url }}"
-                {{ if target_blank == '1' }}target="_blank" rel="noopener noreferrer"{{ /if }}>
-                {{ partial:components/button/button  }}
+        {{# Developments with their own detail page keep the visitor on site:
+            the external Buttons (ShareToBuy and friends) are bypassed in
+            favour of a link to /developments/{slug}. Every other development
+            still renders whatever Buttons the editor set up. #}}
+        {{ if template == 'development-detail' }}
+            <a class="my-4 inline-flex w-full" href="{{ url }}">
+                {{ partial:components/button/button button_text="View development" }}
             </a>
-        {{ /buttons }}
+        {{ else }}
+            {{ buttons }}
+                <a class="my-4 inline-flex w-full" href="{{ button_url }}"
+                    {{ if target_blank == '1' }}target="_blank" rel="noopener noreferrer"{{ /if }}>
+                    {{ partial:components/button/button  }}
+                </a>
+            {{ /buttons }}
+        {{ /if }}
     </div>
 </div>
 </div>

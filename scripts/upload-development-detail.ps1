@@ -33,7 +33,7 @@ if (-not $UsePassword) {
 }
 
 $files = @(
-    "app/Scopes/DevelopmentsPreviewListingFilters.php",
+    "app/Scopes/DevelopmentsListingFilters.php",
     "app/Console/Commands/SeedPreviewDevelopmentExamples.php",
     "app/Console/Commands/ClearDevelopmentDetailFields.php",
     "app/Console/Commands/DisableDevelopmentDetailPages.php",
@@ -68,7 +68,10 @@ $files = @(
     "content/collections/developments/regent-place.md",
     "public/site.generated.css",
     "public/site.js",
-    "public/css/site.css"
+    "public/css/site.css",
+    # The live layout references /css/site.css and /js/site.js, so both
+    # synced copies must ship - not just the Parcel output at public root.
+    "public/js/site.js"
 )
 
 Set-Location $ProjectRoot

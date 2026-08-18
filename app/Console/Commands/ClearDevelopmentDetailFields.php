@@ -13,7 +13,6 @@ class ClearDevelopmentDetailFields extends Command
 
     private const DETAIL_FIELDS = [
         'template',
-        'preview_detail_page',
         'address',
         'map_latitude',
         'map_longitude',
@@ -38,25 +37,15 @@ class ClearDevelopmentDetailFields extends Command
         'floor_plan',
     ];
 
-    private const DEFAULT_PREVIEW_SLUGS = [
-        'a-cityview-point',
-        'a-bow-green',
-        'a-ark-house',
-        'a-east-thames-house',
-        'a-portway-house',
-        'a-rigel-house',
-        'a-vincent-wharf',
-        'a-ymcc-house',
-        'east-thames-house',
-        'regent-place',
-    ];
-
     public function handle(): int
     {
+        // --except and --keep are the whole keep list. There used to be a
+        // hardcoded roster of preview slugs merged in here, which meant the
+        // command could never clear those entries no matter what you passed -
+        // including two that reached production carrying seeded example data.
         $keep = array_unique(array_merge(
             [$this->option('except')],
-            $this->option('keep') ?: [],
-            self::DEFAULT_PREVIEW_SLUGS
+            $this->option('keep') ?: []
         ));
         $cleared = 0;
 

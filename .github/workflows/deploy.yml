@@ -26,6 +26,11 @@ jobs:
 
       - name: Sync code to server
         run: |
+          # content/ and users/ are edited in the live control panel, so the
+          # server is their source of truth - syncing them from here would
+          # overwrite editors' work with whatever this repo last committed.
+          # To ship a structural content change (a new page entry, the pages
+          # tree), copy those specific files up with scripts/upload-development-detail.ps1.
           rsync -avz \
             --exclude '.env' \
             --exclude '.git/' \
@@ -34,6 +39,8 @@ jobs:
             --exclude 'storage/' \
             --exclude 'public/assets/' \
             --exclude '.parcel-cache/' \
+            --exclude 'content/' \
+            --exclude 'users/' \
             ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ploi/imagineliving.co.uk/
 
       - name: Build and clear caches on server
