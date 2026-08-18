@@ -25,10 +25,22 @@ mkdir -p content/collections/developments
 mkdir -p content/trees/collections
 mkdir -p public/css
 
+# raw.githubusercontent.com returns the odd transient 502. Without a retry that
+# aborts the whole run under `set -e`, leaving the server half-updated, so give
+# each file three attempts before giving up.
 pull() {
     local rel="$1"
+    local attempt
     echo "→ $rel"
-    curl -fsSL "${BASE}/${rel}" -o "${rel}"
+    for attempt in 1 2 3; do
+        if curl -fsSL --retry 2 --retry-delay 2 "${BASE}/${rel}" -o "${rel}"; then
+            return 0
+        fi
+        echo "   retry ${attempt}/3 after transient failure"
+        sleep 3
+    done
+    echo "   FAILED: ${rel}" >&2
+    return 1
 }
 
 pull app/Scopes/DevelopmentsListingFilters.php
