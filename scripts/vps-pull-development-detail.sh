@@ -52,6 +52,10 @@ pull resources/blueprints/collections/developments/development.yaml
 pull content/collections/developments.yaml
 pull resources/fieldsets/development_detail.yaml
 pull resources/fieldsets/property_unit.yaml
+# The layout was missing from this list, so the server kept an old copy that
+# had no Leaflet at all and loaded /js/site.js instead of the current /site.js
+# bundle - detail page maps, sliders and panels were all dead as a result.
+pull resources/views/layout.antlers.html
 pull resources/views/development-detail.antlers.html
 pull resources/views/developments-preview.antlers.html
 pull resources/views/components/showcasecard/_showcase-card-detail.antlers.html
