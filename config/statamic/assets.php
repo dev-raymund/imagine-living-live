@@ -52,6 +52,10 @@ return [
         |
         */
 
+        // Left off deliberately. Turning this on makes every glide tag render an
+        // empty src site-wide - the homepage included - rather than writing
+        // derivatives to public/img. Worth revisiting, because with it off each
+        // <img> is served through PHP and the developments listing has 80+ of them.
         'cache' => false,
         'cache_path' => public_path('img'),
 
