@@ -65,6 +65,9 @@ pull resources/views/components/showcasecard/_showcase-card-detail.antlers.html
 pull resources/views/components/showcasecard/_showcase-card.antlers.html
 pull resources/views/components/showcasecard/_showcase-card-specs.antlers.html
 pull resources/views/components/showcasecard/showcaseCard.css
+# Source as well as the built bundle, so rebuilding on the server cannot
+# resurrect the old eager Swiper initialisation.
+pull resources/views/components/showcasecard/cards.js
 pull resources/views/components/developments/_development-sidebar-cta.antlers.html
 pull resources/views/components/developments/_development-property-unit-card.antlers.html
 pull resources/views/components/developments/_development-panel-templates.antlers.html
