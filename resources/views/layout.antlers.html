@@ -12,6 +12,10 @@
             {{ site_settings:site_name }}
       </title>
       <!-- <link rel="stylesheet" href="/tailwind.css" /> -->
+      {{# Both CDNs are hit for CSS and JS, so open the connections early rather
+          than paying DNS + TLS at the moment the first asset is requested. #}}
+      <link rel="preconnect" href="https://unpkg.com" crossorigin />
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
       <link rel="stylesheet" href="/site.generated.css" />
       <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
       <link rel="stylesheet"
@@ -21,11 +25,15 @@
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
             crossorigin="" />
-      <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      {{# All three were render-blocking: the browser had to fetch and execute
+          them from two third-party hosts before it could finish parsing the
+          document. Deferred scripts still run in document order, so Swiper,
+          Leaflet and Luminous are all defined before site.js uses them. #}}
+      <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+      <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.5/luminous.min.js"
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.5/luminous.min.js"
             integrity="sha512-s3wYrA7o3u4lb8d0Qq9+bHSDjL5Uihr6W492rgIuRjtl0D793x/wEWWhO1uqF2JfZfY23aaWER4YcFuZpcMs7g=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script defer src="/site.js"></script>
