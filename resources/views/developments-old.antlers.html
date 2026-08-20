@@ -4,9 +4,11 @@
         {{ heading }}
     </h3>
 
-    {{# Search was removed from this listing; /developments-old keeps it. The `q`
-        filter still works in the query scope, it just has no input here. #}}
-    <form method="get" action="{{ url }}" class="developments-filter developments-filter--no-search">
+    <form method="get" action="{{ url }}" class="developments-filter">
+        <div class="developments-filter__field developments-filter__field--search">
+            <label for="developments-filter-q" class="heading-6 uppercase text-brand-primary font-bold">Search by name or area</label>
+            <input id="developments-filter-q" type="search" name="q" value="{{ get:q }}" placeholder="e.g. Bow Green or Tower Hamlets" class="w-full min-w-0 border border-brand-black/20 bg-brand-white text-brand-black">
+        </div>
         <div class="developments-filter__field developments-filter__field--area">
             <label for="developments-filter-area" class="heading-6 uppercase text-brand-primary font-bold">Area</label>
             <select id="developments-filter-area" name="area" class="w-full min-w-0 border border-brand-black/20 bg-brand-white text-brand-black">
@@ -55,7 +57,7 @@
         </div>
         <div class="developments-filter__actions">
             <button type="submit" class="developments-filter__btn developments-filter__btn--apply">Apply</button>
-            {{ if get:area or get:max_price or get:sort == "name" }}
+            {{ if get:q or get:area or get:max_price or get:sort == "name" }}
                 <a href="{{ url }}" class="developments-filter__btn developments-filter__btn--reset">Reset</a>
             {{ /if }}
         </div>
