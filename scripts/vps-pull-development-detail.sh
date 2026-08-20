@@ -57,7 +57,6 @@ pull resources/fieldsets/property_unit.yaml
 # bundle - detail page maps, sliders and panels were all dead as a result.
 pull resources/views/layout.antlers.html
 pull resources/views/developments.antlers.html
-pull resources/views/developments-old.antlers.html
 pull resources/views/components/developments/developmentsFilter.css
 pull resources/views/development-detail.antlers.html
 pull resources/views/developments-preview.antlers.html

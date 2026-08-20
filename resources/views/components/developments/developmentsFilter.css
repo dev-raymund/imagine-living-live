@@ -25,14 +25,6 @@
   }
 }
 
-/* Without the full-width search field only three inputs remain, so drop to three
-   columns rather than leaving a fourth sitting empty. */
-@media (min-width: 1024px) {
-  .developments-filter--no-search {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 .developments-filter__field {
   display: flex;
   min-width: 0;
