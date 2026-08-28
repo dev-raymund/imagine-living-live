@@ -38,7 +38,7 @@
             <li class="p">{{ property_type }}</li>
             {{ /if }}
             {{ if bedrooms }}
-            <li class="p">{{ bedrooms }} bedroom{{ unless bedrooms == 1 }}s{{ /unless }}</li>
+            <li class="p">{{ if bedrooms_max and bedrooms_max > bedrooms }}{{ bedrooms }}-{{ bedrooms_max }} bedrooms{{ else }}{{ bedrooms }} bedroom{{ unless bedrooms == 1 }}s{{ /unless }}{{ /if }}</li>
             {{ /if }}
             {{ if bathrooms }}
             <li class="p">{{ bathrooms }} bathroom{{ unless bathrooms == 1 }}s{{ /unless }}</li>

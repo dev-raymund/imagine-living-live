@@ -24,7 +24,7 @@
                 <path d="M6 14h12v6H6z" />
             </svg>
         </span>
-        <span class="showcase-card__spec-label">{{ bedrooms }} bedroom{{ unless bedrooms == 1 }}s{{ /unless }}</span>
+        <span class="showcase-card__spec-label">{{ if bedrooms_max and bedrooms_max > bedrooms }}{{ bedrooms }}-{{ bedrooms_max }} bedrooms{{ else }}{{ bedrooms }} bedroom{{ unless bedrooms == 1 }}s{{ /unless }}{{ /if }}</span>
     </li>
     {{ /if }}
     {{ if bathrooms }}
