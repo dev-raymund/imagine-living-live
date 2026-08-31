@@ -37,7 +37,7 @@
                 <path d="M9 21c0-1.5 1.34-3 3-3s3 1.5 3 3" />
             </svg>
         </span>
-        <span class="showcase-card__spec-label">{{ bathrooms }} bathroom{{ unless bathrooms == 1 }}s{{ /unless }}</span>
+        <span class="showcase-card__spec-label">{{ if bathrooms_max and bathrooms_max > bathrooms }}{{ bathrooms }}-{{ bathrooms_max }} bathrooms{{ else }}{{ bathrooms }} bathroom{{ unless bathrooms == 1 }}s{{ /unless }}{{ /if }}</span>
     </li>
     {{ /if }}
     {{ if size_sq_ft }}

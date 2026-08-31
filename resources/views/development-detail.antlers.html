@@ -41,7 +41,7 @@
             <li class="p">{{ if bedrooms_max and bedrooms_max > bedrooms }}{{ bedrooms }}-{{ bedrooms_max }} bedrooms{{ else }}{{ bedrooms }} bedroom{{ unless bedrooms == 1 }}s{{ /unless }}{{ /if }}</li>
             {{ /if }}
             {{ if bathrooms }}
-            <li class="p">{{ bathrooms }} bathroom{{ unless bathrooms == 1 }}s{{ /unless }}</li>
+            <li class="p">{{ if bathrooms_max and bathrooms_max > bathrooms }}{{ bathrooms }}-{{ bathrooms_max }} bathrooms{{ else }}{{ bathrooms }} bathroom{{ unless bathrooms == 1 }}s{{ /unless }}{{ /if }}</li>
             {{ /if }}
             {{ if listing_status }}
             <li class="p development-detail__quick-specs-status">{{ listing_status:label }}</li>
