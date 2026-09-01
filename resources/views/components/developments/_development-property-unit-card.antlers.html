@@ -42,7 +42,9 @@
 
     {{ partial:components/developments/development-unit-specs }}
 
-    <a href="/contact-us" class="development-property-card__btn">
+    {{# Links to this bedroom configuration's own page; falls back to the enquiry
+        form when a unit has no bedroom count, since there is no variant URL. #}}
+    {{ if bedrooms }}<a href="{{ url }}/properties/{{ bedrooms }}-bedroom" class="development-property-card__btn">{{ else }}<a href="/contact-us" class="development-property-card__btn">{{ /if }}
         View details
     </a>
 </article>

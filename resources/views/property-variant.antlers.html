@@ -1,0 +1,107 @@
+{{#
+    One bedroom configuration within a development. Rendered by
+    DevelopmentPropertyController, which cascades the development entry, so
+    everything here except `variant_bedrooms` is the development's own data.
+#}}
+<section class="development-detail section development-detail__container mx-auto px-4 lg:px-6">
+    <nav class="development-detail__breadcrumb p-small" aria-label="Breadcrumb">
+        <a href="/" class="anchor anchor--primary">Home</a>
+        <span aria-hidden="true"> &gt; </span>
+        <a href="/developments" class="anchor anchor--primary">Developments</a>
+        <span aria-hidden="true"> &gt; </span>
+        <a href="{{ url }}" class="anchor anchor--primary">{{ title }}</a>
+        <span aria-hidden="true"> &gt; </span>
+        <span>{{ variant_bedrooms }} bedroom</span>
+    </nav>
+
+    <div class="development-detail__layout">
+        <div class="development-detail__main">
+            {{ property_units }}
+            {{ if bedrooms == variant_bedrooms }}
+            <header class="development-detail__header">
+                {{ if scheme_type }}
+                <p class="development-detail__scheme p-small font-bold uppercase text-brand-secondary">{{ scheme_type }}</p>
+                {{ /if }}
+                <h1 class="heading-2 uppercase text-brand-primary font-bold">
+                    {{ bedrooms }} bedroom{{ unless bedrooms == 1 }}s{{ /unless }}{{ if property_type }} {{ property_type }}{{ /if }}
+                </h1>
+                <p class="development-detail__address p">
+                    {{ if unit_address }}{{ unit_address }}{{ else }}{{ title }}, {{ subtitle }}{{ /if }}
+                </p>
+                {{ if unit_price }}
+                <p class="development-detail__price heading-3 text-brand-secondary font-bold">{{ unit_price }}</p>
+                {{ /if }}
+                {{ if unit_price_note }}
+                <p class="development-detail__pricing-note p">{{ unit_price_note }}</p>
+                {{ /if }}
+                <ul class="development-detail__quick-specs" aria-label="Property summary">
+                    {{ if property_type }}
+                    <li class="p">{{ property_type }}</li>
+                    {{ /if }}
+                    <li class="p">{{ bedrooms }} bedroom{{ unless bedrooms == 1 }}s{{ /unless }}</li>
+                    {{ if bathrooms }}
+                    <li class="p">{{ bathrooms }} bathroom{{ unless bathrooms == 1 }}s{{ /unless }}</li>
+                    {{ /if }}
+                    {{ if size_sq_ft }}
+                    <li class="p">{{ size_sq_ft }} sq ft</li>
+                    {{ /if }}
+                    {{ if floor }}
+                    <li class="p">{{ floor }}</li>
+                    {{ /if }}
+                </ul>
+            </header>
+
+            {{ if unit_image }}
+            <div class="development-detail__gallery">
+                {{ unit_image }}
+                <img src="{{ glide:id width='1200' quality='80' format='webp' }}" alt="{{ alt ?? title }}" loading="lazy" />
+                {{ /unit_image }}
+            </div>
+            {{ /if }}
+
+            {{ if unit_description }}
+            <section class="development-detail__summary" aria-labelledby="variant-description-heading">
+                <h2 id="variant-description-heading" class="heading-4 uppercase text-brand-primary font-bold mb-4">Description</h2>
+                <p class="p">{{ unit_description }}</p>
+            </section>
+            {{ /if }}
+
+            {{ if monthly_rent || service_charge || ground_rent }}
+            <section class="development-detail__summary" aria-labelledby="variant-costs-heading">
+                <h2 id="variant-costs-heading" class="heading-4 uppercase text-brand-primary font-bold mb-4">Monthly costs</h2>
+                <ul class="development-property-card__costs p">
+                    {{ if monthly_rent }}
+                    <li><strong>Monthly rent:</strong> {{ monthly_rent }}</li>
+                    {{ /if }}
+                    {{ if service_charge }}
+                    <li><strong>Service charge:</strong> {{ service_charge }}</li>
+                    {{ /if }}
+                    {{ if ground_rent }}
+                    <li><strong>Ground rent:</strong> {{ ground_rent }}</li>
+                    {{ /if }}
+                </ul>
+            </section>
+            {{ /if }}
+            {{ /if }}
+            {{ /property_units }}
+
+            <section class="development-detail__summary" aria-labelledby="variant-development-heading">
+                <h2 id="variant-development-heading" class="heading-4 uppercase text-brand-primary font-bold mb-4">About {{ title }}</h2>
+                {{ if summary }}
+                <p class="p mb-4">{{ summary }}</p>
+                {{ elseif description }}
+                <p class="p mb-4">{{ description }}</p>
+                {{ /if }}
+                <a href="{{ url }}" class="anchor anchor--primary">View the whole development</a>
+            </section>
+
+            <p class="development-detail__disclaimer p-small">
+                The information displayed about this property comprises a property advertisement. Property details are provided for guidance only. Floor plans, sizes, and specifications may vary. Please contact Imagine Living for the latest availability and viewing arrangements.
+            </p>
+        </div>
+
+        <aside class="development-detail__sidebar">
+            {{ partial:components/developments/development-sidebar-cta }}
+        </aside>
+    </div>
+</section>

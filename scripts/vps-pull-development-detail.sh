@@ -15,7 +15,7 @@ BASE="https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}"
 APP_DIR="${APP_DIR:-/home/ploi/imagineliving.co.uk}"
 cd "$APP_DIR"
 
-mkdir -p app/Scopes app/Console/Commands
+mkdir -p app/Scopes app/Console/Commands app/Http/Controllers
 mkdir -p resources/fieldsets
 mkdir -p resources/views/components/showcasecard
 mkdir -p resources/views/components/developments
@@ -44,6 +44,9 @@ pull() {
 }
 
 pull app/Scopes/DevelopmentsListingFilters.php
+# Bedroom-configuration sub-pages: /developments/{slug}/properties/{n}-bedroom
+pull app/Http/Controllers/DevelopmentPropertyController.php
+pull routes/web.php
 pull app/Console/Commands/ClearDevelopmentDetailFields.php
 pull app/Console/Commands/DisableDevelopmentDetailPages.php
 pull app/Console/Commands/EnableDevelopmentDetailPages.php
@@ -59,6 +62,7 @@ pull resources/views/layout.antlers.html
 pull resources/views/developments.antlers.html
 pull resources/views/components/developments/developmentsFilter.css
 pull resources/views/development-detail.antlers.html
+pull resources/views/property-variant.antlers.html
 pull resources/views/developments-preview.antlers.html
 pull resources/views/components/showcasecard/_showcase-card-detail.antlers.html
 pull resources/views/components/showcasecard/_showcase-card.antlers.html
