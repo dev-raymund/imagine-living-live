@@ -609,14 +609,23 @@
   font-size: 0.75rem;
 }
 
+/* resources/css/defaults/input.css styles every select for the big contact
+   forms - 80px tall, 2rem left padding, oversized text, most of it !important,
+   and the dropdown arrow pinned 34px down. All of that has to be undone here
+   for a compact toolbar control. */
 .development-properties__filter select {
-  @apply p-small;
-  width: 100%;
+  width: 100% !important;
   min-width: 0;
+  min-height: 0 !important;
   height: 2.25rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background: #fff;
-  padding: 0 0.5rem;
+  background-color: #fff !important;
+  background-position-x: calc(100% - 0.6rem);
+  background-position-y: center;
+  background-size: 0.65rem auto;
+  padding: 0 1.9rem 0 0.6rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1;
 }
 
 .development-properties__search {
@@ -683,7 +692,7 @@
 
 @media (min-width: 768px) {
   .development-properties__filters {
-    grid-template-columns: repeat(3, minmax(0, 9.5rem)) auto;
+    grid-template-columns: repeat(3, minmax(0, 11rem)) auto;
     width: auto;
   }
 
