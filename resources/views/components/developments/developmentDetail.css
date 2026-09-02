@@ -606,23 +606,25 @@
 
 .development-properties__filter-label {
   @apply p-small font-bold text-brand-black/70;
+  font-size: 0.75rem;
 }
 
 .development-properties__filter select {
+  @apply p-small;
   width: 100%;
   min-width: 0;
-  height: 2.75rem;
+  height: 2.25rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: #fff;
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
 }
 
 .development-properties__search {
   @apply bg-brand-secondary text-brand-white font-bold uppercase;
-  height: 2.75rem;
+  height: 2.25rem;
   border: 0;
   cursor: pointer;
-  padding: 0 1.75rem;
+  padding: 0 1.25rem;
   transition: opacity 0.15s ease;
 }
 
@@ -681,7 +683,7 @@
 
 @media (min-width: 768px) {
   .development-properties__filters {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    grid-template-columns: repeat(3, minmax(0, 9.5rem)) auto;
     width: auto;
   }
 
