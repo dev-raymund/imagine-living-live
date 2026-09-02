@@ -2,6 +2,10 @@
     data-status="{{ unit_status }}"
     data-type="{{ property_type }}"
     data-bedrooms="{{ bedrooms }}">
+    {{# The ribbon overlays the image where there is one, and stands in as a
+        plain bar where there is not, so a unit without a photo still shows its
+        configuration rather than collapsing to nothing. #}}
+    {{ if unit_image }}
     <div class="development-property-card__media">
         {{ unit_image }}
         <img src="{{ glide:id width="600" height="420" fit="crop" quality="80" format="webp" }}" alt="{{ title }}" class="development-property-card__image" loading="lazy" decoding="async" />
@@ -12,6 +16,11 @@
         </span>
         {{ /if }}
     </div>
+    {{ elseif bedrooms || property_type }}
+    <p class="development-property-card__ribbon development-property-card__ribbon--plain">
+        {{ if bedrooms }}{{ bedrooms }} bedroom{{ /if }}{{ if property_type }} {{ property_type | lower }}{{ /if }}{{ if scheme_type }} &middot; {{ scheme_type }}{{ /if }}
+    </p>
+    {{ /if }}
 
     <div class="development-property-card__body">
         {{ if unit_status }}

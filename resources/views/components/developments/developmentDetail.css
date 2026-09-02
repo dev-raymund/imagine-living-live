@@ -440,7 +440,8 @@
 }
 
 .development-property-card__status {
-  @apply absolute left-4 bottom-4 uppercase text-xs font-bold px-3 py-1;
+  @apply uppercase text-xs font-bold px-3 py-1;
+  align-self: flex-start;
   letter-spacing: 0.04em;
 }
 
@@ -560,7 +561,9 @@
 
 /* ---------------------------------------------------------------------------
    Properties in this development
-   Sits outside the two-column layout so it can run the full container width.
+   Lives outside the two-column layout so it can run the full container width.
+   Card internals (image, status, specs bar, button) keep their original rules
+   above - only the pieces the new layout introduces are defined here.
    --------------------------------------------------------------------------- */
 
 .development-detail__properties {
@@ -589,6 +592,7 @@
 .development-properties__filters {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  align-items: end;
   gap: 0.75rem;
   width: 100%;
 }
@@ -597,7 +601,7 @@
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
 .development-properties__filter-label {
@@ -607,18 +611,18 @@
 .development-properties__filter select {
   width: 100%;
   min-width: 0;
-  border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  background: transparent;
-  padding: 0.4rem 0;
+  height: 2.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #fff;
+  padding: 0 0.75rem;
 }
 
 .development-properties__search {
   @apply bg-brand-secondary text-brand-white font-bold uppercase;
-  align-self: end;
+  height: 2.75rem;
   border: 0;
   cursor: pointer;
-  padding: 0.7rem 1.5rem;
+  padding: 0 1.75rem;
   transition: opacity 0.15s ease;
 }
 
@@ -634,52 +638,28 @@
   display: grid;
   gap: 1.5rem;
   grid-template-columns: minmax(0, 1fr);
+  align-items: start;
 }
 
-/* Card ---------------------------------------------------------------------*/
-
-.development-property-card__media {
-  position: relative;
-  overflow: hidden;
-}
-
-.development-property-card__image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+/* Ribbon over the image, or a plain bar when a unit has no image yet. */
 .development-property-card__ribbon {
   @apply p-small text-brand-white font-bold;
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 90%;
-  background: #1f2a44;
+  max-width: 92%;
+  background: #2d2a4a;
   padding: 0.55rem 1rem;
 }
 
-.development-property-card__status {
-  @apply p-small uppercase font-bold text-brand-white;
-  align-self: flex-start;
-  background: #c8102e;
-  padding: 0.2rem 0.6rem;
-}
-
-.development-property-card__status--sold {
-  background: rgba(0, 0, 0, 0.55);
-}
-
-.development-property-card__status--to-rent {
-  @apply bg-brand-primary;
-}
-
-.development-property-card__body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.25rem;
+.development-property-card__ribbon--plain {
+  @apply p-small text-brand-white font-bold;
+  position: static;
+  display: block;
+  max-width: none;
+  background: #2d2a4a;
+  margin: 0;
+  padding: 0.55rem 1.25rem;
 }
 
 .development-property-card__price {
@@ -689,30 +669,14 @@
 
 .development-property-card__price-note {
   @apply p-small text-brand-black/70;
-  margin: 0;
+  margin: 0.35rem 0 0;
 }
 
 .development-property-card__address {
   @apply p font-bold text-brand-secondary;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  margin: 0;
+  margin: 0.9rem 0 0;
   padding-top: 0.9rem;
-}
-
-.development-property-card__btn {
-  @apply p font-bold text-brand-black;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 1.25rem 1.25rem;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  padding: 0.7rem 1rem;
-  text-decoration: none;
-  transition: background 0.15s ease;
-}
-
-.development-property-card__btn:hover {
-  background: rgba(0, 0, 0, 0.04);
 }
 
 @media (min-width: 768px) {
