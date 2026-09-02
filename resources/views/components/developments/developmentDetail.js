@@ -262,3 +262,84 @@ window.initDevelopmentMap = initDevelopmentMap;
 if (window.L) {
     initDevelopmentMap();
 }
+
+// Properties in this development: the filter dropdowns are populated from the
+// cards on the page rather than hardcoded, so they only ever offer values that
+// actually match something. Filtering is client-side - a development has a
+// handful of units and they are all in the DOM already.
+const propertyList = document.querySelector("[data-property-list]");
+
+if (propertyList) {
+    const cards = Array.from(
+        propertyList.querySelectorAll(".development-property-card")
+    );
+    const selects = Array.from(document.querySelectorAll("[data-property-filter]"));
+    const countEl = document.querySelector("[data-property-count]");
+    const emptyEl = document.querySelector("[data-property-empty]");
+
+    const statusLabels = {
+        "for-sale": "For sale",
+        sold: "Sold",
+        "to-rent": "To rent",
+    };
+
+    selects.forEach((select) => {
+        const key = select.dataset.propertyFilter;
+
+        const values = Array.from(
+            new Set(cards.map((card) => (card.dataset[key] || "").trim()))
+        )
+            .filter(Boolean)
+            .sort((a, b) =>
+                key === "bedrooms" ? Number(a) - Number(b) : a.localeCompare(b)
+            );
+
+        values.forEach((value) => {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent =
+                key === "status"
+                    ? statusLabels[value] || value
+                    : key === "bedrooms"
+                    ? `${value} bedroom${Number(value) === 1 ? "" : "s"}`
+                    : value;
+            select.appendChild(option);
+        });
+    });
+
+    const applyPropertyFilters = () => {
+        let visible = 0;
+
+        cards.forEach((card) => {
+            const matches = selects.every((select) => {
+                if (!select.value) {
+                    return true;
+                }
+
+                return (card.dataset[select.dataset.propertyFilter] || "") === select.value;
+            });
+
+            card.hidden = !matches;
+
+            if (matches) {
+                visible++;
+            }
+        });
+
+        if (countEl) {
+            countEl.textContent = visible;
+        }
+
+        if (emptyEl) {
+            emptyEl.hidden = visible !== 0;
+        }
+    };
+
+    selects.forEach((select) =>
+        select.addEventListener("change", applyPropertyFilters)
+    );
+
+    document
+        .querySelector("[data-property-search]")
+        ?.addEventListener("click", applyPropertyFilters);
+}

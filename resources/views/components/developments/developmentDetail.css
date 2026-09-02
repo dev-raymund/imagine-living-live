@@ -557,3 +557,177 @@
     max-height: 20rem;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Properties in this development
+   Sits outside the two-column layout so it can run the full container width.
+   --------------------------------------------------------------------------- */
+
+.development-detail__properties {
+  margin-top: 3.5rem;
+}
+
+.development-properties__panel {
+  background: #f4f4f5;
+  padding: 1.75rem;
+}
+
+.development-properties__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.development-properties__count {
+  @apply heading-6 text-brand-primary font-bold;
+  margin: 0;
+}
+
+.development-properties__filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.development-properties__filter {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.development-properties__filter-label {
+  @apply p-small font-bold text-brand-black/70;
+}
+
+.development-properties__filter select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  background: transparent;
+  padding: 0.4rem 0;
+}
+
+.development-properties__search {
+  @apply bg-brand-secondary text-brand-white font-bold uppercase;
+  align-self: end;
+  border: 0;
+  cursor: pointer;
+  padding: 0.7rem 1.5rem;
+  transition: opacity 0.15s ease;
+}
+
+.development-properties__search:hover {
+  opacity: 0.9;
+}
+
+.development-properties__empty {
+  margin-top: 1.5rem;
+}
+
+.development-detail__property-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Card ---------------------------------------------------------------------*/
+
+.development-property-card__media {
+  position: relative;
+  overflow: hidden;
+}
+
+.development-property-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.development-property-card__ribbon {
+  @apply p-small text-brand-white font-bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 90%;
+  background: #1f2a44;
+  padding: 0.55rem 1rem;
+}
+
+.development-property-card__status {
+  @apply p-small uppercase font-bold text-brand-white;
+  align-self: flex-start;
+  background: #c8102e;
+  padding: 0.2rem 0.6rem;
+}
+
+.development-property-card__status--sold {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.development-property-card__status--to-rent {
+  @apply bg-brand-primary;
+}
+
+.development-property-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.25rem;
+}
+
+.development-property-card__price {
+  @apply heading-4 text-brand-black font-bold;
+  margin: 0;
+}
+
+.development-property-card__price-note {
+  @apply p-small text-brand-black/70;
+  margin: 0;
+}
+
+.development-property-card__address {
+  @apply p font-bold text-brand-secondary;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 0;
+  padding-top: 0.9rem;
+}
+
+.development-property-card__btn {
+  @apply p font-bold text-brand-black;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.25rem 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.development-property-card__btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 768px) {
+  .development-properties__filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    width: auto;
+  }
+
+  .development-detail__property-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .development-detail__property-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

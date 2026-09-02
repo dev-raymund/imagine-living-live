@@ -210,39 +210,58 @@
                 {{ /if }}
             </section>
 
-            <section id="properties" class="development-detail__properties" aria-labelledby="development-properties-heading">
-                <h2 id="development-properties-heading" class="heading-4 uppercase text-brand-primary font-bold mb-6">
-                    Properties in this development
-                </h2>
 
-                {{ if property_units }}
-                <div class="development-detail__filters" aria-label="Property filters">
-                    <span class="development-detail__filter-label">Home</span>
-                    <span class="development-detail__filter-label">For Sale</span>
-                    <span class="development-detail__filter-label">To Rent</span>
-                    <span class="development-detail__filter-label">Bedrooms</span>
-                    <span class="development-detail__filter-label">Property Type</span>
-                </div>
-
-                <div class="development-detail__property-list">
-                    {{ property_units }}
-                        {{ partial:components/developments/development-property-unit-card }}
-                    {{ /property_units }}
-                </div>
-                {{ else }}
-                <p class="p">Property listings for this development will be available soon. <a href="/contact-us" class="anchor anchor--primary">Contact us</a> for the latest availability.</p>
-                {{ /if }}
-            </section>
-
-            <p class="development-detail__disclaimer p-small">
-                The information displayed about this development comprises a property advertisement. Property details are provided for guidance only. Floor plans, sizes, and specifications may vary. Please contact Imagine Living for the latest availability and viewing arrangements.
-            </p>
         </div>
 
         <aside class="development-detail__sidebar">
             {{ partial:components/developments/development-sidebar-cta }}
         </aside>
     </div>
+
+    <section id="properties" class="development-detail__properties" aria-labelledby="development-properties-heading">
+        <h2 id="development-properties-heading" class="heading-3 uppercase text-brand-primary font-bold text-center mb-8">
+            Properties in this development
+        </h2>
+
+        {{ if property_units }}
+        <div class="development-properties__panel">
+            <div class="development-properties__toolbar">
+                <p class="development-properties__count">
+                    Found <span data-property-count>{{ property_units | count }}</span> propert{{ if property_units | count == 1 }}y{{ else }}ies{{ /if }}
+                </p>
+
+                <div class="development-properties__filters">
+                    <label class="development-properties__filter">
+                        <span class="development-properties__filter-label">Purchase / Rental type</span>
+                        <select data-property-filter="status"><option value="">Any type</option></select>
+                    </label>
+                    <label class="development-properties__filter">
+                        <span class="development-properties__filter-label">Property type</span>
+                        <select data-property-filter="type"><option value="">Any type</option></select>
+                    </label>
+                    <label class="development-properties__filter">
+                        <span class="development-properties__filter-label">No. of Bedrooms</span>
+                        <select data-property-filter="bedrooms"><option value="">Any number</option></select>
+                    </label>
+                    <button type="button" class="development-properties__search" data-property-search>Search</button>
+                </div>
+            </div>
+
+            <div class="development-detail__property-list" data-property-list>
+                {{ property_units }}
+                    {{ partial:components/developments/development-property-unit-card }}
+                {{ /property_units }}
+            </div>
+
+            <p class="development-properties__empty p" data-property-empty hidden>No properties match those filters.</p>
+        </div>
+        {{ else }}
+        <p class="p">Property listings for this development will be available soon. <a href="/contact-us" class="anchor anchor--primary">Contact us</a> for the latest availability.</p>
+        {{ /if }}
+    </section>
+        <p class="development-detail__disclaimer p-small">
+            The information displayed about this development comprises a property advertisement. Property details are provided for guidance only. Floor plans, sizes, and specifications may vary. Please contact Imagine Living for the latest availability and viewing arrangements.
+        </p>
 
     {{ partial:components/developments/development-panel-templates }}
 
