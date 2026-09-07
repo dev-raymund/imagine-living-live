@@ -1,0 +1,27 @@
+{{ partial:components/banner/banner image=image:url }}
+<section class="developments section max-w-screen-max mx-auto">
+    <h3 class="heading-3 uppercase mt-8 mb-4 text-center md:text-left lg:px-6 xl:px-14">
+        {{ heading }}
+    </h3>
+    <p class="p text-center md:text-left lg:px-6 xl:px-14 mb-4 text-brand-black/70">
+        Dummy developments for checking the listing card, the detail template and the property filters against realistic-looking content. Every name, price, address, station and school below is invented — nothing here is a real property. Entries are picked up by slug, so anything named <code>staging-*</code> in the developments collection appears on this page and nowhere else.
+    </p>
+    <p class="p text-center md:text-left lg:px-6 xl:px-14 mb-12 text-brand-black/70">
+        Real drafts live on the <a href="/developments-preview" class="anchor anchor--primary">developments preview page</a>; published developments on the <a href="/developments" class="anchor anchor--primary">developments page</a>.
+    </p>
+
+    <div class="showcase-card__container mt-8 lg:px-6 xl:px-14">
+        {{ collection:developments slug:starts_with="staging-" sort="title" as="development_entries" }}
+            {{ if no_results }}
+                <p class="p w-full text-center md:text-left mb-8">
+                    No staging developments found. Add an entry to the developments collection with a slug starting <code>staging-</code>.
+                </p>
+            {{ /if }}
+            <div class="testimonials__content developments-results flex flex-col gap-12 md:flex-row md:flex-wrap md:gap-x-[5%] md:gap-y-16">
+                {{ development_entries }}
+                    {{ partial:components/showcasecard/showcase-card-detail }}
+                {{ /development_entries }}
+            </div>
+        {{ /collection:developments }}
+    </div>
+</section>

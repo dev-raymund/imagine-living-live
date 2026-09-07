@@ -64,7 +64,8 @@
     </form>
 
     <div class="showcase-card__container mt-8 lg:px-6 xl:px-14">
-        {{ collection:developments query_scope="developments_listing_filters" paginate="8" as="development_entries" }}
+        {{-- staging-* entries are dummy data for /staging and are kept off this listing. --}}
+        {{ collection:developments query_scope="developments_listing_filters" slug:doesnt_start_with="staging-" paginate="8" as="development_entries" }}
             {{ if no_results }}
                 <p class="p w-full text-center md:text-left mb-8">No developments match your filters.</p>
             {{ /if }}
