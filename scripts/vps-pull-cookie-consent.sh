@@ -6,7 +6,8 @@
 # Never run as root. See DEPLOY-COOKIE-CONSENT.md.
 #
 # Everything it replaces is backed up first to ~/backups/cookie-consent-<time>/,
-# together with a restore.sh that puts it all back.
+# together with a restore.sh that puts it all back. Afterwards it loads the main
+# pages; if any of them fails it prints the error and runs restore.sh itself.
 
 set -euo pipefail
 
@@ -16,6 +17,7 @@ BRANCH="${3:-main}"
 BASE="${BASE:-https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${BRANCH}}"
 
 APP_DIR="${APP_DIR:-/home/ploi/imagineliving.co.uk}"
+SITE_URL="${SITE_URL:-https://imagineliving.co.uk}"
 cd "$APP_DIR"
 
 if [ "$(id -u)" -eq 0 ]; then
@@ -24,6 +26,7 @@ if [ "$(id -u)" -eq 0 ]; then
 fi
 
 CODE_FILES=(
+    app/Tags/Uncached.php
     config/oreos.php
     resources/lang/vendor/statamic-oreos/en/messages.php
     resources/views/layout.antlers.html
@@ -94,12 +97,34 @@ done
     for f in "${NEW_FILES[@]}"; do
         echo "rm -f \"$f\""
     done
+    echo "composer dump-autoload -o --no-interaction"
     echo "php please stache:clear"
     echo "php artisan view:clear"
     echo "php artisan cache:clear"
     echo "php please static:clear"
     echo "echo \"✓ Restored the files from $BACKUP\""
 } > "$BACKUP/restore.sh"
+
+status() {
+    curl -s -o /dev/null -w '%{http_code}' --max-time 60 "${SITE_URL}$1" || true
+}
+
+# From here on, anything that goes wrong puts the previous version back.
+roll_back() {
+    echo "   ✗ $1"
+    local log
+    log="$(ls -t storage/logs/laravel*.log 2>/dev/null | head -n 1 || true)"
+    if [ -n "$log" ]; then
+        echo "   Last error logged:"
+        grep -h -E '^\[[^]]+\] [a-z]+\.ERROR' "$log" | tail -n 1 | cut -c1-900 || true
+    fi
+    echo "→ Putting the previous version back"
+    bash "$BACKUP/restore.sh"
+    echo "   / now returns $(status /)"
+    echo
+    echo "✗ Deploy rolled back. Nothing from this update is live. Send the error line above."
+    exit 1
+}
 
 echo "→ Installing code"
 for f in "${CODE_FILES[@]}"; do
@@ -128,14 +153,38 @@ else
     echo "   SKIPPED (reason above); the rest of the deploy carried on"
 fi
 
-echo "→ Caches (cache:clear also empties the static page cache)"
-php please stache:clear
-php artisan view:clear
-php artisan cache:clear
-php please static:clear
+echo "→ Autoloader (new tag class) and caches (cache:clear also empties the static page cache)"
+{
+    composer dump-autoload -o --no-interaction &&
+    php please stache:clear &&
+    php artisan view:clear &&
+    php artisan cache:clear &&
+    php please static:clear
+} || roll_back "clearing caches failed"
+
+# Each page twice: the first request renders and caches it, the second is
+# served from the static cache. Either can fail on its own.
+echo "→ Checking the site"
+for p in / /about-us /contact-us /privacy-policy /developments /faq; do
+    for pass in render cached; do
+        code="$(status "$p")"
+        if [ "$code" = "000" ]; then
+            UNCHECKED=1
+            echo "   ? $p could not be reached from the server; check it in a browser"
+            break 2
+        fi
+        if [ "$code" != "200" ]; then
+            roll_back "$p returned $code ($pass)"
+        fi
+    done
+    echo "   ✓ $p"
+done
 
 echo
 echo "✓ Done."
+if [ -n "${UNCHECKED:-}" ]; then
+    echo "  ! The site couldn't be checked from the server - open it in a browser now."
+fi
 if [ -n "${BANNER_SKIPPED:-}" ]; then
     echo "  ! Banner text was not replaced - see above."
 fi

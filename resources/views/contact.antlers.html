@@ -58,9 +58,10 @@
 <div class="contact-map">
   {{# The embed sends the visitor's IP address (and any Google cookies they
       already have) to Google, so it only loads once they've opted in to the
-      "maps" cookie group. nocache stops static caching from serving one
-      visitor's choice to everyone. #}}
-  {{ nocache }}
+      "maps" cookie group. uncached stops static caching from serving one
+      visitor's choice to everyone (see app/Tags/Uncached.php); everything
+      inside it is a global, as it only sees the global cascade. #}}
+  {{ uncached }}
   {{ if {oreo:maps} }}
   <iframe
     src="{{ company_information:google_maps_link }}"
@@ -97,6 +98,6 @@
     >
   </div>
   {{ /if }}
-  {{ /nocache }}
+  {{ /uncached }}
 </div>
 {{ partial:components/break/break }} {{ /if }}

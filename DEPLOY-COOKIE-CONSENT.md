@@ -4,12 +4,15 @@ Ships the cookie banner fix, the Google Maps consent gate and the updated cookie
 
 Use the **VPS pull** (Option B in `PROJECT-HANDOFF.md`). The **Deploy to VPS** GitHub Action has failed on every push since 2 September: the server doesn't accept the deploy key, so a push alone changes nothing on live. Its red run after Step 1 is expected and harmless (it fails before copying anything).
 
+> **First attempt, 06.10.2026:** every page returned 500 and the site was restored with `restore.sh`. The layout wrapped the banner in `{{ nocache }}`, which in Statamic 3.4 compares every page variable with the cascade, and some live data made that throw (`Object of class Statamic\Fields\Value could not be converted to int`, `NoCache/Region.php:55`). It now uses `{{ uncached }}` (`app/Tags/Uncached.php`), which stores no page variables. The script also checks the site afterwards and rolls itself back if any page fails.
+
 ## What gets deployed
 
 | File | Purpose |
 |------|---------|
+| `app/Tags/Uncached.php` | `{{ uncached }}`: like `{{ nocache }}` but without the page variables that crashed it (new) |
 | `config/oreos.php` | Adds the optional **Google Maps** consent group (off by default) |
-| `resources/views/layout.antlers.html` | Banner check moved inside `{{ nocache }}`, so static caching can't freeze it |
+| `resources/views/layout.antlers.html` | Banner check moved inside `{{ uncached }}`, so static caching can't freeze it |
 | `resources/views/vendor/statamic-oreos/popup.antlers.html` | Banner wording, policy link |
 | `resources/views/vendor/statamic-oreos/form.antlers.html` | Accept all / Reject all / Save choices (Cancel removed) |
 | `resources/views/vendor/statamic-oreos/oreos.css` | Banner button styles (new) |
@@ -38,7 +41,7 @@ Commit **only** these files. The other uncommitted changes in the working tree (
 
 ```powershell
 cd C:\projects\imagine-living-live\imagineliving.co.uk
-git add config/oreos.php content/oreos.yaml content/collections/pages/privacy-policy.md `
+git add app/Tags/Uncached.php config/oreos.php content/oreos.yaml content/collections/pages/privacy-policy.md `
   resources/views/layout.antlers.html resources/views/contact.antlers.html `
   resources/views/components/footer/_footer.antlers.html resources/views/vendor/statamic-oreos `
   resources/lang/vendor/statamic-oreos resources/css/views/contact.css `
@@ -48,21 +51,21 @@ git add config/oreos.php content/oreos.yaml content/collections/pages/privacy-po
 git status    # check nothing else is staged
 git commit -m "Make the cookie banner work with static caching and gate Google Maps behind consent"
 git push origin main
-git rev-parse HEAD    # copy this commit hash for Step 2
 ```
 
 The repo copy of `privacy-policy.md` is a record only; live is updated by Step 2.
 
 ## Step 2 — Run on the VPS (Fasthosts web console or SSH, as `ploi`)
 
-Use the commit hash from Step 1 rather than `main`. raw.githubusercontent.com can serve files up to 5 minutes stale after a push, and pinning the hash guarantees every file comes from the same commit.
+Wait about 5 minutes after the push (raw.githubusercontent.com can serve stale copies right after one), then run each line on its own:
 
 ```bash
 cd /home/ploi/imagineliving.co.uk
-SHA=paste-the-commit-hash-here
-curl -fsSL "https://raw.githubusercontent.com/dev-raymund/imagine-living-live/$SHA/scripts/vps-pull-cookie-consent.sh" -o /tmp/vps-pull-cookie-consent.sh
-bash /tmp/vps-pull-cookie-consent.sh dev-raymund imagine-living-live "$SHA"
+curl -fsSL "https://raw.githubusercontent.com/dev-raymund/imagine-living-live/main/scripts/vps-pull-cookie-consent.sh" -o /tmp/vps-pull-cookie-consent.sh
+bash /tmp/vps-pull-cookie-consent.sh dev-raymund imagine-living-live
 ```
+
+To deploy one exact commit instead of `main`, add its hash as a third argument to the `bash` line and use it in place of `main` in the URL.
 
 The script:
 
@@ -70,22 +73,28 @@ The script:
 2. Backs up everything it will replace to `~/backups/cookie-consent-<time>/` and writes a `restore.sh` there.
 3. Installs the code files.
 4. Updates the banner text (if unchanged on live) and the policy's cookie section, setting "Last updated" to today.
-5. Clears the Stache, compiled views, application cache and static page cache.
+5. Regenerates the autoloader and clears the Stache, compiled views, application cache and static page cache.
+6. Loads `/`, `/about-us`, `/contact-us`, `/privacy-policy`, `/developments` and `/faq` twice each (fresh, then from the static cache). If any of them doesn't return 200, or step 5 fails, it prints the last logged error, runs `restore.sh` itself, and ends with `✗ Deploy rolled back`.
 
-It ends like this:
+The `PHP Deprecated: … Logger::__construct()` lines it prints are harmless warnings, because the server's PHP is newer than this Laravel version.
+
+A good run ends like this:
 
 ```
-→ Banner text (content/oreos.yaml)
-   updated
-→ Privacy policy cookie section (content/collections/pages/privacy-policy.md)
-Updated the cookie section of content/collections/pages/privacy-policy.md
-   updated (Last updated: 06.10.2026)
-...
+→ Checking the site
+   ✓ /
+   ✓ /about-us
+   ✓ /contact-us
+   ✓ /privacy-policy
+   ✓ /developments
+   ✓ /faq
+
 ✓ Done.
+  Check: / (banner), /contact-us (map placeholder), /privacy-policy (cookie section)
   Undo everything: bash /home/ploi/backups/cookie-consent-…/restore.sh
 ```
 
-Note the **Undo** line.
+Note the **Undo** line. If it ends with `✗ Deploy rolled back` instead, the site is already back as it was; send the error line it printed.
 
 ## Step 3 — Check on live
 
@@ -120,7 +129,7 @@ Visitors who chose before this deploy see the banner once more. Adding the Googl
 bash ~/backups/cookie-consent-<time>/restore.sh
 ```
 
-This puts back every replaced file, removes the three new files and clears the caches. It also restores the policy and banner text exactly as they were before the deploy. Any control panel edits to those two pages made after deploying would be lost, so copy them first if there are any.
+This puts back every replaced file, removes the four new files, regenerates the autoloader and clears the caches. It also restores the policy and banner text exactly as they were before the deploy. Any control panel edits to those two pages made after deploying would be lost, so copy them first if there are any.
 
 ## Notes
 
