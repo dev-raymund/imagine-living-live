@@ -29,7 +29,7 @@ block_builder:
                 marks:
                   -
                     type: btsSpan
-                text: 'Last updated: 01.10.2024'
+                text: 'Last updated: 05.10.2026'
               -
                 type: hardBreak
                 marks:
@@ -302,18 +302,7 @@ block_builder:
                 marks:
                   -
                     type: btsSpan
-                text: "Our website uses cookies to distinguish you from other users of our website. It enables us to collect useful information about our website visitors to further improve the online experience we offer. A cookie is a small file of letters and numbers that we store on your browser or the hard drive of your computer if you agree. Cookies contain information that is transferred to your computer's hard drive. By using our website, you are agreeing to our use of cookies."
-          -
-            type: paragraph
-            attrs:
-              class: null
-            content:
-              -
-                type: text
-                marks:
-                  -
-                    type: btsSpan
-                text: 'We use the following cookies:'
+                text: 'A cookie is a small file of letters and numbers that a website stores in your browser or on your device. We only use cookies that our website needs to work, such as keeping our contact form secure and remembering your cookie choices. We don’t use analytics, advertising or tracking cookies.'
               -
                 type: hardBreak
                 marks:
@@ -336,71 +325,13 @@ block_builder:
                     type: bold
                   -
                     type: btsSpan
-                text: 'Analytical/performance cookies.'
+                text: 'Strictly necessary cookies.'
               -
                 type: text
                 marks:
                   -
                     type: btsSpan
-                text: "\_They allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily."
-              -
-                type: hardBreak
-                marks:
-                  -
-                    type: btsSpan
-              -
-                type: hardBreak
-                marks:
-                  -
-                    type: btsSpan
-          -
-            type: paragraph
-            attrs:
-              class: null
-            content:
-              -
-                type: text
-                marks:
-                  -
-                    type: bold
-                  -
-                    type: btsSpan
-                text: 'Functionality cookies.'
-              -
-                type: text
-                marks:
-                  -
-                    type: btsSpan
-                text: "\_These are used to recognise you when you return to our website."
-              -
-                type: hardBreak
-                marks:
-                  -
-                    type: btsSpan
-              -
-                type: hardBreak
-                marks:
-                  -
-                    type: btsSpan
-          -
-            type: paragraph
-            attrs:
-              class: null
-            content:
-              -
-                type: text
-                marks:
-                  -
-                    type: bold
-                  -
-                    type: btsSpan
-                text: 'Targeting cookies.'
-              -
-                type: text
-                marks:
-                  -
-                    type: btsSpan
-                text: "\_These cookies record your visit to our website, the pages you have visited and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose."
+                text: ' These are needed for our website to work, so they’re always on and don’t need your consent. They’re all set by us:'
               -
                 type: hardBreak
                 marks:
@@ -423,7 +354,7 @@ block_builder:
                       colspan: 1
                       rowspan: 1
                       colwidth:
-                        - 156
+                        - 200
                     content:
                       -
                         type: paragraph
@@ -444,7 +375,7 @@ block_builder:
                       colspan: 1
                       rowspan: 1
                       colwidth:
-                        - 234
+                        - 140
                     content:
                       -
                         type: paragraph
@@ -458,7 +389,7 @@ block_builder:
                                 type: bold
                               -
                                 type: btsSpan
-                            text: 'Data Processor'
+                            text: Provider
                   -
                     type: tableHeader
                     attrs:
@@ -478,13 +409,14 @@ block_builder:
                                 type: bold
                               -
                                 type: btsSpan
-                            text: Life
+                            text: Purpose
                   -
                     type: tableHeader
                     attrs:
                       colspan: 1
                       rowspan: 1
-                      colwidth: null
+                      colwidth:
+                        - 110
                     content:
                       -
                         type: paragraph
@@ -498,7 +430,7 @@ block_builder:
                                 type: bold
                               -
                                 type: btsSpan
-                            text: Info
+                            text: Duration
               -
                 type: tableRow
                 content:
@@ -508,7 +440,7 @@ block_builder:
                       colspan: 1
                       rowspan: 1
                       colwidth:
-                        - 156
+                        - 200
                     content:
                       -
                         type: paragraph
@@ -520,14 +452,14 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: _ga
+                            text: imagine_living_session
                   -
                     type: tableCell
                     attrs:
                       colspan: 1
                       rowspan: 1
                       colwidth:
-                        - 234
+                        - 140
                     content:
                       -
                         type: paragraph
@@ -539,7 +471,7 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: 'Google Analytics'
+                            text: 'Imagine Living'
                   -
                     type: tableCell
                     attrs:
@@ -557,13 +489,14 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: '2 years'
+                            text: 'Strictly necessary. Keeps your visit secure and lets our contact form work.'
                   -
                     type: tableCell
                     attrs:
                       colspan: 1
                       rowspan: 1
-                      colwidth: null
+                      colwidth:
+                        - 110
                     content:
                       -
                         type: paragraph
@@ -575,7 +508,7 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: 'Used to distinguish users'
+                            text: '2 hours'
               -
                 type: tableRow
                 content:
@@ -585,7 +518,7 @@ block_builder:
                       colspan: 1
                       rowspan: 1
                       colwidth:
-                        - 156
+                        - 200
                     content:
                       -
                         type: paragraph
@@ -597,14 +530,14 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: _gat
+                            text: XSRF-TOKEN
                   -
                     type: tableCell
                     attrs:
                       colspan: 1
                       rowspan: 1
                       colwidth:
-                        - 234
+                        - 140
                     content:
                       -
                         type: paragraph
@@ -616,7 +549,7 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: 'Google Analytics'
+                            text: 'Imagine Living'
                   -
                     type: tableCell
                     attrs:
@@ -634,13 +567,14 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: '10 minutes'
+                            text: 'Strictly necessary. A security cookie that stops other websites from submitting our forms on your behalf.'
                   -
                     type: tableCell
                     attrs:
                       colspan: 1
                       rowspan: 1
-                      colwidth: null
+                      colwidth:
+                        - 110
                     content:
                       -
                         type: paragraph
@@ -652,7 +586,7 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: 'Used to throttle request rate'
+                            text: '2 hours'
               -
                 type: tableRow
                 content:
@@ -662,7 +596,7 @@ block_builder:
                       colspan: 1
                       rowspan: 1
                       colwidth:
-                        - 156
+                        - 200
                     content:
                       -
                         type: paragraph
@@ -674,14 +608,14 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: _utma
+                            text: TP_OREOS
                   -
                     type: tableCell
                     attrs:
                       colspan: 1
                       rowspan: 1
                       colwidth:
-                        - 234
+                        - 140
                     content:
                       -
                         type: paragraph
@@ -693,7 +627,7 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: 'Google Analytics'
+                            text: 'Imagine Living'
                   -
                     type: tableCell
                     attrs:
@@ -711,13 +645,14 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: '2 years from set/update'
+                            text: 'Strictly necessary. Records your cookie preferences.'
                   -
                     type: tableCell
                     attrs:
                       colspan: 1
                       rowspan: 1
-                      colwidth: null
+                      colwidth:
+                        - 110
                     content:
                       -
                         type: paragraph
@@ -729,7 +664,7 @@ block_builder:
                             marks:
                               -
                                 type: btsSpan
-                            text: 'Used to distinguish users and sessions. The cookie is created when the javascript library executes and no existing __utma cookies exist. The cookie is updated every time data is sent to Google Analytics'
+                            text: '30 days'
           -
             type: paragraph
             attrs:
@@ -749,8 +684,47 @@ block_builder:
                 type: text
                 marks:
                   -
+                    type: bold
+                  -
                     type: btsSpan
-                text: 'You can block cookies by activating the setting on your browser that allows you to refuse the setting of all or some cookies. However, if you use your browser settings to block all cookies (including essential cookies) you may not be able to access all or parts of our site.'
+                text: 'Google Maps (optional).'
+              -
+                type: text
+                marks:
+                  -
+                    type: btsSpan
+                text: ' Our Contact Us page can show a map provided by Google Maps. We only load it if you agree, either through our cookie banner or by choosing “Load map” on that page. When the map loads, Google receives information such as your IP address and may set its own cookies, particularly if you’re signed in to a Google account. See '
+              -
+                type: text
+                marks:
+                  -
+                    type: link
+                    attrs:
+                      href: 'https://policies.google.com/privacy'
+                      rel: 'noreferrer noopener'
+                      target: _blank
+                      title: null
+                  -
+                    type: underline
+                  -
+                    type: btsSpan
+                text: 'Google’s Privacy Policy'
+              -
+                type: text
+                marks:
+                  -
+                    type: btsSpan
+                text: ' for how Google uses this information.'
+              -
+                type: hardBreak
+                marks:
+                  -
+                    type: btsSpan
+              -
+                type: hardBreak
+                marks:
+                  -
+                    type: btsSpan
           -
             type: paragraph
             attrs:
@@ -761,7 +735,28 @@ block_builder:
                 marks:
                   -
                     type: btsSpan
-                text: 'During your visits to our website we may automatically collect the following information: the public Internet protocol (IP) address used to connect your computer to the Internet, which browser type and version you’ve used, your time zone setting, your operating system, properties you viewed or searched for, page response times, download errors, how you found our site (such as via Facebook or searching on Google) and length of visits to certain pages.'
+                text: 'You can change your cookie choices at any time using the Cookie settings link at the bottom of every page. You can also block or delete cookies in your browser settings, but if you block all cookies, parts of our website, such as the contact form, may not work.'
+              -
+                type: hardBreak
+                marks:
+                  -
+                    type: btsSpan
+              -
+                type: hardBreak
+                marks:
+                  -
+                    type: btsSpan
+          -
+            type: paragraph
+            attrs:
+              class: null
+            content:
+              -
+                type: text
+                marks:
+                  -
+                    type: btsSpan
+                text: 'When you visit our website, our web server may automatically record technical information such as your IP address, browser type and version, the pages you request and the website that referred you to us. We use this only to keep our website secure and working properly.'
           -
             type: paragraph
             attrs:
@@ -795,7 +790,7 @@ block_builder:
                     type: bold
                   -
                     type: btsSpan
-                text: Cookies
+                text: 'How your information is used'
           -
             type: paragraph
             attrs:
@@ -887,27 +882,6 @@ block_builder:
                         marks:
                           -
                             type: btsSpan
-          -
-            type: paragraph
-            attrs:
-              class: null
-            content:
-              -
-                type: text
-                marks:
-                  -
-                    type: btsSpan
-                text: 'The analytical information we gather about the visitors to our website helps us to improve our site to ensure it’s presented in the most effective manner. It’ll also allow you to participate in any interactive features of our service, should you choose to do so.'
-              -
-                type: hardBreak
-                marks:
-                  -
-                    type: btsSpan
-              -
-                type: hardBreak
-                marks:
-                  -
-                    type: btsSpan
           -
             type: paragraph
             attrs:
@@ -1097,17 +1071,6 @@ block_builder:
                   -
                     type: btsSpan
                 text: 'If you’ve given us consent to services offered by a third party, only relevant information would be shared.'
-          -
-            type: paragraph
-            attrs:
-              class: null
-            content:
-              -
-                type: text
-                marks:
-                  -
-                    type: btsSpan
-                text: 'We also share information about your use of our site with our trusted social media, advertising and analytics partners. This helps to select and serve relevant adverts to you.'
           -
             type: paragraph
             attrs:

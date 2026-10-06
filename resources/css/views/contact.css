@@ -41,6 +41,27 @@
     }
 }
 
+/* Shown instead of the Google Maps embed until the visitor opts in. */
+.contact-map__consent {
+    @apply flex flex-col items-center justify-center text-center bg-brand-gray;
+    min-height: 24rem;
+    padding: clamp(2rem, 4vw, 6rem);
+    & h3 {
+        @apply text-brand-primary uppercase font-bold mb-5;
+    }
+    & p {
+        @apply mb-6;
+        max-width: 40rem;
+    }
+    & .btn {
+        @apply mb-6 px-10;
+        min-width: 0;
+    }
+    & .contact-map__note {
+        @apply text-sm;
+    }
+}
+
 .contact-left-form {
     & h3 {
         @apply text-brand-black uppercase mb-10 !important;

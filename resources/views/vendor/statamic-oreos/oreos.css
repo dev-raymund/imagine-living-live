@@ -1,0 +1,18 @@
+/* Cookie banner buttons (form.antlers.html). */
+.oreos-actions {
+    @apply flex flex-wrap gap-2;
+}
+
+.oreos-button {
+    @apply py-2 px-4 border border-brand-primary text-brand-primary font-semibold transition-colors;
+    &:hover {
+        @apply bg-brand-primary text-white;
+    }
+}
+
+.oreos-button--primary {
+    @apply bg-brand-primary text-white;
+    &:hover {
+        @apply bg-brand-secondary border-brand-secondary;
+    }
+}

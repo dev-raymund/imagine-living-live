@@ -56,6 +56,12 @@
 </section>
 {{ if company_information:google_maps_link }}
 <div class="contact-map">
+  {{# The embed sends the visitor's IP address (and any Google cookies they
+      already have) to Google, so it only loads once they've opted in to the
+      "maps" cookie group. nocache stops static caching from serving one
+      visitor's choice to everyone. #}}
+  {{ nocache }}
+  {{ if {oreo:maps} }}
   <iframe
     src="{{ company_information:google_maps_link }}"
     width="100%"
@@ -64,5 +70,33 @@
     allowfullscreen=""
     loading="lazy"
   ></iframe>
+  {{ else }}
+  <div class="contact-map__consent">
+    <h3 class="heading-6">Google Maps</h3>
+    <p>
+      This map is provided by Google. When it loads, Google receives your IP
+      address and may set cookies.
+    </p>
+    <form method="post" action="{{ route:statamic.oreos.save }}">
+      <input type="hidden" name="_token" value="{{ csrf_token }}" />
+      <input type="hidden" name="oreos[]" value="maps" />
+      <button class="btn" type="submit" name="action" value="save">
+        <span class="leading-8 heading-6">Load map</span>
+      </button>
+    </form>
+    <p class="contact-map__note">
+      This saves your choice. You can change it at any time using Cookie
+      settings at the bottom of the page.
+    </p>
+    <a
+      class="anchor anchor--primary"
+      href="https://www.google.com/maps/search/?api=1&query={{ company_information:address_line_2 | urlencode }}%2C+{{ company_information:post_code | urlencode }}"
+      target="_blank"
+      rel="noreferrer noopener"
+      >Open in Google Maps</a
+    >
+  </div>
+  {{ /if }}
+  {{ /nocache }}
 </div>
 {{ partial:components/break/break }} {{ /if }}

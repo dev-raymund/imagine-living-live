@@ -32,36 +32,35 @@
         {{ /oreos }}
     </div>
 
-    <div class="flex gap-2">
-        <button class="py-1 px-2 bg-gray-200 border hover:border-current" type="submit" name="action" value="save">
-            {{ trans key="statamic-oreos::messages.button.save" }}
-        </button>
-
+    {{# Accept all and Reject all share a style: UK guidance (ICO) expects
+        rejecting to be as easy as accepting. #}}
+    <div class="oreos-actions">
         {{ if showAcceptall }}
-            <button class="py-1 px-2 border hover:border-current" type="submit" name="action" value="accept-all">
+            <button class="oreos-button oreos-button--primary" type="submit" name="action" value="accept-all">
                 {{ trans key="statamic-oreos::messages.button.acceptall" }}
             </button>
         {{ /if }}
 
-        {{ if showCancel }}
-            <button class="py-1 px-2 border hover:border-current" type="reset" onclick="removeOreosPopup()">
-                {{ trans key="statamic-oreos::messages.button.cancel" }}
-            </button>
-            <script>
-                function removeOreosPopup() {
-                    const el = document.getElementById('{{ popupId ?? "oreos-popup" }}');
-                    if (el) el.parentNode.removeChild(el);
-                }
-            </script>
-        {{ /if }}
+        {{# Submits the empty form below rather than this one, so it ignores
+            any boxes ticked above: only the required groups get saved. #}}
+        <button class="oreos-button oreos-button--primary" type="submit" form="oreos-reject" name="action" value="save">
+            {{ trans key="statamic-oreos::messages.button.reject" }}
+        </button>
+
+        <button class="oreos-button" type="submit" name="action" value="save">
+            {{ trans key="statamic-oreos::messages.button.save" }}
+        </button>
 
         {{ if showReset }}
-            <button class="py-1 px-2 border hover:border-current" type="submit" name="action" value="reset">
+            <button class="oreos-button" type="submit" name="action" value="reset">
                 {{ trans key="statamic-oreos::messages.button.reset" }}
             </button>
         {{ /if }}
-
     </div>
 
+</form>
+
+<form id="oreos-reject" action="{{ route:statamic.oreos.save }}" method="post" hidden>
+    <input type="hidden" name="_token" value="{{ csrf_token }}">
 </form>
 {{ /nocache }}

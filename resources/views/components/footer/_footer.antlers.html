@@ -30,6 +30,16 @@
                                     {{ title }}
                                 </a></li>
                         {{ /nav:footer_nav  }}
+                            {{# Clears the visitor's saved cookie choices, so the banner
+                                shows again and they can choose afresh. #}}
+                            <li class="mb-6">
+                                <form method="post" action="{{ route:statamic.oreos.save }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token }}">
+                                    <button class="anchor uppercase" type="submit" name="action" value="reset">
+                                        {{ trans key="statamic-oreos::messages.button.settings" }}
+                                    </button>
+                                </form>
+                            </li>
                     </ul>
                 </div>
             </div>

@@ -66,6 +66,13 @@ return [
         'essentials' => [
             'required' => true,
             'default' => true
+        ],
+        // The Google Maps embed on the contact page. Loading it sends the
+        // visitor's IP address (and any Google cookies they already have) to
+        // Google, so it stays off until they opt in.
+        'maps' => [
+            'required' => false,
+            'default' => false
         ]
     ],
 

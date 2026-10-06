@@ -1,7 +1,9 @@
-essentials_title: Essentials
-essentials_description: 'By proceeding, you confirm your agreement to our Privacy Policy.'
+essentials_title: 'Strictly necessary'
+essentials_description: 'Needed for our website to work, for example to keep forms secure and remember your cookie choices. Always on.'
 essentials_details:
   -
     type: paragraph
     attrs:
       class: null
+maps_title: 'Google Maps'
+maps_description: 'Shows a Google map of our office on the Contact Us page. When the map loads, Google receives your IP address and may set cookies.'

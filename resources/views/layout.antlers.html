@@ -45,7 +45,13 @@
       {{ template_content }}
       {{ partial:components/footer/footer }}
 
-      {{ oreos:popup }}
+      {{# oreos:popup decides in PHP whether to render the banner, so the tag
+          itself has to sit inside nocache. Otherwise static caching stores
+          whichever answer the first visitor to a page got and serves it to
+          everyone: the banner never shows, or never goes away. #}}
+      {{ nocache }}
+            {{ oreos:popup }}
+      {{ /nocache }}
 
 </body>
 

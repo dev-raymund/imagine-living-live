@@ -30,4 +30,5 @@
 @import "../views/components/social/socialLinks.css";
 @import "../views/components/testimonials/testimonials.css";
 @import "../views/components/texteditor/textEditor.css";
+@import "../views/vendor/statamic-oreos/oreos.css";
 @import "tailwind/components.css";

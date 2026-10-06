@@ -1,3 +1,25 @@
+/* Tables written in the Bard editor, e.g. the cookie table in the Privacy & Cookie Policy. */
+.text-editor__content table {
+    border-collapse: collapse;
+}
+
+.text-editor__content th,
+.text-editor__content td {
+    @apply border border-gray-300 px-2 py-1 text-left align-top;
+}
+
+/* Lets long cookie names wrap on phones instead of squeezing the other columns. */
+.text-editor__content td:first-child {
+    overflow-wrap: anywhere;
+}
+
+@screen md {
+    .text-editor__content th,
+    .text-editor__content td {
+        @apply px-3 py-2;
+    }
+}
+
 @screen lg {
     .text-editor__container {
         @apply flex flex-wrap;
